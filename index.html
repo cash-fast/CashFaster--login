@@ -26,18 +26,19 @@
             --text-muted: #A0AEC0;
             --success: #22C55E;
             --danger: #EF4444;
+            --table-header: linear-gradient(90deg, #00D9FF, #0099FF);
         }
 
         body {
             font-family: 'Cairo', sans-serif;
             background: linear-gradient(135deg, #05081d 0%, #0d0b26 100%);
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.7;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.2rem;
         }
@@ -174,7 +175,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Trust Bar */
         .trust-bar {
             display: flex;
             justify-content: center;
@@ -220,6 +220,13 @@
             color: var(--primary);
             font-weight: 600;
             font-size: 0.9rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         /* Cards */
@@ -361,6 +368,60 @@
             font-size: 1.3rem;
         }
 
+        /* Pricing Table - Full */
+        .pricing-table-wrapper {
+            overflow-x: auto;
+            border-radius: 1.2rem;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            background: var(--card-bg);
+            padding: 0.5rem;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 700px;
+        }
+
+        .pricing-table th {
+            background: linear-gradient(90deg, #00D9FF, #0099FF);
+            color: #0A0E27;
+            font-weight: 700;
+            padding: 0.8rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        .pricing-table td {
+            padding: 0.7rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pricing-table tr:nth-child(even) {
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        .pricing-table tr:hover {
+            background: rgba(0, 217, 255, 0.1);
+        }
+
+        .pricing-table .category-row td {
+            background: rgba(255, 215, 0, 0.1);
+            font-weight: 700;
+            color: var(--gold);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .table-note {
+            text-align: center;
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
         /* Manual Section */
         .manual-section {
             background: linear-gradient(135deg, rgba(20, 26, 56, 0.95), rgba(10, 12, 30, 0.98));
@@ -493,80 +554,6 @@
             color: var(--text-muted);
         }
 
-        /* Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-window {
-            background: linear-gradient(135deg, #0d122b, #170f2b);
-            border: 2px solid var(--primary);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            max-width: 90%;
-            width: 500px;
-            position: relative;
-        }
-
-        .modal-close-btn {
-            position: absolute;
-            top: 0.8rem;
-            right: 0.8rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        th, td {
-            padding: 0.6rem;
-            text-align: center;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
-            font-size: 0.8rem;
-        }
-
-        th {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-        }
-
-        /* Toast */
-        .toast-msg {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--success);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            display: none;
-            z-index: 1100;
-        }
-
         /* Footer */
         footer {
             border-top: 1px solid rgba(0, 217, 255, 0.1);
@@ -574,6 +561,11 @@
             text-align: center;
             font-size: 0.75rem;
             color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
         }
 
         @media (max-width: 640px) {
@@ -590,12 +582,17 @@
             .manual-top {
                 flex-direction: column;
             }
+            .pricing-table {
+                font-size: 0.75rem;
+                min-width: 500px;
+            }
+            .pricing-table th, .pricing-table td {
+                padding: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<div id="toast" class="toast-msg">✅ تم النسخ بنجاح!</div>
 
 <header>
     <div class="container">
@@ -615,7 +612,7 @@
             <p>بدون رسوم إدارية مسبقة، واستلام فوري عبر محفظتك الإلكترونية. أقساط تناسب ميزانيتك.</p>
             <div class="hero-buttons">
                 <a href="https://survey.porsline.com/s/RL4YcaoZ" target="_blank" class="btn-primary">⚡ ابدأ الآن</a>
-                <button onclick="togglePricingModal(true)" class="btn-secondary">📊 جدول الأقساط</button>
+                <a href="#pricing" class="btn-secondary">📊 جدول الأقساط</a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-secondary">🔍 تتبع طلبك</a>
             </div>
             <div class="trust-bar">
@@ -641,7 +638,7 @@
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">• يجب تقديم صورة واضحة للبطاقة من الوجهين.<br>• البطاقة غير منتهية الصلاحية وقت التقديم.<br>• صورة شخصية حديثة.</div>
+                    <div class="card-details">• يجب تقديم صورة واضحة للبطاقة من الوجهين.<br>• البطاقة غير منتهية الصلاحية وقت التقديم.<br>• صورة شخصية حديثة (سيلفي) مع البطاقة.</div>
                 </div>
                 <div class="glass-card">
                     <div class="card-main">
@@ -652,7 +649,7 @@
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">
+                    <div class="card-details">• إثبات الدخل: قسيمة مرتب أو كشف حساب بنكي لآخر 3 أشهر.<br>• للمتقاعدين: إخطار ربط المعاش.<br>• لأصحاب الأعمال: إقرار ضريبي أو كشف حساب شركة.</div>
                 </div>
                 <div class="glass-card">
                     <div class="card-main">
@@ -674,7 +671,7 @@
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">• يجب أن تكون المحفظة مسجلة بنفس الرقم القومي.<br>• المحفظة مفعلة وجاهزة لاستقبال الأموال.</div>
+                    <div class="card-details">• يجب أن تكون المحفظة مسجلة بنفس الرقم القومي.<br>• المحفظة مفعلة وجاهزة لاستقبال الأموال.<br>• يتم الصرف فقط على المحفظة المسجلة باسم العميل.</div>
                 </div>
             </div>
             <div class="notice-banner">
@@ -684,6 +681,79 @@
                     <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة.</p>
                 </div>
             </div>
+        </section>
+
+        <!-- Full Pricing Table -->
+        <section id="pricing">
+            <div class="section-header">
+                <h2>📊 جدول الأقساط الكامل</h2>
+                <p>جميع المبالغ والمدد المتاحة للتمويل</p>
+            </div>
+            <p class="section-subtitle">اختر المبلغ المناسب لك وتعرف على القسط الشهري وإجمالي السداد</p>
+            <div class="pricing-table-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>المبلغ</th>
+                            <th>المدة</th>
+                            <th>القسط الشهري</th>
+                            <th>إجمالي السداد</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- الفئة الاقتصادية -->
+                        <tr class="category-row"><td colspan="4">💚 التمويل الاقتصادي</td></tr>
+                        <tr><td>30,000 ج.م</td><td>12 شهر</td><td>3,325 ج.م</td><td>39,900 ج.م</td></tr>
+                        <tr><td>35,000 ج.م</td><td>12 شهر</td><td>3,875 ج.م</td><td>46,500 ج.م</td></tr>
+                        <tr><td>40,000 ج.م</td><td>18 شهر</td><td>2,965 ج.م</td><td>53,370 ج.م</td></tr>
+                        <tr><td>45,000 ج.م</td><td>18 شهر</td><td>3,325 ج.م</td><td>59,850 ج.م</td></tr>
+
+                        <!-- الفئة الأساسية -->
+                        <tr class="category-row"><td colspan="4">💙 التمويل الأساسي</td></tr>
+                        <tr><td>50,000 ج.م</td><td>24 شهر</td><td>2,725 ج.م</td><td>65,400 ج.م</td></tr>
+                        <tr><td>55,000 ج.م</td><td>24 شهر</td><td>3,075 ج.م</td><td>73,800 ج.م</td></tr>
+                        <tr><td>60,000 ج.م</td><td>24 شهر</td><td>3,085 ج.م</td><td>74,040 ج.م</td></tr>
+                        <tr><td>65,000 ج.م</td><td>26 شهر</td><td>3,325 ج.م</td><td>86,450 ج.م</td></tr>
+                        <tr><td>70,000 ج.م</td><td>26 شهر</td><td>3,585 ج.م</td><td>93,210 ج.م</td></tr>
+                        <tr><td>75,000 ج.م</td><td>26 شهر</td><td>3,845 ج.م</td><td>99,970 ج.م</td></tr>
+
+                        <!-- الفئة المتوسطة -->
+                        <tr class="category-row"><td colspan="4">💛 التمويل المتوسط</td></tr>
+                        <tr><td>80,000 ج.م</td><td>30 شهر</td><td>3,550 ج.م</td><td>106,500 ج.م</td></tr>
+                        <tr><td>85,000 ج.م</td><td>30 شهر</td><td>3,775 ج.م</td><td>113,250 ج.م</td></tr>
+                        <tr><td>90,000 ج.م</td><td>30 شهر</td><td>3,990 ج.م</td><td>119,700 ج.م</td></tr>
+                        <tr><td>95,000 ج.م</td><td>30 شهر</td><td>4,220 ج.م</td><td>126,600 ج.م</td></tr>
+                        <tr><td>100,000 ج.م</td><td>32 شهر</td><td>4,157 ج.م</td><td>133,024 ج.م</td></tr>
+                        <tr><td>105,000 ج.م</td><td>32 شهر</td><td>4,375 ج.م</td><td>140,000 ج.م</td></tr>
+                        <tr><td>110,000 ج.م</td><td>32 شهر</td><td>4,580 ج.م</td><td>146,560 ج.م</td></tr>
+
+                        <!-- الفئة المتقدمة -->
+                        <tr class="category-row"><td colspan="4">🧡 التمويل المتقدم</td></tr>
+                        <tr><td>115,000 ج.م</td><td>38 شهر</td><td>4,075 ج.م</td><td>154,850 ج.م</td></tr>
+                        <tr><td>120,000 ج.م</td><td>38 شهر</td><td>4,235 ج.م</td><td>160,930 ج.م</td></tr>
+                        <tr><td>125,000 ج.م</td><td>38 شهر</td><td>4,035 ج.م</td><td>153,330 ج.م</td></tr>
+                        <tr><td>130,000 ج.م</td><td>42 شهر</td><td>4,400 ج.م</td><td>184,800 ج.م</td></tr>
+                        <tr><td>135,000 ج.م</td><td>42 شهر</td><td>4,305 ج.م</td><td>180,810 ج.م</td></tr>
+                        <tr><td>140,000 ج.م</td><td>42 شهر</td><td>4,495 ج.م</td><td>188,790 ج.م</td></tr>
+
+                        <!-- الفئة الذهبية -->
+                        <tr class="category-row"><td colspan="4">🏆 التمويل الذهبي</td></tr>
+                        <tr><td>145,000 ج.م</td><td>48 شهر</td><td>4,075 ج.م</td><td>195,600 ج.م</td></tr>
+                        <tr><td>150,000 ج.م</td><td>48 شهر</td><td>4,205 ج.م</td><td>201,840 ج.م</td></tr>
+                        <tr><td>155,000 ج.م</td><td>48 شهر</td><td>4,315 ج.م</td><td>207,120 ج.م</td></tr>
+                        <tr><td>160,000 ج.م</td><td>48 شهر</td><td>4,435 ج.م</td><td>212,880 ج.م</td></tr>
+                        <tr><td>165,000 ج.م</td><td>48 شهر</td><td>4,615 ج.م</td><td>221,520 ج.م</td></tr>
+                        <tr><td>170,000 ج.م</td><td>48 شهر</td><td>4,725 ج.م</td><td>226,800 ج.م</td></tr>
+                        <tr><td>175,000 ج.م</td><td>48 شهر</td><td>4,848 ج.م</td><td>232,704 ج.م</td></tr>
+                        <tr><td>180,000 ج.م</td><td>54 شهر</td><td>4,435 ج.م</td><td>239,490 ج.م</td></tr>
+                        <tr><td>185,000 ج.م</td><td>54 شهر</td><td>4,557 ج.م</td><td>246,078 ج.م</td></tr>
+                        <tr><td>190,000 ج.م</td><td>60 شهر</td><td>4,215 ج.م</td><td>252,900 ج.م</td></tr>
+                        <tr><td>195,000 ج.م</td><td>60 شهر</td><td>4,325 ج.م</td><td>259,500 ج.م</td></tr>
+                        <tr><td>200,000 ج.م</td><td>60 شهر</td><td>4,440 ج.م</td><td>266,400 ج.م</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-note">🔐 جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.</div>
         </section>
 
         <!-- Features -->
@@ -734,7 +804,7 @@
             <div class="manual-section">
                 <div class="manual-top">
                     <h3>استمارة التسجيل اليدوي</h3>
-                    <div class="actions-grp" style="display: flex; gap: 0.5rem;">
+                    <div class="actions-grp" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <button class="copy-btn" id="copyFormBtn">📋 نسخ الاستمارة</button>
                         <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn">💬 أرسل عبر ماسنجر</a>
                     </div>
@@ -784,11 +854,38 @@
                 <p>إجابات واضحة لأهم الاستفسارات</p>
             </div>
             <div class="faq-box">
-                <div class="faq-item"><button class="faq-trigger">كيف تتم الموافقة على الطلب؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة.</div></div>
-                <div class="faq-item"><button class="faq-trigger">ما هي المستندات المطلوبة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-content">صورة البطاقة + صورة شخصية + إثبات دخل + بيانات الضامن + رقم محفظة نشط.</div></div>
-                <div class="faq-item"><button class="faq-trigger">كيف استلم القرض؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-content">بعد توقيع العقود، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة.</div></div>
-                <div class="faq-item"><button class="faq-trigger">ما هي مدة السداد؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ.</div></div>
-                <div class="faq-item"><button class="faq-trigger">هل هناك فئات مستبعدة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة.</div></div>
+                <div class="faq-item">
+                    <button class="faq-trigger">كيف تتم الموافقة على الطلب؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">ما هي المستندات المطلوبة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">صورة البطاقة + صورة شخصية + إثبات دخل + بيانات الضامن + رقم محفظة نشط.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">كيف استلم القرض؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">بعد توقيع العقود، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">ما هي مدة السداد؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">هل هناك فئات مستبعدة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">كم تستغرق عملية الموافقة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">في العادة، يتم الرد على الطلب خلال 24 ساعة من تقديم المستندات الكاملة.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">هل هناك رسوم خفية؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">هل يمكنني سداد القرض مبكراً؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد.</div>
+                </div>
             </div>
         </section>
 
@@ -807,27 +904,9 @@
     <div class="container">
         <p>&copy; 2026 Cash Faster. جميع الحقوق محفوظة | تمويل استهلاكي آمن وموثوق</p>
         <p style="margin-top:0.5rem;"><a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" style="color: var(--primary);">صفحة الدعم الرسمية على فيسبوك</a></p>
+        <p style="margin-top:0.3rem; font-size:0.7rem; color:var(--text-muted);">التمويل يخضع لتقييم الائتمان والشروط الكاملة على موقعنا.</p>
     </div>
 </footer>
-
-<!-- Modal -->
-<div id="pricingModal" class="modal-overlay">
-    <div class="modal-window">
-        <button class="modal-close-btn" onclick="togglePricingModal(false)">✕</button>
-        <h3 style="text-align:center; margin-bottom:1rem;">جدول الأقساط التقريبي</h3>
-        <table>
-            <thead><tr><th>المبلغ</th><th>المدة</th><th>القسط الشهري</th><th>الإجمالي</th></tr></thead>
-            <tbody>
-                <tr><td>30,000 ج.م</td><td>12 شهر</td><td>2,750 ج.م</td><td>33,000 ج.م</td></tr>
-                <tr><td>50,000 ج.م</td><td>24 شهر</td><td>2,300 ج.م</td><td>55,200 ج.م</td></tr>
-                <tr><td>100,000 ج.م</td><td>36 شهر</td><td>3,200 ج.م</td><td>115,200 ج.م</td></tr>
-                <tr><td>150,000 ج.م</td><td>48 شهر</td><td>4,205 ج.م</td><td>201,840 ج.م</td></tr>
-                <tr><td>200,000 ج.M</td><td>60 شهر</td><td>4,440 ج.م</td><td>266,400 ج.م</td></tr>
-            </tbody>
-        </table>
-        <div style="text-align:center; margin-top:1rem; font-size:0.8rem; color:var(--gold);">بدون رسوم إدارية مقدمة • عقود قانونية موثقة</div>
-    </div>
-</div>
 
 <script>
     // Accordion for requirements cards
@@ -870,7 +949,6 @@
     // Copy form text
     const copyBtn = document.getElementById('copyFormBtn');
     const formText = document.getElementById('manualFormText');
-    const toast = document.getElementById('toast');
     
     async function copyToClipboard() {
         try {
@@ -890,24 +968,12 @@
     copyBtn.addEventListener('click', copyToClipboard);
     
     function showToast() {
-        toast.style.display = 'block';
-        setTimeout(() => { toast.style.display = 'none'; }, 2500);
+        const toast = document.createElement('div');
+        toast.textContent = '✅ تم النسخ بنجاح!';
+        toast.style.cssText = 'position:fixed; bottom:20px; left:20px; background:#22C55E; color:white; padding:0.6rem 1.2rem; border-radius:2rem; font-weight:700; z-index:1100; font-family:Cairo, sans-serif;';
+        document.body.appendChild(toast);
+        setTimeout(() => { toast.remove(); }, 2500);
     }
-    
-    // Pricing Modal
-    function togglePricingModal(show) {
-        const modal = document.getElementById('pricingModal');
-        if (show) modal.classList.add('active');
-        else modal.classList.remove('active');
-    }
-    
-    window.addEventListener('click', (e) => {
-        const modal = document.getElementById('pricingModal');
-        if (e.target === modal) togglePricingModal(false);
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') togglePricingModal(false);
-    });
 </script>
 </body>
 </html>
