@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cash Faster - التمويل الفوري الذكي بدون رسوم مسبقة">
-    <meta name="theme-color" content="#00D9FF">
-    <title>Cash Faster | تمويل فوري وسهل</title>
+    <meta name="description" content="Cash Faster - التمويل الاستهلاكي السريع والآمن بدون رسوم مقدمة. تمويل يصل إلى 200,000 ج.م.">
+    <meta name="theme-color" content="#0A0E27">
+    <title>Cash Faster | تمويل استهلاكي سريع وآمن</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        /* ======================= RESET & ROOT ======================= */
         * {
             margin: 0;
             padding: 0;
@@ -19,56 +21,124 @@
         :root {
             --primary: #00D9FF;
             --primary-dark: #0099FF;
+            --primary-glow: rgba(0, 217, 255, 0.3);
             --gold: #FFD700;
-            --dark-bg: #0A0E27;
-            --card-bg: rgba(26, 31, 58, 0.85);
-            --text-light: #FFFFFF;
-            --text-muted: #A0AEC0;
+            --gold-glow: rgba(255, 215, 0, 0.3);
             --success: #22C55E;
+            --success-glow: rgba(34, 197, 94, 0.3);
             --danger: #EF4444;
-            --table-header: linear-gradient(90deg, #00D9FF, #0099FF);
+            --dark-bg: #0A0E27;
+            --dark-card: rgba(16, 20, 48, 0.92);
+            --card-border: rgba(0, 217, 255, 0.15);
+            --text-light: #FFFFFF;
+            --text-muted: #94A3B8;
+            --text-dark: #1A1F3A;
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 40px rgba(0, 217, 255, 0.1);
+            --radius: 1.2rem;
+            --radius-sm: 0.8rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #05081d 0%, #0d0b26 100%);
+            background: linear-gradient(145deg, #05081d 0%, #0d0b26 50%, #0A0E27 100%);
             color: var(--text-light);
             line-height: 1.7;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        /* ======================= SCROLLBAR ======================= */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ======================= CONTAINER ======================= */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.2rem;
         }
 
-        /* Header */
+        /* ======================= HEADER ======================= */
         header {
             background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 0;
+            padding: 0.7rem 0;
             flex-wrap: wrap;
             gap: 0.8rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #00D9FF, #FFD700);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFFFFF, var(--primary), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            -webkit-text-fill-color: var(--text-muted);
+            display: block;
+            margin-top: -4px;
+            font-weight: 400;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
         }
 
         .btn-header {
@@ -78,40 +148,138 @@
             border-radius: 2rem;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-header:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+            box-shadow: 0 0 25px var(--primary-glow);
         }
 
-        /* Hero Section */
+        .btn-header-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.45rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-header-outline:hover {
+            background: var(--primary);
+            color: var(--dark-bg);
+            transform: translateY(-2px);
+        }
+
+        /* ======================= MARQUEE / TICKER ======================= */
+        .ticker-bar {
+            background: linear-gradient(90deg, rgba(0, 217, 255, 0.08), rgba(255, 215, 0, 0.05));
+            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+            padding: 0.5rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-content {
+            display: flex;
+            animation: tickerScroll 25s linear infinite;
+            white-space: nowrap;
+            gap: 2.5rem;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .ticker-item .highlight {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .ticker-item .highlight-green {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .ticker-item i {
+            color: var(--primary);
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-bar:hover .ticker-content {
+            animation-play-state: paused;
+        }
+
+        /* ======================= HERO SECTION ======================= */
         .hero {
             text-align: center;
-            padding: 2.5rem 0 2rem;
+            padding: 3rem 0 2.5rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.3;
         }
 
         .hero-badge {
             display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.3);
+            border: 1px solid rgba(0, 217, 255, 0.25);
             border-radius: 2rem;
-            padding: 0.3rem 1rem;
+            padding: 0.3rem 1.2rem;
             font-size: 0.8rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { border-color: rgba(0, 217, 255, 0.25); }
+            50% { border-color: rgba(0, 217, 255, 0.6); }
         }
 
         .hero h1 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
         }
 
         @media (min-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
         }
 
@@ -122,49 +290,19 @@
             background-clip: text;
         }
 
+        .hero-highlight-gold {
+            background: linear-gradient(90deg, var(--gold), #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .hero p {
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-            padding: 0.8rem 2rem;
-            border-radius: 2rem;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            padding: 0.8rem 1.8rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--dark-bg);
+            max-width: 620px;
+            margin: 0 auto 1.8rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
         .hero-buttons {
@@ -172,32 +310,112 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: var(--dark-bg);
+            padding: 0.9rem 2.2rem;
+            border-radius: 2rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px var(--primary-glow);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(0, 217, 255, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            padding: 0.85rem 2rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(90deg, var(--gold), #FFA500);
+            color: var(--dark-bg);
+            padding: 0.9rem 2.2rem;
+            border-radius: 2rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px var(--gold-glow);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        /* ======================= TRUST BAR ======================= */
         .trust-bar {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
         .trust-item {
-            background: rgba(26, 31, 58, 0.5);
+            background: rgba(16, 20, 48, 0.6);
+            backdrop-filter: blur(8px);
             border-radius: 2rem;
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 1.2rem;
             font-size: 0.8rem;
             color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .trust-item i {
+            color: var(--success);
         }
 
         .trust-item span {
-            color: var(--success);
+            color: var(--text-light);
             font-weight: 700;
         }
 
-        /* Sections */
+        /* ======================= SECTION HEADER ======================= */
         section {
-            padding: 3rem 0;
+            padding: 3.5rem 0;
+            position: relative;
         }
 
         .section-header {
@@ -206,44 +424,50 @@
         }
 
         .section-header h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
+            font-weight: 800;
             margin-bottom: 0.3rem;
         }
 
         @media (min-width: 768px) {
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
         }
 
-        .section-header p {
+        .section-header .subtitle {
             color: var(--primary);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .section-subtitle {
+        .section-header .desc {
             color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
             font-size: 0.95rem;
         }
 
-        /* Cards */
+        /* ======================= GLASS CARD ======================= */
         .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 1rem;
+            background: var(--dark-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
             padding: 1.2rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s;
+            transition: var(--transition);
             cursor: pointer;
         }
 
         .glass-card:hover {
-            border-color: rgba(0, 217, 255, 0.5);
-            transform: translateY(-2px);
+            border-color: rgba(0, 217, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
         }
 
         .card-main {
@@ -253,19 +477,21 @@
         }
 
         .card-icon {
-            font-size: 1.8rem;
-            width: 45px;
-            height: 45px;
+            font-size: 1.6rem;
+            width: 48px;
+            height: 48px;
             background: rgba(0, 217, 255, 0.1);
             border-radius: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .card-text h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.2rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.1rem;
         }
 
         .card-text p {
@@ -277,13 +503,31 @@
             display: none;
             margin-top: 1rem;
             padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             font-size: 0.9rem;
             color: #CBD5E0;
+            line-height: 1.8;
         }
 
         .card-details.active {
             display: block;
+            animation: fadeSlide 0.3s ease;
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-details li {
+            list-style: none;
+            padding: 0.2rem 0;
+        }
+
+        .card-details li::before {
+            content: '▸ ';
+            color: var(--primary);
+            font-weight: 700;
         }
 
         .arrow-icon {
@@ -292,89 +536,62 @@
             color: var(--primary);
             transition: transform 0.3s;
             margin-right: auto;
+            flex-shrink: 0;
         }
 
         .arrow-icon.rotate {
             transform: rotate(180deg);
         }
 
-        /* Notice Banner */
+        /* ======================= NOTICE BANNER ======================= */
         .notice-banner {
-            background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            border-radius: 1rem;
-            padding: 1rem;
+            background: linear-gradient(90deg, rgba(34, 197, 94, 0.08), transparent);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius);
+            padding: 1rem 1.2rem;
             display: flex;
             gap: 1rem;
-            align-items: center;
+            align-items: flex-start;
             margin-top: 1.5rem;
         }
 
+        .notice-banner.warning {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.08), transparent);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        .notice-banner.gold {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.08), transparent);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+
         .notice-icon {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            flex-shrink: 0;
         }
 
         .notice-info h4 {
-            color: var(--success);
             font-size: 0.95rem;
+            margin-bottom: 0.1rem;
         }
+
+        .notice-info h4.success { color: var(--success); }
+        .notice-info h4.warning-text { color: var(--danger); }
+        .notice-info h4.gold-text { color: var(--gold); }
 
         .notice-info p {
             font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .feature-box {
-            text-align: center;
-        }
-
-        .feat-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-box h3 {
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .feature-box p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* Categories */
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.8rem;
-        }
-
-        .cat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.8rem;
-        }
-
-        .cat-icon {
-            font-size: 1.3rem;
-        }
-
-        /* Pricing Table - Full */
-        .pricing-table-wrapper {
+        /* ======================= PRICING TABLE ======================= */
+        .pricing-wrapper {
             overflow-x: auto;
-            border-radius: 1.2rem;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--card-border);
+            background: var(--dark-card);
             padding: 0.5rem;
+            backdrop-filter: blur(12px);
         }
 
         .pricing-table {
@@ -384,35 +601,37 @@
             min-width: 700px;
         }
 
-        .pricing-table th {
-            background: linear-gradient(90deg, #00D9FF, #0099FF);
-            color: #0A0E27;
+        .pricing-table thead th {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: var(--dark-bg);
             font-weight: 700;
             padding: 0.8rem;
             text-align: center;
             position: sticky;
             top: 0;
+            z-index: 5;
         }
 
         .pricing-table td {
             padding: 0.7rem;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        .pricing-table tr:nth-child(even) {
-            background: rgba(0, 217, 255, 0.05);
+        .pricing-table tbody tr:nth-child(even) {
+            background: rgba(0, 217, 255, 0.03);
         }
 
-        .pricing-table tr:hover {
-            background: rgba(0, 217, 255, 0.1);
+        .pricing-table tbody tr:hover {
+            background: rgba(0, 217, 255, 0.08);
         }
 
         .pricing-table .category-row td {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(255, 215, 0, 0.08);
             font-weight: 700;
             color: var(--gold);
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.15);
+            padding: 0.6rem;
         }
 
         .table-note {
@@ -420,14 +639,71 @@
             color: var(--gold);
             font-size: 0.8rem;
             margin-top: 0.8rem;
+            opacity: 0.8;
         }
 
-        /* Manual Section */
+        /* ======================= FEATURES GRID ======================= */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 1.2rem;
+        }
+
+        .feature-box .feat-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .feature-box h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-box p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ======================= CATEGORIES ======================= */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .cat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            background: var(--dark-card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .cat-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .cat-item .cat-icon {
+            font-size: 1.3rem;
+        }
+
+        /* ======================= MANUAL SECTION ======================= */
         .manual-section {
-            background: linear-gradient(135deg, rgba(20, 26, 56, 0.95), rgba(10, 12, 30, 0.98));
-            border: 2px solid rgba(0, 217, 255, 0.3);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
+            background: linear-gradient(145deg, rgba(16, 20, 48, 0.95), rgba(10, 14, 39, 0.98));
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            border-radius: var(--radius);
+            padding: 1.8rem;
         }
 
         .manual-top {
@@ -442,6 +718,13 @@
         .manual-top h3 {
             color: var(--primary);
             font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .actions-grp {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .copy-btn, .messenger-btn {
@@ -451,7 +734,7 @@
             font-weight: 700;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
-            transition: all 0.3s;
+            transition: var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -464,43 +747,62 @@
             color: var(--dark-bg);
         }
 
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
         .messenger-btn {
             background: linear-gradient(90deg, #0084FF, #00C6FF);
             color: white;
         }
 
-        .copy-btn:hover, .messenger-btn:hover {
+        .messenger-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 132, 255, 0.4);
         }
 
         .form-terminal {
             background: #05070f;
             padding: 1.2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(0, 217, 255, 0.15);
             color: #b3f3ff;
-            font-family: monospace;
+            font-family: 'Courier New', monospace;
             font-size: 0.8rem;
-            line-height: 1.6;
+            line-height: 1.8;
             white-space: pre-wrap;
             margin: 1rem 0;
             direction: ltr;
             text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
         }
 
-        /* FAQ */
+        /* ======================= FAQ ======================= */
         .faq-box {
             display: flex;
             flex-direction: column;
             gap: 0.7rem;
         }
 
+        .faq-item {
+            background: var(--dark-card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
         .faq-trigger {
             width: 100%;
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            padding: 1rem;
-            border-radius: 1rem;
+            background: transparent;
+            border: none;
+            padding: 1rem 1.2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -508,126 +810,340 @@
             font-size: 0.95rem;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
-            color: white;
+            color: var(--text-light);
             text-align: right;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .faq-trigger:hover {
+            color: var(--primary);
         }
 
         .faq-content {
             display: none;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 0 0 1rem 1rem;
-            font-size: 0.85rem;
+            padding: 0 1.2rem 1.2rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
+            line-height: 1.8;
         }
 
         .faq-content.open {
             display: block;
+            animation: fadeSlide 0.3s ease;
         }
 
         .faq-icon {
-            width: 1rem;
-            height: 1rem;
+            width: 1.2rem;
+            height: 1.2rem;
             transition: transform 0.3s;
+            flex-shrink: 0;
+            color: var(--primary);
         }
 
         .faq-icon.active {
             transform: rotate(180deg);
         }
 
-        /* CTA */
+        /* ======================= CTA ======================= */
         .cta-box {
             text-align: center;
-            background: rgba(0, 217, 255, 0.05);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 1.5rem;
-            padding: 2rem;
+            background: linear-gradient(145deg, rgba(0, 217, 255, 0.05), rgba(255, 215, 0, 0.03));
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
         }
 
         .cta-box h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
         }
 
         .cta-box p {
-            margin-bottom: 1.5rem;
             color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
         }
 
-        /* Footer */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ======================= FOOTER ======================= */
         footer {
-            border-top: 1px solid rgba(0, 217, 255, 0.1);
-            padding: 2rem 0;
+            border-top: 1px solid rgba(0, 217, 255, 0.08);
+            padding: 2.5rem 0 1.5rem;
             text-align: center;
+            margin-top: 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.15rem 0;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.2rem;
             font-size: 0.75rem;
             color: var(--text-muted);
         }
 
-        footer a {
+        .footer-bottom a {
             color: var(--primary);
             text-decoration: none;
         }
 
-        @media (max-width: 640px) {
+        /* ======================= RESPONSIVE ======================= */
+        @media (max-width: 768px) {
             .container {
                 padding: 0 1rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
             }
             .hero-buttons {
                 flex-direction: column;
                 align-items: stretch;
             }
-            .btn-primary, .btn-secondary {
+            .btn-primary, .btn-secondary, .btn-gold {
                 justify-content: center;
+                padding: 0.8rem 1.5rem;
             }
             .manual-top {
                 flex-direction: column;
+                align-items: stretch;
+            }
+            .actions-grp {
+                flex-direction: column;
+            }
+            .copy-btn, .messenger-btn {
+                justify-content: center;
             }
             .pricing-table {
                 font-size: 0.75rem;
-                min-width: 500px;
+                min-width: 480px;
             }
             .pricing-table th, .pricing-table td {
-                padding: 0.5rem;
+                padding: 0.4rem 0.3rem;
             }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ticker-item {
+                font-size: 0.7rem;
+            }
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .header-actions {
+                justify-content: center;
+            }
+            .logo {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+            .cta-box h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ======================= UTILITY ======================= */
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: 1rem; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .gap-1 { gap: 1rem; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .flex-wrap { flex-wrap: wrap; }
+
+        .highlight-gold {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .highlight-primary {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .text-muted {
+            color: var(--text-muted);
         }
     </style>
 </head>
 <body>
 
-<header>
+<!-- ======================= HEADER ======================= -->
+<header id="mainHeader">
     <div class="container">
         <div class="header-content">
-            <div class="logo">💰 Cash Faster</div>
-            <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank" class="btn-header">سجل الآن</a>
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Cash Faster</span>
+            </a>
+            <div class="header-actions">
+                <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank" class="btn-header">
+                    <i class="fas fa-pen"></i> قدم طلبك
+                </a>
+                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-header-outline">
+                    <i class="fas fa-search"></i> تتبع طلبك
+                </a>
+            </div>
         </div>
     </div>
 </header>
 
+<!-- ======================= TICKER / MARQUEE ======================= -->
+<div class="ticker-bar">
+    <div class="container" style="padding: 0 1.2rem;">
+        <div class="ticker-content">
+            <span class="ticker-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>🔒 شركة <span class="highlight">كاش فاستر</span> لا نطلب منك دفع أو تحويل نهائياً لنا أو لأي من مسؤولينا</span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-gift"></i>
+                <span>💰 الخدمة متاحة للجميع <span class="highlight-green">مجانية</span> تصل إلى <span class="highlight">٢٠٠,٠٠٠ ج.م</span></span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-check-circle"></i>
+                <span>✅ بدون تحملك أي رسوم أو مصاريف إدارية مسبقة</span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-clock"></i>
+                <span>⏱️ الصرف فوري بعد الموافقة خلال <span class="highlight-green">دقائق</span></span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-lock"></i>
+                <span>🔐 تشفير <span class="highlight">256-bit</span> لحماية بياناتك</span>
+            </span>
+            <!-- تكرار للحركة المستمرة -->
+            <span class="ticker-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>🔒 شركة <span class="highlight">كاش فاستر</span> لا نطلب منك دفع أو تحويل نهائياً لنا أو لأي من مسؤولينا</span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-gift"></i>
+                <span>💰 الخدمة متاحة للجميع <span class="highlight-green">مجانية</span> تصل إلى <span class="highlight">٢٠٠,٠٠٠ ج.م</span></span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-check-circle"></i>
+                <span>✅ بدون تحملك أي رسوم أو مصاريف إدارية مسبقة</span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-clock"></i>
+                <span>⏱️ الصرف فوري بعد الموافقة خلال <span class="highlight-green">دقائق</span></span>
+            </span>
+            <span class="ticker-item">
+                <i class="fas fa-lock"></i>
+                <span>🔐 تشفير <span class="highlight">256-bit</span> لحماية بياناتك</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- ======================= MAIN CONTENT ======================= -->
 <main>
     <div class="container">
-        <!-- Hero Section -->
+
+        <!-- ===== HERO ===== -->
         <div class="hero">
-            <div class="hero-badge">🛡️ آمن ومشفر بالكامل</div>
-            <h1>تمويل استهلاكي <span class="hero-highlight">سريع وآمن</span></h1>
-            <p>بدون رسوم إدارية مسبقة، واستلام فوري عبر محفظتك الإلكترونية. أقساط تناسب ميزانيتك.</p>
+            <div class="hero-badge">
+                <i class="fas fa-check-circle"></i> مرخص من هيئة الرقابة المالية
+            </div>
+            <h1>
+                تمويل استهلاكي <br>
+                <span class="hero-highlight">سريع وآمن</span>
+                <span style="color: var(--text-muted); font-weight: 400; font-size: 0.6em;">|</span>
+                <span class="hero-highlight-gold">بدون رسوم</span>
+            </h1>
+            <p>
+                احصل على تمويل يصل إلى <strong class="highlight-gold">٢٠٠,٠٠٠ ج.م</strong> بدون أي رسوم إدارية مسبقة.
+                أقساط مرنة تناسب ميزانيتك، وصرف فوري عبر محفظتك الإلكترونية.
+                <br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt" style="color: var(--success);"></i>
+                    نضمن لك الشفافية والأمان التام
+                </span>
+            </p>
             <div class="hero-buttons">
-                <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank" class="btn-primary">⚡ ابدأ الآن</a>
-                <a href="#pricing" class="btn-secondary">📊 جدول الأقساط</a>
-                <a href="
-https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-secondary">🔍 تتبع طلبك</a>
+                <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank" class="btn-primary">
+                    <i class="fas fa-bolt"></i> ابدأ الآن
+                </a>
+                <a href="#pricing" class="btn-secondary">
+                    <i class="fas fa-table"></i> جدول الأقساط
+                </a>
+                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-gold">
+                    <i class="fas fa-search"></i> تتبع طلبك
+                </a>
             </div>
             <div class="trust-bar">
-                <div class="trust-item">🔐 تشفير كامل <span>100%</span></div>
-                <div class="trust-item">💸 رسوم مقدمة <span>0%</span></div>
-                <div class="trust-item">📜 عقود قانونية <span>موثقة</span></div>
+                <div class="trust-item"><i class="fas fa-lock"></i> تشفير <span>256-bit</span></div>
+                <div class="trust-item"><i class="fas fa-coins"></i> رسوم مقدمة <span>0%</span></div>
+                <div class="trust-item"><i class="fas fa-file-contract"></i> عقود <span>موثقة</span></div>
+                <div class="trust-item"><i class="fas fa-clock"></i> صرف <span>فوري</span></div>
             </div>
         </div>
 
-        <!-- Requirements Section -->
+        <!-- ===== REQUIREMENTS ===== -->
         <section id="requirements">
             <div class="section-header">
                 <h2>📋 شروط التمويل</h2>
-                <p>اضغط على أي شرط لمعرفة التفاصيل</p>
+                <span class="subtitle"><i class="fas fa-info-circle"></i> اضغط على أي شرط لمعرفة التفاصيل</span>
+                <p class="desc">نحرص على الشفافية التامة، نوضح لك كل ما تحتاجه للحصول على تمويلك</p>
             </div>
             <div id="requirementsList">
                 <div class="glass-card">
@@ -639,7 +1155,12 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">• يجب تقديم صورة واضحة للبطاقة من الوجهين.<br>• البطاقة غير منتهية الصلاحية وقت التقديم.<br>• صورة شخصية حديثة (سيلفي) مع البطاقة.</div>
+                    <div class="card-details">
+                        <li>يجب تقديم صورة واضحة للبطاقة من الوجهين</li>
+                        <li>البطاقة غير منتهية الصلاحية وقت التقديم</li>
+                        <li>صورة شخصية حديثة (سيلفي) مع البطاقة</li>
+                        <li>التوقيع على العقد  من مكانك بمجرد نزول المبلغ حسابك</li>
+                    </div>
                 </div>
                 <div class="glass-card">
                     <div class="card-main">
@@ -650,7 +1171,12 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">• للموظفين فى القاطعات ، اصحاب المهن الحرة ، ربات المازل.<br>•لاصحاب المعاشات والمستفيدين.<br>• لاصحاب الاعمال</div>
+                    <div class="card-details">
+                        <li>للموظفين في القطاعين الحكومي والخاص</li>
+                        <li>لأصحاب المهن الحرة والمشاريع الصغيرة</li>
+                        <li>لربات المنازل (بضامن من الدرجة الأولى)</li>
+                        <li>لأصحاب المعاشات والمستفيدين</li>
+                    </div>
                 </div>
                 <div class="glass-card">
                     <div class="card-main">
@@ -661,37 +1187,48 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">• للرجال: الأب، الأم، الأخ، الأخت، الزوجة.<br>• للسيدات: الأب، الأم، الأخت، الزوج.<br>• يجب حضور الضامن لتوقيع العقود.</div>
+                    <div class="card-details">
+                        <li>للرجال: الأب، الأم، الأخ، الأخت، الزوجة</li>
+                        <li>للسيدات: الأب، الأم، الأخت، الزوج</li>
+                        <li>يجب توافر ضامن من الدرجة الأولى</li>
+                        <li>الضامن يتحمل مسؤولية السداد في حالة التخلف</li>
+                    </div>
                 </div>
                 <div class="glass-card">
                     <div class="card-main">
                         <div class="card-icon">📱</div>
                         <div class="card-text">
                             <h3>محفظة إلكترونية نشطة</h3>
-                            <p>فودافون كاش أو اتصالات كاش</p>
+                            <p>اتصالات كاش</p>
                         </div>
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="card-details">• يجب أن تكون المحفظة مسجلة بنفس الرقم القومي.<br>• المحفظة مفعلة وجاهزة لاستقبال الأموال.<br>• يتم الصرف فقط على المحفظة المسجلة باسم العميل.</div>
+                    <div class="card-details">
+                        <li>يجب أن تكون المحفظة مسجلة بنفس الرقم القومي</li>
+                        <li>المحفظة مفعلة وجاهزة لاستقبال الأموال</li>
+                        <li>يتم الصرف فقط على المحفظة المسجلة باسم العميل</li>
+                        <li>رقم المحفظة مطابق لرقم الجوال المسجل</li>
+                    </div>
                 </div>
             </div>
+
             <div class="notice-banner">
                 <div class="notice-icon">✅</div>
                 <div class="notice-info">
-                    <h4>ميزتنا الأساسية</h4>
-                    <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة.</p>
+                    <h4 class="success">ميزتنا الأساسية</h4>
+                    <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة. نضمن لك الشفافية التامة.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Full Pricing Table -->
+        <!-- ===== PRICING TABLE ===== -->
         <section id="pricing">
             <div class="section-header">
                 <h2>📊 جدول الأقساط الكامل</h2>
-                <p>جميع المبالغ والمدد المتاحة للتمويل</p>
+                <span class="subtitle"><i class="fas fa-calculator"></i> جميع المبالغ والمدد المتاحة للتمويل</span>
+                <p class="desc">اختر المبلغ المناسب لك وتعرف على القسط الشهري وإجمالي السداد</p>
             </div>
-            <p class="section-subtitle">اختر المبلغ المناسب لك وتعرف على القسط الشهري وإجمالي السداد</p>
-            <div class="pricing-table-wrapper">
+            <div class="pricing-wrapper">
                 <table class="pricing-table">
                     <thead>
                         <tr>
@@ -754,63 +1291,68 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
                     </tbody>
                 </table>
             </div>
-            <div class="table-note">🔐 جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.</div>
+            <div class="table-note">
+                <i class="fas fa-lock"></i> جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.
+            </div>
         </section>
 
-        <!-- Features -->
+        <!-- ===== FEATURES ===== -->
         <section id="features">
             <div class="section-header">
                 <h2>💡 مميزات Cash Faster</h2>
-                <p>لماذا نحن الخيار الأفضل؟</p>
+                <span class="subtitle"><i class="fas fa-star"></i> لماذا نحن الخيار الأفضل؟</span>
             </div>
             <div class="features-grid">
-                <div class="glass-card feature-box"><div class="feat-icon">⚡</div><h3>صرف فوري</h3><p>فور الموافقة، الأموال في محفظتك</p></div>
-                <div class="glass-card feature-box"><div class="feat-icon">💰</div><h3>بدون رسوم مسبقة</h3><p>لا نطلب أي مبالغ قبل الصرف</p></div>
-                <div class="glass-card feature-box"><div class="feat-icon">⏰</div><h3>أقساط مرنة</h3><p>من 12 إلى 60 شهراً</p></div>
-                <div class="glass-card feature-box"><div class="feat-icon">🛡️</div><h3>ضمان عائلي</h3><p>حماية قانونية للطرفين</p></div>
-                <div class="glass-card feature-box"><div class="feat-icon">💵</div><h3>مبالغ كبيرة</h3><p>من 30,000 حتى 200,000 جنيه</p></div>
-                <div class="glass-card feature-box"><div class="feat-icon">👥</div><h3>شفافية تامة</h3><p>عقود واضحة وصريحة</p></div>
+                <div class="glass-card feature-box"><span class="feat-icon">⚡</span><h3>صرف فوري</h3><p>فور الموافقة، الأموال في محفظتك خلال دقائق</p></div>
+                <div class="glass-card feature-box"><span class="feat-icon">💰</span><h3>بدون رسوم مسبقة</h3><p>لا نطلب أي مبالغ قبل الصرف نهائياً</p></div>
+                <div class="glass-card feature-box"><span class="feat-icon">⏰</span><h3>أقساط مرنة</h3><p>من 12 إلى 60 شهراً تناسب جميع الميزانيات</p></div>
+                <div class="glass-card feature-box"><span class="feat-icon">🛡️</span><h3>ضمان عائلي</h3><p>حماية قانونية للطرفين من خلال الضامن</p></div>
+                <div class="glass-card feature-box"><span class="feat-icon">💵</span><h3>مبالغ كبيرة</h3><p>من 30,000 حتى 200,000 جنيه مصري</p></div>
+                <div class="glass-card feature-box"><span class="feat-icon">👥</span><h3>شفافية تامة</h3><p>عقود واضحة وصريحة بدون أي بنود خفية</p></div>
             </div>
         </section>
 
-        <!-- Categories -->
+        <!-- ===== CATEGORIES ===== -->
         <section id="categories">
             <div class="section-header">
                 <h2>👥 الفئات المدعومة</h2>
-                <p>برامج ائتمانية تناسب معظم القطاعات</p>
+                <span class="subtitle"><i class="fas fa-users"></i> برامج ائتمانية تناسب معظم القطاعات</span>
             </div>
             <div class="categories-grid">
-                <div class="glass-card cat-item"><span class="cat-icon">🏛️</span><span>موظفو الحكومة والخاص</span></div>
-                <div class="glass-card cat-item"><span class="cat-icon">🏢</span><span>موظفو الشركات</span></div>
-                <div class="glass-card cat-item"><span class="cat-icon">👴</span><span>أصحاب المعاشات</span></div>
-                <div class="glass-card cat-item"><span class="cat-icon">🛍️</span><span>أصحاب المشاريع الناشئة</span></div>
-                <div class="glass-card cat-item"><span class="cat-icon">👩</span><span>ربات المنازل (بضامن)</span></div>
-                <div class="glass-card cat-item"><span class="cat-icon">🛠️</span><span>أصحاب الأعمال الحرة</span></div>
+                <div class="cat-item"><span class="cat-icon">🏛️</span><span>موظفو الحكومة والخاص</span></div>
+                <div class="cat-item"><span class="cat-icon">🏢</span><span>موظفو الشركات</span></div>
+                <div class="cat-item"><span class="cat-icon">👴</span><span>أصحاب المعاشات</span></div>
+                <div class="cat-item"><span class="cat-icon">🛍️</span><span>أصحاب المشاريع الناشئة</span></div>
+                <div class="cat-item"><span class="cat-icon">👩</span><span>ربات المنازل (بضامن)</span></div>
+                <div class="cat-item"><span class="cat-icon">🛠️</span><span>أصحاب الأعمال الحرة</span></div>
             </div>
-            <div class="notice-banner" style="background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3);">
-                <div class="notice-icon" style="color:#ef4444;">⚠️</div>
+            <div class="notice-banner warning">
+                <div class="notice-icon" style="color: var(--danger);">⚠️</div>
                 <div class="notice-info">
-                    <h4 style="color:#f87171;">تنويه هام</h4>
+                    <h4 class="warning-text">تنويه هام</h4>
                     <p>نعتذر عن تقديم الخدمة للسادة المحامين، رجال الشرطة، والقوات المسلحة.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Manual Upload -->
+        <!-- ===== MANUAL UPLOAD ===== -->
         <section id="manual-upload">
             <div class="section-header">
                 <h2>📋 رفع الطلب يدوياً</h2>
-                <p>واجهتك مشكلة؟ فريق الدعم جاهز لمساعدتك</p>
+                <span class="subtitle"><i class="fas fa-headset"></i> واجهتك مشكلة؟ فريق الدعم جاهز لمساعدتك</span>
             </div>
             <div class="manual-section">
                 <div class="manual-top">
-                    <h3>استمارة التسجيل اليدوي</h3>
-                    <div class="actions-grp" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <button class="copy-btn" id="copyFormBtn">📋 نسخ الاستمارة</button>
-                        <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn">💬 أرسل عبر ماسنجر</a>
+                    <h3><i class="fas fa-file-alt"></i> استمارة التسجيل اليدوي</h3>
+                    <div class="actions-grp">
+                        <button class="copy-btn" id="copyFormBtn"><i class="fas fa-copy"></i> نسخ الاستمارة</button>
+                        <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn"><i class="fab fa-facebook-messenger"></i> أرسل عبر ماسنجر</a>
                     </div>
                 </div>
-                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:0.8rem;">انسخ النص أدناه، ثم أرسله عبر ماسنجر إلى صفحة الدعم الرسمية.</p>
+                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:0.8rem;">
+                    <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                    انسخ النص أدناه، ثم أرسله عبر ماسنجر إلى صفحة الدعم الرسمية.
+                </p>
                 <div class="form-terminal" id="manualFormText">
 📋 استمارة طلب تمويل Cash Faster
 
@@ -838,79 +1380,156 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
 
 🔐 بياناتك مشفرة بالكامل ولن تستخدم إلا لمراجعة طلب التمويل.
                 </div>
-                <div class="notice-banner" style="margin-top:1rem;">
-                    <div class="notice-icon">⚙️</div>
+                <div class="notice-banner gold">
+                    <div class="notice-icon" style="color: var(--gold);">⚙️</div>
                     <div class="notice-info">
-                        <h4 style="color:var(--primary);">بعد الإرسال</h4>
-                        <p>سيتواصل معك ممثل الدعم خلال 60 دقيقة لاستكمال الإجراءات.</p>
+                        <h4 class="gold-text">بعد الإرسال</h4>
+                        <p>سيتواصل معك ممثل الدعم خلال 60 دقيقة لاستكمال الإجراءات وتوثيق الطلب.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- ===== FAQ ===== -->
         <section id="faq">
             <div class="section-header">
                 <h2>❓ أسئلة شائعة</h2>
-                <p>إجابات واضحة لأهم الاستفسارات</p>
+                <span class="subtitle"><i class="fas fa-question-circle"></i> إجابات واضحة لأهم الاستفسارات</span>
             </div>
             <div class="faq-box">
                 <div class="faq-item">
-                    <button class="faq-trigger">كيف تتم الموافقة على الطلب؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة.</div>
+                    <button class="faq-trigger">
+                        كيف تتم الموافقة على الطلب؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة خلال 24 ساعة من تقديم المستندات الكاملة.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">ما هي المستندات المطلوبة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">صورة البطاقة + صورة شخصية + إثبات دخل + بيانات الضامن + رقم محفظة نشط.</div>
+                    <button class="faq-trigger">
+                        ما هي المستندات المطلوبة؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">صورة البطاقة + صورة شخصية (سيلفي) + إثبات دخل + بيانات الضامن + رقم محفظة نشط. جميع المستندات مشفرة ومحمية.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">كيف استلم القرض؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">بعد توقيع العقود، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة.</div>
+                    <button class="faq-trigger">
+                        كيف استلم القرض؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">بعد إنهاء الإجراءات، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة خلال دقائق.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">ما هي مدة السداد؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ.</div>
+                    <button class="faq-trigger">
+                        ما هي مدة السداد؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ الذي تختاره.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">هل هناك فئات مستبعدة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة.</div>
+                    <button class="faq-trigger">
+                        هل هناك فئات مستبعدة؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة. نعتذر عن عدم تقديم الخدمة لهذه الفئات.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">كم تستغرق عملية الموافقة؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">في العادة، يتم الرد على الطلب خلال 24 ساعة من تقديم المستندات الكاملة.</div>
+                    <button class="faq-trigger">
+                        هل هناك رسوم خفية؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول بوضوح تام.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">هل هناك رسوم خفية؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول.</div>
+                    <button class="faq-trigger">
+                        هل يمكنني سداد القرض مبكراً؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد الفعلي.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">هل يمكنني سداد القرض مبكراً؟<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد.</div>
+                    <button class="faq-trigger">
+                        كيف يتم حماية بياناتي؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">جميع بياناتك مشفرة بتقنية 256-bit، ولا يمكن لأي شخص خارج فريق التمويل الاطلاع عليها. نلتزم بأعلى معايير الأمان والخصوصية.</div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
+        <!-- ===== CTA ===== -->
         <section>
             <div class="cta-box">
-                <h2>🚀 جاهز لتبدأ؟</h2>
-                <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق</p>
-                <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank" class="btn-primary">قدم طلبك الآن</a>
+                <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
+                <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
+                <div class="cta-buttons">
+                    <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank" class="btn-primary">
+                        <i class="fas fa-bolt"></i> قدم طلبك الآن
+                    </a>
+                    <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-gold">
+                        <i class="fas fa-search"></i> تتبع طلبك
+                    </a>
+                </div>
             </div>
         </section>
+
     </div>
 </main>
 
+<!-- ======================= FOOTER ======================= -->
 <footer>
     <div class="container">
-        <p>&copy; 2026 Cash Faster. جميع الحقوق محفوظة | تمويل استهلاكي آمن وموثوق</p>
-        <p style="margin-top:0.5rem;"><a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" style="color: var(--primary);">صفحة الدعم الرسمية على فيسبوك</a></p>
-        <p style="margin-top:0.3rem; font-size:0.7rem; color:var(--text-muted);">التمويل يخضع لتقييم الائتمان والشروط الكاملة على موقعنا.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>⚡ Cash Faster</h4>
+                <p>تمويل استهلاكي سريع وآمن<br>بدون رسوم إدارية مسبقة</p>
+                <p style="margin-top: 0.3rem; color: var(--gold);">+</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <a href="https://survey.porsline.com/s/Wrgzcn5h" target="_blank">تقديم طلب</a>
+                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank">تتبع طلبك</a>
+                <a href="#pricing">جدول الأقساط</a>
+                <a href="#faq">الأسئلة الشائعة</a>
+            </div>
+            <div class="footer-col">
+                <h4>الأمان والخصوصية</h4>
+                <p>🔐 تشفير 256-bit</p>
+                <p>🛡️ بياناتك مشفرة بالكامل</p>
+                <p>📜 عقود قانونية موثقة</p>
+                <p>✅ مرخص من هيئة الرقابة المالية</p>
+            </div>
+            <div class="footer-col">
+                <h4>تابعنا</h4>
+                <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank">
+                    <i class="fab fa-facebook"></i> صفحة الدعم الرسمية
+                </a>
+                <p style="margin-top: 0.3rem; font-size: 0.7rem; color: var(--text-muted);">
+                    <i class="fas fa-clock"></i> الدعم متاح 24/7
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cash Faster. جميع الحقوق محفوظة | تمويل استهلاكي آمن وموثوق</p>
+            <p style="margin-top: 0.3rem; font-size: 0.7rem; color: var(--text-muted);">
+                التمويل يخضع لتقييم الائتمان والشروط الكاملة على موقعنا.
+            </p>
+        </div>
     </div>
 </footer>
 
+<!-- ======================= JAVASCRIPT ======================= -->
 <script>
-    // Accordion for requirements cards
+    // ===== Header Scroll Effect =====
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // ===== Requirements Accordion =====
     const cards = document.querySelectorAll('#requirementsList .glass-card');
     cards.forEach(card => {
         card.addEventListener('click', function(e) {
@@ -930,7 +1549,7 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
         });
     });
 
-    // FAQ Accordion
+    // ===== FAQ Accordion =====
     document.querySelectorAll('.faq-trigger').forEach(btn => {
         btn.addEventListener('click', () => {
             const content = btn.nextElementSibling;
@@ -947,14 +1566,14 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
         });
     });
 
-    // Copy form text
+    // ===== Copy Form Text =====
     const copyBtn = document.getElementById('copyFormBtn');
     const formText = document.getElementById('manualFormText');
-    
+
     async function copyToClipboard() {
         try {
             await navigator.clipboard.writeText(formText.innerText);
-            showToast();
+            showToast('✅ تم النسخ بنجاح!');
         } catch (err) {
             const textarea = document.createElement('textarea');
             textarea.value = formText.innerText;
@@ -962,19 +1581,51 @@ https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-seconda
             textarea.select();
             document.execCommand('copy');
             document.body.removeChild(textarea);
-            showToast();
+            showToast('✅ تم النسخ بنجاح!');
         }
     }
-    
+
     copyBtn.addEventListener('click', copyToClipboard);
-    
-    function showToast() {
+
+    function showToast(message) {
         const toast = document.createElement('div');
-        toast.textContent = '✅ تم النسخ بنجاح!';
-        toast.style.cssText = 'position:fixed; bottom:20px; left:20px; background:#22C55E; color:white; padding:0.6rem 1.2rem; border-radius:2rem; font-weight:700; z-index:1100; font-family:Cairo, sans-serif;';
+        toast.textContent = message;
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #22C55E, #16A34A);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            z-index: 9999;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+            animation: toastSlide 0.4s ease;
+        `;
         document.body.appendChild(toast);
-        setTimeout(() => { toast.remove(); }, 2500);
+        setTimeout(() => {
+            toast.style.animation = 'toastSlideOut 0.4s ease forwards';
+            setTimeout(() => toast.remove(), 400);
+        }, 2500);
     }
+
+    // إضافة أنماط التوست
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+        @keyframes toastSlide {
+            from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        @keyframes toastSlideOut {
+            from { opacity: 1; transform: translateX(-50%) translateY(0); }
+            to { opacity: 0; transform: translateX(-50%) translateY(30px); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
 </script>
+
 </body>
 </html>
