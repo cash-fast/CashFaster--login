@@ -845,6 +845,100 @@
             transform: rotate(180deg);
         }
 
+        /* ======================= PRIVACY POLICY SECTION ======================= */
+        .privacy-section {
+            background: var(--dark-card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .privacy-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-section h3 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .privacy-section p {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .privacy-section ul {
+            padding-right: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section ul li {
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            list-style: none;
+            padding-right: 1.2rem;
+            position: relative;
+        }
+
+        .privacy-section ul li::before {
+            content: "▸";
+            position: absolute;
+            right: 0;
+            color: var(--primary);
+        }
+
+        .privacy-section .highlight {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .privacy-section .highlight-cyan {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ======================= DISCLAIMER BOX ======================= */
+        .disclaimer-box {
+            background: rgba(255, 215, 0, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .disclaimer-box h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .disclaimer-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 2rem;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
         /* ======================= CTA ======================= */
         .cta-box {
             text-align: center;
@@ -978,6 +1072,9 @@
             }
             .logo {
                 justify-content: center;
+            }
+            .privacy-section {
+                padding: 1.2rem;
             }
         }
 
@@ -1159,7 +1256,7 @@
                         <li>يجب تقديم صورة واضحة للبطاقة من الوجهين</li>
                         <li>البطاقة غير منتهية الصلاحية وقت التقديم</li>
                         <li>صورة شخصية حديثة (سيلفي) مع البطاقة</li>
-                        <li>التوقيع على العقد  من مكانك بمجرد نزول المبلغ حسابك</li>
+                        <li>التوقيع على العقد من مكانك بمجرد نزول المبلغ حسابك</li>
                     </div>
                 </div>
                 <div class="glass-card">
@@ -1456,6 +1553,112 @@
             </div>
         </section>
 
+        <!-- ===== PRIVACY POLICY SECTION ===== -->
+        <section id="privacy">
+            <div class="section-header">
+                <h2>🔐 سياسة الخصوصية</h2>
+                <span class="subtitle"><i class="fas fa-shield-alt"></i> نحمي بياناتك ونلتزم بخصوصيتك</span>
+            </div>
+            <div class="privacy-section">
+                <div class="privacy-badge">
+                    <i class="fas fa-shield-alt"></i> محدث: مايو 2026
+                </div>
+
+                <h3>📌 مقدمة</h3>
+                <p>
+                    نحن في <span class="highlight">Cash Faster</span> نلتزم بحماية خصوصيتك وبياناتك الشخصية. تصف سياسة الخصوصية هذه سياساتنا وإجراءاتنا المتعلقة بجمع واستخدام والإفصاح عن معلوماتك عند استخدامك لخدماتنا.
+                </p>
+                <p>
+                    باستخدامك لخدماتنا، فإنك توافق على جمع المعلومات واستخدامها وفقًا لسياسة الخصوصية هذه.
+                </p>
+
+                <h3>📌 التعريفات</h3>
+                <ul>
+                    <li><span class="highlight-cyan">الحساب:</span> حساب فريد تم إنشاؤه لك للوصول إلى خدماتنا.</li>
+                    <li><span class="highlight-cyan">الشركة:</span> تشير إلى <span class="highlight">Cash Faster</span> (كاش فاستر للتمويل الاستهلاكي).</li>
+                    <li><span class="highlight-cyan">البيانات الشخصية:</span> أي معلومات تتعلق بشخص محدد أو يمكن تحديده.</li>
+                    <li><span class="highlight-cyan">الخدمة:</span> تشير إلى موقعنا الإلكتروني وجميع الخدمات التي نقدمها.</li>
+                    <li><span class="highlight-cyan">أنت:</span> الفرد الذي يصل إلى الخدمة أو يستخدمها.</li>
+                    <li><span class="highlight-cyan">الجهاز:</span> أي جهاز يمكنه الوصول إلى الخدمة (كمبيوتر، هاتف محمول، جهاز لوحي).</li>
+                </ul>
+
+                <h3>📌 جمع البيانات الشخصية واستخدامها</h3>
+                <p><span class="highlight-cyan">أنواع البيانات التي يتم جمعها:</span></p>
+                <ul>
+                    <li>الاسم الكامل رباعياً</li>
+                    <li>الرقم القومي (14 رقم)</li>
+                    <li>العنوان بالتفصيل</li>
+                    <li>رقم المحفظة الإلكترونية</li>
+                    <li>رقم الهاتف ورقم الواتساب</li>
+                    <li>البيانات المالية (الدخل الشهري، مصدر الدخل، المبلغ المطلوب)</li>
+                    <li>بيانات الضامن (الاسم، الرقم القومي، رقم الهاتف، صلة القرابة)</li>
+                    <li>الصور والمستندات المطلوبة للتقديم</li>
+                </ul>
+
+                <p><span class="highlight-cyan">الغرض من جمع البيانات:</span></p>
+                <ul>
+                    <li>التحقق من الهوية</li>
+                    <li>التقييم الائتماني واتخاذ قرارات التمويل</li>
+                    <li>متابعة السداد والتحصيل</li>
+                    <li>التحليل الإحصائي وتحسين المنتجات والخدمات</li>
+                    <li>التواصل معك بشأن طلبك</li>
+                </ul>
+
+                <h3>📌 أمن البيانات وتخزينها</h3>
+                <ul>
+                    <li><span class="highlight-cyan">أثناء النقل:</span> تتم حماية البيانات باستخدام بروتوكولات أمان معتمدة وفقًا لمعايير الصناعة.</li>
+                    <li><span class="highlight-cyan">أثناء التخزين:</span> يتم تأمينها باستخدام خوارزميات تشفير قوية (256-bit).</li>
+                    <li><span class="highlight-cyan">التحكم في الوصول:</span> لا يُسمح بالوصول إلى البيانات إلا للموظفين المخولين.</li>
+                    <li><span class="highlight-cyan">الاحتفاظ والتخزين:</span> نحتفظ بالبيانات الشخصية فقط للمدة اللازمة لتحقيق الأغراض المذكورة.</li>
+                </ul>
+
+                <h3>📌 مشاركة البيانات ونقلها</h3>
+                <p>نحن <span class="highlight-cyan">لا نشارك</span> بياناتك الشخصية مع أطراف ثالثة إلا في الحالات التالية:</p>
+                <ul>
+                    <li>بموافقتك الصريحة</li>
+                    <li>مع مزودي الخدمات الذين يساعدوننا في تقديم خدماتنا</li>
+                    <li>عندما يقتضي القانون ذلك (مثل أوامر المحاكم، أو تحقيقات الشرطة، أو توجيهات البنك المركزي)</li>
+                    <li>مع مزودي خدمات الأمن وإدارة المخاطر (لأغراض كشف الاحتيال)</li>
+                    <li>إذا كان تبادل البيانات مطلوباً لأغراض التسويق، فسنحصل على موافقتك الواضحة</li>
+                </ul>
+
+                <h3>📌 حقوقك والتحكم في بياناتك</h3>
+                <p>يمكنك من خلال التواصل مع خدمة العملاء:</p>
+                <ul>
+                    <li>تعديل أو حذف بعض المعلومات الشخصية</li>
+                    <li>طلب تصدير بياناتك</li>
+                    <li>حذف حسابك (لا يمكن حذف الحساب إلا بعد سداد جميع القروض المستحقة بالكامل)</li>
+                    <li>الاستفسار عن تفاصيل الاحتفاظ بالبيانات</li>
+                </ul>
+
+                <h3>📌 التعديلات على سياسة الخصوصية</h3>
+                <p>
+                    قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطارك بأي تغييرات عن طريق نشر سياسة الخصوصية الجديدة على هذه الصفحة. آخر تحديث: <span class="highlight">مايو 2026</span>.
+                </p>
+
+                <!-- ====== DISCLAIMER ====== -->
+                <div class="disclaimer-box">
+                    <h3><i class="fas fa-exclamation-triangle"></i> إخلاء مسؤولية</h3>
+                    <p>
+                        <strong>شركة <span class="highlight">Cash Faster</span> (كاش فاستر)</strong> هي شركة مصرية تعمل في مجال التمويل الاستهلاكي وفقاً للقوانين واللوائح المصرية. جميع إجراءات التمويل تخضع لتقييم ائتماني دقيق وفقاً للشروط والأحكام المعلنة.
+                    </p>
+                    <p>
+                        <strong>تنبيه هام:</strong> نحن <span class="highlight-cyan">لا نطلب من عملائنا دفع أو تحويل أي مبالغ مالية</span> لأي شخص أو جهة بخلاف الأقساط الشهرية المتفق عليها. في حالة تلقي أي طلب بتحويل أموال باسم الشركة، يرجى التواصل فوراً مع خدمة العملاء والإبلاغ عن ذلك.
+                    </p>
+                    <p>
+                        جميع البيانات والمستندات المقدمة من العملاء تُستخدم فقط لأغراض التقييم الائتماني واتخاذ قرارات التمويل، ولا يتم مشاركتها مع أي طرف ثالث إلا في الحالات التي يقتضيها القانون.
+                    </p>
+                    <p>
+                        الشركة غير مسؤولة عن أي استخدام غير مصرح به للبيانات من قبل أطراف خارجية نتيجة لأي اختراق أمني خارج عن إرادتها.
+                    </p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #94A3B8;">
+                        <i class="fas fa-check-circle" style="color: #22C55E;"></i>
+                        آخر تحديث لإخلاء المسؤولية: مايو 2026
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- ===== CTA ===== -->
         <section>
             <div class="cta-box">
@@ -1537,11 +1740,11 @@
             const details = this.querySelector('.card-details');
             const arrow = this.querySelector('.arrow-icon');
             const isActive = details.classList.contains('active');
-            
+
             // Close all others
             document.querySelectorAll('#requirementsList .card-details').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('#requirementsList .arrow-icon').forEach(a => a.classList.remove('rotate'));
-            
+
             if (!isActive) {
                 details.classList.add('active');
                 arrow.classList.add('rotate');
@@ -1555,10 +1758,10 @@
             const content = btn.nextElementSibling;
             const icon = btn.querySelector('.faq-icon');
             const isOpen = content.classList.contains('open');
-            
+
             document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
             document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('active'));
-            
+
             if (!isOpen) {
                 content.classList.add('open');
                 icon.classList.add('active');
