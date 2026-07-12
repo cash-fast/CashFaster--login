@@ -845,7 +845,7 @@
             transform: rotate(180deg);
         }
 
-        /* ======================= PRIVACY POLICY SECTION ======================= */
+        /* ======================= PRIVACY & TERMS SECTION ======================= */
         .privacy-section {
             background: var(--dark-card);
             border: 1px solid var(--card-border);
@@ -865,6 +865,12 @@
             color: var(--gold);
             font-size: 1.2rem;
             margin: 1.5rem 0 0.8rem;
+        }
+
+        .privacy-section h4 {
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin: 1.2rem 0 0.5rem;
         }
 
         .privacy-section p {
@@ -904,6 +910,19 @@
             font-weight: 700;
         }
 
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 2rem;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
         /* ======================= DISCLAIMER BOX ======================= */
         .disclaimer-box {
             background: rgba(255, 215, 0, 0.06);
@@ -924,19 +943,6 @@
             font-size: 0.9rem;
             line-height: 1.8;
             margin-bottom: 0.8rem;
-        }
-
-        .privacy-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 2rem;
-            padding: 0.3rem 1.2rem;
-            font-size: 0.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
         }
 
         /* ======================= CTA ======================= */
@@ -1119,6 +1125,32 @@
         .text-muted {
             color: var(--text-muted);
         }
+
+        /* ======================= TERMS OF USE SPECIAL ======================= */
+        .terms-list {
+            padding-right: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-list li {
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            list-style: none;
+            padding-right: 1.5rem;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .terms-list li::before {
+            content: "▸";
+            position: absolute;
+            right: 0;
+            color: var(--primary);
+        }
+
+        .terms-list li strong {
+            color: var(--gold);
+        }
     </style>
 </head>
 <body>
@@ -1132,7 +1164,7 @@
                 <span class="logo-text">Cash Faster</span>
             </a>
             <div class="header-actions">
-                <a href="https://survey.porsline.com/s/GwhQsCwv" target="_blank" class="btn-header">
+                <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank" class="btn-header">
                     <i class="fas fa-pen"></i> قدم طلبك
                 </a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-header-outline">
@@ -1217,7 +1249,7 @@
                 </span>
             </p>
             <div class="hero-buttons">
-                <a href="https://survey.porsline.com/s/GwhQsCwv" target="_blank" class="btn-primary">
+                <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank" class="btn-primary">
                     <i class="fas fa-bolt"></i> ابدأ الآن
                 </a>
                 <a href="#pricing" class="btn-secondary">
@@ -1553,18 +1585,20 @@
             </div>
         </section>
 
-        <!-- ===== PRIVACY POLICY SECTION ===== -->
-        <section id="privacy">
+        <!-- ===== PRIVACY & TERMS SECTION ===== -->
+        <section id="privacy-terms">
             <div class="section-header">
-                <h2>🔐 سياسة الخصوصية</h2>
-                <span class="subtitle"><i class="fas fa-shield-alt"></i> نحمي بياناتك ونلتزم بخصوصيتك</span>
+                <h2>🔐 سياسة الخصوصية وشروط الاستخدام</h2>
+                <span class="subtitle"><i class="fas fa-shield-alt"></i> نحمي بياناتك ونلتزم بالشفافية</span>
             </div>
+
+            <!-- ===== PRIVACY POLICY ===== -->
             <div class="privacy-section">
                 <div class="privacy-badge">
                     <i class="fas fa-shield-alt"></i> محدث: مايو 2026
                 </div>
 
-                <h3>📌 مقدمة</h3>
+                <h3>📌 سياسة الخصوصية</h3>
                 <p>
                     نحن في <span class="highlight">Cash Faster</span> نلتزم بحماية خصوصيتك وبياناتك الشخصية. تصف سياسة الخصوصية هذه سياساتنا وإجراءاتنا المتعلقة بجمع واستخدام والإفصاح عن معلوماتك عند استخدامك لخدماتنا.
                 </p>
@@ -1635,6 +1669,78 @@
                 <p>
                     قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطارك بأي تغييرات عن طريق نشر سياسة الخصوصية الجديدة على هذه الصفحة. آخر تحديث: <span class="highlight">مايو 2026</span>.
                 </p>
+            </div>
+
+            <!-- ===== TERMS OF USE ===== -->
+            <div class="privacy-section" style="margin-top: 2rem;">
+                <div class="privacy-badge">
+                    <i class="fas fa-file-contract"></i> محدث: مايو 2026
+                </div>
+
+                <h3>📋 شروط الاستخدام</h3>
+                <p style="font-size: 1.05rem; color: var(--text-light); margin-bottom: 1.5rem;">
+                    مرحبًا بك في منصة <span class="highlight">Cash Faster</span>.
+                </p>
+
+                <p>
+                    يرجى قراءة شروط الاستخدام التالية ("شروط الاستخدام") بعناية قبل استخدام هذه المنصة. تحتوي شروط الاستخدام على شروط وأحكام تحكم استخدامك للمنصة وكذلك الخدمات المقدمة فيها، بما في ذلك على سبيل المثال لا الحصر خدمات المعلومات وخدمات القروض والخدمات الأخرى التي قد يطورها مزود الخدمات.
+                </p>
+                <p>
+                    من خلال الوصول إلى و/أو استخدام المنصة، سيتم اعتبارك موافقًا على شروط الاستخدام هذه. إذا كنت لا توافق على شروط الاستخدام هذه، فيرجى التوقف فورًا عن استخدام المنصة.
+                </p>
+
+                <h3>1. استخدام المنصة</h3>
+                <p>لاستخدام المنصة، يجب عليك:</p>
+                <ul class="terms-list">
+                    <li>قبول والموافقة على شروط الاستخدام هذه وسياسة الخصوصية</li>
+                    <li>التسجيل معنا على منصة <span class="highlight">Cash Faster</span></li>
+                    <li>تقديم جميع المعلومات التي قد نطلبها، مثل اسمك ووظيفتك وعنوان بريدك الإلكتروني ورقم جهازك المحمول وبيانات الاعتماد عبر الإنترنت لحسابك المصرفي وأي معلومات أخرى قد نطلبها من وقت لآخر</li>
+                </ul>
+
+                <h3>2. استخدام الحساب</h3>
+                <h4>2.1</h4>
+                <p>
+                    ستكون مسؤولاً عن استخدام حسابك وفقًا للقوانين واللوائح السائدة. أنت توافق على أنك لن تستخدم حسابك في أي إجراءات تنتهك القوانين واللوائح، بما في ذلك على سبيل المثال لا الحصر، تزوير الهويات، أو الانخراط في جرائم غسيل الأموال، أو أي إجراءات أخرى لا تتوافق مع القوانين واللوائح.
+                </p>
+
+                <h4>2.2</h4>
+                <p>
+                    أنت توافق على أن القرض الذي تحصل عليه أو تقدمه من خلال المنصة سيتم استخدامه فقط للأغراض المنصوص عليها في اتفاقية القرض التي سيتم إبرامها بين المقترض والمقرض (كما يمثله مزود الخدمة).
+                </p>
+
+                <h4>2.3</h4>
+                <p>
+                    أنت توافق على أنه بخلاف الإجراءات التي تحظرها القوانين واللوائح، يُحظر عليك أيضًا استخدام الحساب بطريقة قد تضر بأطراف أخرى، بما في ذلك على سبيل المثال لا الحصر، مزود الخدمات أو أطراف ثالثة أخرى.
+                </p>
+                <p>
+                    تشمل الإجراءات التي تسبب ضررًا لأطراف أخرى، على سبيل المثال لا الحصر: تعطيل التحكم في الأنظمة الإلكترونية، البريد العشوائي، الكشف غير القانوني عن المعلومات السرية للطرف الثالث، نسخ كل جزء من أجزاء المنصة دون إذن (بغض النظر عما إذا كان محميًا من قبل الملكية الفكرية أم لا)، أو تحميل محتويات بها عنف، أو فاحشة، أو هجوم على كرامة الآخرين، أو محتويات محمية بموجب الملكية الفكرية للطرف الآخر، أو غيرها من الإجراءات التي قد تضر بأطراف أخرى.
+                </p>
+
+                <h4>2.4</h4>
+                <p>
+                    أنت تفهم وتوافق على أنه لا يجوز لك سوى امتلاك حساب واحد في المنصة، ما لم يقرر مزود الخدمات خلاف ذلك. لهذا الغرض، فإنك توافق على أنك لن تنشئ ولا تحاول إنشاء، بشكل مباشر أو غير مباشر، أكثر من حساب واحد في المنصة.
+                </p>
+
+                <h4>2.5</h4>
+                <p>
+                    يحق لمزود الخدمات إغلاق حسابك إذا لم تمتثل لشروط الاستخدام. ومع ذلك، ستكون مسؤولاً عن المحتويات التي تقوم بتحميلها والتي تنتهك شروط الاستخدام، ويجب عليك تعويض مزود الخدمات عن أي نوع من العواقب الناشئة عن المحتويات التي تقوم بتحميلها على المنصة والتي تنتهك شروط الاستخدام.
+                </p>
+
+                <h3>3. الآخرين</h3>
+                <h4>3.1</h4>
+                <p>
+                    تُفسَّر شروط الاستخدام هذه وتحكمها قوانين جمهورية مصر العربية. تخضع أي مطالبة أو نزاع ينشأ فيما يتعلق بشروط الاستخدام هذه للاختصاص القضائي لمحاكم جمهورية مصر العربية، وفقًا للقوانين واللوائح السائدة.
+                </p>
+
+                <h4>3.2</h4>
+                <p>
+                    إذا كان هناك أي بند في شروط الاستخدام تم الإعلان عن بطلانه أو انتهاكه للقوانين واللوائح، فلن تؤثر الشروط على صلاحية الأحكام المتبقية وسيتم اعتبار شروط الاستخدام هذه منقحة بطريقة تعكس التوافق مع القوانين والأنظمة.
+                </p>
+
+                <h4>3.3</h4>
+                <p>
+                    لا يوجد تنازل عن أي حقوق لمزود الخدمات والتي يجب أن تُمنح ما لم يكن واضحًا ومكتوبًا من قبل مزود الخدمات. لا يُعتبر عدم الأداء أو الأداء المتأخر أو الأداء الجزئي لحقوق مزود الخدمات تنازلاً عن أي حقوق لمقدم الخدمات.
+                </p>
 
                 <!-- ====== DISCLAIMER ====== -->
                 <div class="disclaimer-box">
@@ -1665,7 +1771,7 @@
                 <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
                 <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
                 <div class="cta-buttons">
-                    <a href="https://survey.porsline.com/s/GwhQsCwv" target="_blank" class="btn-primary">
+                    <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank" class="btn-primary">
                         <i class="fas fa-bolt"></i> قدم طلبك الآن
                     </a>
                     <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-gold">
@@ -1689,10 +1795,11 @@
             </div>
             <div class="footer-col">
                 <h4>روابط سريعة</h4>
-                <a href="https://survey.porsline.com/s/GwhQsCwv" target="_blank">تقديم طلب</a>
+                <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank">تقديم طلب</a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank">تتبع طلبك</a>
                 <a href="#pricing">جدول الأقساط</a>
                 <a href="#faq">الأسئلة الشائعة</a>
+                <a href="#privacy-terms">سياسة الخصوصية</a>
             </div>
             <div class="footer-col">
                 <h4>الأمان والخصوصية</h4>
