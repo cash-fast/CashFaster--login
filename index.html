@@ -3,50 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cash Faster - التمويل الاستهلاكي السريع والآمن بدون رسوم مقدمة. تمويل يصل إلى 200,000 ج.م.">
-    <meta name="theme-color" content="#0A0E27">
-    <title>Cash Faster | تمويل استهلاكي سريع وآمن</title>
+    <meta name="description" content="كاش فاستر للتمويل الاستهلاكي - حلول تمويلية سريعة وآمنة بدون رسوم مقدمة">
+    <meta name="theme-color" content="#0A0A1A">
+    <title>كاش فاستر | تمويل استهلاكي سريع وآمن</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* ======================= RESET & ROOT ======================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #00D9FF;
-            --primary-dark: #0099FF;
-            --primary-glow: rgba(0, 217, 255, 0.3);
-            --gold: #FFD700;
-            --gold-glow: rgba(255, 215, 0, 0.3);
-            --success: #22C55E;
-            --success-glow: rgba(34, 197, 94, 0.3);
-            --danger: #EF4444;
-            --dark-bg: #0A0E27;
-            --dark-card: rgba(16, 20, 48, 0.92);
-            --card-border: rgba(0, 217, 255, 0.15);
+            --anuta-bg: #0A0A1A;
+            --anuta-card: rgba(20, 20, 40, 0.95);
+            --anuta-border: rgba(255, 255, 255, 0.06);
+            --anuta-gold: #E8B84B;
+            --anuta-gold-dark: #C99A2E;
+            --anuta-gold-light: #F5D98E;
+            --anuta-blue: #00D9FF;
+            --anuta-green: #22C55E;
+            --anuta-purple: #7C3AED;
+            --anuta-red: #EF4444;
             --text-light: #FFFFFF;
             --text-muted: #94A3B8;
-            --text-dark: #1A1F3A;
+            --text-dark: #0A0A1A;
             --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
-            --shadow-glow: 0 0 40px rgba(0, 217, 255, 0.1);
+            --shadow-glow: 0 0 40px rgba(232, 184, 75, 0.08);
             --radius: 1.2rem;
             --radius-sm: 0.8rem;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(145deg, #05081d 0%, #0d0b26 50%, #0A0E27 100%);
+            background: var(--anuta-bg);
             color: var(--text-light);
             line-height: 1.7;
             min-height: 100vh;
@@ -54,48 +47,32 @@
         }
 
         /* ======================= SCROLLBAR ======================= */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--dark-bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--anuta-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--anuta-gold); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--anuta-gold-dark); }
 
         /* ======================= CONTAINER ======================= */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.2rem; }
 
-        /* ======================= HEADER ======================= */
+        /* ======================= HEADER (مثل عنوته) ======================= */
         header {
-            background: rgba(10, 14, 39, 0.95);
+            background: rgba(10, 10, 26, 0.98);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             transition: var(--transition);
         }
-
-        header.scrolled {
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
+        header.scrolled { box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.7rem 0;
+            padding: 0.6rem 0;
             flex-wrap: wrap;
             gap: 0.8rem;
         }
@@ -103,35 +80,36 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
             text-decoration: none;
         }
 
         .logo-icon {
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, var(--primary), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--anuta-gold), var(--anuta-gold-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #0A0A1A;
+            font-weight: 900;
         }
 
         .logo-text {
-            font-size: 1.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #FFFFFF, var(--primary), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #FFFFFF;
         }
-
+        .logo-text span { color: var(--anuta-gold); }
         .logo-sub {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: var(--text-muted);
-            -webkit-text-fill-color: var(--text-muted);
             display: block;
-            margin-top: -4px;
+            margin-top: -3px;
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         .header-actions {
@@ -142,9 +120,9 @@
         }
 
         .btn-header {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-            padding: 0.5rem 1.2rem;
+            background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-gold-dark));
+            color: #0A0A1A;
+            padding: 0.5rem 1.4rem;
             border-radius: 2rem;
             font-weight: 700;
             text-decoration: none;
@@ -156,16 +134,15 @@
             border: none;
             cursor: pointer;
         }
-
         .btn-header:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 25px var(--primary-glow);
+            box-shadow: 0 0 25px rgba(232, 184, 75, 0.3);
         }
 
         .btn-header-outline {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: var(--anuta-gold);
+            border: 2px solid var(--anuta-gold);
             padding: 0.45rem 1.2rem;
             border-radius: 2rem;
             font-weight: 700;
@@ -176,147 +153,91 @@
             align-items: center;
             gap: 0.4rem;
         }
-
         .btn-header-outline:hover {
-            background: var(--primary);
-            color: var(--dark-bg);
+            background: var(--anuta-gold);
+            color: #0A0A1A;
             transform: translateY(-2px);
         }
 
-        /* ======================= MARQUEE / TICKER ======================= */
-        .ticker-bar {
-            background: linear-gradient(90deg, rgba(0, 217, 255, 0.08), rgba(255, 215, 0, 0.05));
-            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
-            padding: 0.5rem 0;
+        /* ======================= HERO ======================= */
+        .hero-section {
+            position: relative;
+            padding: 3rem 0 2rem;
             overflow: hidden;
-            position: relative;
         }
 
-        .ticker-content {
-            display: flex;
-            animation: tickerScroll 25s linear infinite;
-            white-space: nowrap;
-            gap: 2.5rem;
-        }
-
-        .ticker-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .ticker-item .highlight {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .ticker-item .highlight-green {
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .ticker-item i {
-            color: var(--primary);
-        }
-
-        @keyframes tickerScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .ticker-bar:hover .ticker-content {
-            animation-play-state: paused;
-        }
-
-        /* ======================= HERO SECTION ======================= */
-        .hero {
-            text-align: center;
-            padding: 3rem 0 2.5rem;
-            position: relative;
-        }
-
-        .hero::after {
+        .hero-section::before {
             content: '';
             position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            opacity: 0.3;
+            top: -40%;
+            right: -10%;
+            width: 60%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(232, 184, 75, 0.06), transparent 70%);
+            pointer-events: none;
         }
 
-        .hero-badge {
-            display: inline-flex;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.25);
-            border-radius: 2rem;
-            padding: 0.3rem 1.2rem;
-            font-size: 0.8rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            animation: pulseBadge 2s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
         }
 
-        @keyframes pulseBadge {
-            0%, 100% { border-color: rgba(0, 217, 255, 0.25); }
-            50% { border-color: rgba(0, 217, 255, 0.6); }
-        }
-
-        .hero h1 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 0.8rem;
-            line-height: 1.2;
-        }
-
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 2.8rem;
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
 
-        .hero-highlight {
-            background: linear-gradient(90deg, var(--primary), #00FFCC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-content .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(232, 184, 75, 0.08);
+            border: 1px solid rgba(232, 184, 75, 0.15);
+            border-radius: 2rem;
+            padding: 0.25rem 1.2rem;
+            font-size: 0.75rem;
+            color: var(--anuta-gold);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
         }
 
-        .hero-highlight-gold {
-            background: linear-gradient(90deg, var(--gold), #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-content h1 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
+        @media (max-width: 768px) { .hero-content h1 { font-size: 1.8rem; } }
 
-        .hero p {
+        .hero-content h1 .highlight-gold { color: var(--anuta-gold); }
+        .hero-content h1 .highlight-blue { color: var(--anuta-blue); }
+
+        .hero-content p {
             color: var(--text-muted);
-            max-width: 620px;
-            margin: 0 auto 1.8rem;
             font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.9;
+            margin-bottom: 1.8rem;
+            max-width: 500px;
         }
+        @media (max-width: 768px) { .hero-content p { max-width: 100%; } }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
         }
+        @media (max-width: 768px) { .hero-buttons { justify-content: center; } }
 
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-            padding: 0.9rem 2.2rem;
+        .btn-primary-hero {
+            background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-gold-dark));
+            color: #0A0A1A;
+            padding: 0.85rem 2.2rem;
             border-radius: 2rem;
             font-weight: 800;
             text-decoration: none;
@@ -324,23 +245,22 @@
             align-items: center;
             gap: 0.6rem;
             transition: var(--transition);
-            box-shadow: 0 4px 20px var(--primary-glow);
+            box-shadow: 0 4px 20px rgba(232, 184, 75, 0.2);
             border: none;
             cursor: pointer;
             font-size: 1rem;
             font-family: 'Cairo', sans-serif;
         }
-
-        .btn-primary:hover {
+        .btn-primary-hero:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 35px rgba(0, 217, 255, 0.5);
+            box-shadow: 0 8px 35px rgba(232, 184, 75, 0.35);
         }
 
-        .btn-secondary {
-            border: 2px solid var(--primary);
+        .btn-secondary-hero {
+            border: 2px solid var(--anuta-gold);
             background: transparent;
-            color: var(--primary);
-            padding: 0.85rem 2rem;
+            color: var(--anuta-gold);
+            padding: 0.8rem 2rem;
             border-radius: 2rem;
             font-weight: 700;
             text-decoration: none;
@@ -352,323 +272,362 @@
             font-family: 'Cairo', sans-serif;
             cursor: pointer;
         }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--dark-bg);
+        .btn-secondary-hero:hover {
+            background: var(--anuta-gold);
+            color: #0A0A1A;
             transform: translateY(-3px);
         }
 
-        .btn-gold {
-            background: linear-gradient(90deg, var(--gold), #FFA500);
-            color: var(--dark-bg);
-            padding: 0.9rem 2.2rem;
-            border-radius: 2rem;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px var(--gold-glow);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 35px rgba(255, 215, 0, 0.5);
-        }
-
-        /* ======================= TRUST BAR ======================= */
-        .trust-bar {
+        /* ===== صورة الهيرو ===== */
+        .hero-image {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            background: rgba(16, 20, 48, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 2rem;
-            padding: 0.4rem 1.2rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
             align-items: center;
-            gap: 0.4rem;
         }
 
-        .trust-item i {
-            color: var(--success);
+        .hero-image .image-card {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1/1;
+            background: linear-gradient(145deg, rgba(232, 184, 75, 0.04), rgba(0, 217, 255, 0.02));
+            border-radius: 2rem;
+            border: 1px solid rgba(232, 184, 75, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .trust-item span {
-            color: var(--text-light);
+        .image-card .big-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--anuta-gold), var(--anuta-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .image-card h3 {
+            color: var(--anuta-gold);
+            font-size: 1.3rem;
             font-weight: 700;
         }
 
-        /* ======================= SECTION HEADER ======================= */
-        section {
-            padding: 3.5rem 0;
-            position: relative;
+        .image-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 2rem;
+        .image-card .tags {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.2rem;
         }
 
-        .section-header h2 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 0.3rem;
+        .image-card .tags span {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        @media (min-width: 768px) {
-            .section-header h2 {
-                font-size: 2.2rem;
+        .image-card .tags span.gold-tag {
+            background: rgba(232, 184, 75, 0.08);
+            color: var(--anuta-gold);
+            border-color: rgba(232, 184, 75, 0.1);
+        }
+
+        .image-card .tags span.blue-tag {
+            background: rgba(0, 217, 255, 0.06);
+            color: var(--anuta-blue);
+            border-color: rgba(0, 217, 255, 0.08);
+        }
+
+        .image-card .tags span.green-tag {
+            background: rgba(34, 197, 94, 0.06);
+            color: var(--anuta-green);
+            border-color: rgba(34, 197, 94, 0.08);
+        }
+
+        /* ======================= STATS BAR ======================= */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            margin: 0.5rem 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
             }
         }
 
-        .section-header .subtitle {
-            color: var(--primary);
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--anuta-gold);
+            line-height: 1.2;
+        }
+        @media (max-width: 480px) { .stat-item .number { font-size: 1.6rem; } }
+
+        .stat-item .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+
+        /* ======================= SECTION STYLE ======================= */
+        .section-anuta {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-anuta .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-anuta .section-title .sub {
+            color: var(--anuta-gold);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
         }
 
-        .section-header .desc {
+        .section-anuta .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-top: 0.2rem;
+        }
+        @media (max-width: 768px) { .section-anuta .section-title h2 { font-size: 1.6rem; } }
+
+        .section-anuta .section-title .desc {
             color: var(--text-muted);
             max-width: 600px;
             margin: 0.5rem auto 0;
             font-size: 0.95rem;
         }
 
-        /* ======================= GLASS CARD ======================= */
-        .glass-card {
-            background: var(--dark-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
+        /* ======================= ABOUT GRID (عرض) ======================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            align-items: stretch;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .about-text {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
             border-radius: var(--radius);
-            padding: 1.2rem;
-            transition: var(--transition);
-            cursor: pointer;
+            padding: 2rem;
         }
 
-        .glass-card:hover {
-            border-color: rgba(0, 217, 255, 0.4);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .card-main {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .card-icon {
+        .about-text h2 {
             font-size: 1.6rem;
-            width: 48px;
-            height: 48px;
-            background: rgba(0, 217, 255, 0.1);
-            border-radius: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
 
-        .card-text h3 {
-            font-size: 1.05rem;
+        .about-text h2 .highlight-gold {
+            color: var(--anuta-gold);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.9;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-text .highlight-box {
+            background: rgba(232, 184, 75, 0.04);
+            border-right: 3px solid var(--anuta-gold);
+            padding: 0.8rem 1.2rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .about-text .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-content: start;
+        }
+
+        .about-stat-card {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .about-stat-card:hover {
+            border-color: rgba(232, 184, 75, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .about-stat-card .number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--anuta-gold);
+            line-height: 1.2;
+        }
+
+        .about-stat-card .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+
+        .about-stat-card .icon {
+            font-size: 1.6rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ======================= CARDS GRID ======================= */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .card-anuta {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.5rem;
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-anuta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-blue));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card-anuta:hover {
+            transform: translateY(-5px);
+            border-color: rgba(232, 184, 75, 0.12);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-anuta:hover::before { opacity: 1; }
+
+        .card-anuta .card-icon {
+            font-size: 2.6rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .card-anuta h3 {
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.1rem;
+            margin-bottom: 0.3rem;
+            color: #FFFFFF;
         }
 
-        .card-text p {
+        .card-anuta p {
             font-size: 0.85rem;
             color: var(--text-muted);
-        }
-
-        .card-details {
-            display: none;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 0.9rem;
-            color: #CBD5E0;
             line-height: 1.8;
         }
 
-        .card-details.active {
-            display: block;
-            animation: fadeSlide 0.3s ease;
+        .card-anuta .card-tag {
+            display: inline-block;
+            background: rgba(232, 184, 75, 0.08);
+            border: 1px solid rgba(232, 184, 75, 0.1);
+            border-radius: 2rem;
+            padding: 0.15rem 0.8rem;
+            font-size: 0.6rem;
+            color: var(--anuta-gold);
+            margin-top: 0.6rem;
         }
 
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .card-details li {
-            list-style: none;
-            padding: 0.2rem 0;
-        }
-
-        .card-details li::before {
-            content: '▸ ';
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .arrow-icon {
-            width: 1.2rem;
-            height: 1.2rem;
-            color: var(--primary);
-            transition: transform 0.3s;
-            margin-right: auto;
-            flex-shrink: 0;
-        }
-
-        .arrow-icon.rotate {
-            transform: rotate(180deg);
-        }
-
-        /* ======================= NOTICE BANNER ======================= */
-        .notice-banner {
-            background: linear-gradient(90deg, rgba(34, 197, 94, 0.08), transparent);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: var(--radius);
-            padding: 1rem 1.2rem;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            margin-top: 1.5rem;
-        }
-
-        .notice-banner.warning {
-            background: linear-gradient(90deg, rgba(239, 68, 68, 0.08), transparent);
-            border-color: rgba(239, 68, 68, 0.2);
-        }
-
-        .notice-banner.gold {
-            background: linear-gradient(90deg, rgba(255, 215, 0, 0.08), transparent);
-            border-color: rgba(255, 215, 0, 0.2);
-        }
-
-        .notice-icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
-        }
-
-        .notice-info h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.1rem;
-        }
-
-        .notice-info h4.success { color: var(--success); }
-        .notice-info h4.warning-text { color: var(--danger); }
-        .notice-info h4.gold-text { color: var(--gold); }
-
-        .notice-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* ======================= PRICING TABLE ======================= */
-        .pricing-wrapper {
-            overflow-x: auto;
-            border-radius: var(--radius);
-            border: 1px solid var(--card-border);
-            background: var(--dark-card);
-            padding: 0.5rem;
-            backdrop-filter: blur(12px);
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            min-width: 700px;
-        }
-
-        .pricing-table thead th {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-            font-weight: 700;
-            padding: 0.8rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 5;
-        }
-
-        .pricing-table td {
-            padding: 0.7rem;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .pricing-table tbody tr:nth-child(even) {
-            background: rgba(0, 217, 255, 0.03);
-        }
-
-        .pricing-table tbody tr:hover {
-            background: rgba(0, 217, 255, 0.08);
-        }
-
-        .pricing-table .category-row td {
-            background: rgba(255, 215, 0, 0.08);
-            font-weight: 700;
-            color: var(--gold);
-            border-bottom: 2px solid rgba(255, 215, 0, 0.15);
-            padding: 0.6rem;
-        }
-
-        .table-note {
-            text-align: center;
-            color: var(--gold);
-            font-size: 0.8rem;
-            margin-top: 0.8rem;
-            opacity: 0.8;
-        }
-
-        /* ======================= FEATURES GRID ======================= */
-        .features-grid {
+        /* ======================= PARTNERS ======================= */
+        .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 1rem;
         }
 
-        .feature-box {
+        .partner-item {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
+            border-radius: var(--radius-sm);
+            padding: 1rem 0.8rem;
             text-align: center;
-            padding: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
         }
 
-        .feature-box .feat-icon {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            display: block;
+        .partner-item:hover {
+            border-color: rgba(232, 184, 75, 0.15);
+            transform: translateY(-3px);
         }
 
-        .feature-box h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
+        .partner-item .partner-icon {
+            font-size: 2rem;
         }
 
-        .feature-box p {
-            font-size: 0.8rem;
+        .partner-item .partner-name {
+            font-size: 0.75rem;
             color: var(--text-muted);
+            font-weight: 500;
         }
 
         /* ======================= CATEGORIES ======================= */
@@ -683,51 +642,170 @@
             align-items: center;
             gap: 0.8rem;
             padding: 0.8rem 1rem;
-            background: var(--dark-card);
-            border: 1px solid var(--card-border);
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
             border-radius: var(--radius-sm);
             transition: var(--transition);
         }
 
         .cat-item:hover {
-            border-color: var(--primary);
+            border-color: rgba(232, 184, 75, 0.12);
             transform: translateY(-2px);
         }
 
-        .cat-item .cat-icon {
-            font-size: 1.3rem;
+        .cat-item .cat-icon { font-size: 1.3rem; }
+
+        /* ======================= PRICING TABLE ======================= */
+        .pricing-wrapper {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--anuta-border);
+            background: var(--anuta-card);
+            padding: 0.5rem;
         }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 700px;
+        }
+
+        .pricing-table thead th {
+            background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-gold-dark));
+            color: #0A0A1A;
+            font-weight: 700;
+            padding: 0.8rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .pricing-table td {
+            padding: 0.7rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .pricing-table tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        .pricing-table tbody tr:hover {
+            background: rgba(232, 184, 75, 0.04);
+        }
+
+        .pricing-table .category-row td {
+            background: rgba(232, 184, 75, 0.05);
+            font-weight: 700;
+            color: var(--anuta-gold);
+            border-bottom: 2px solid rgba(232, 184, 75, 0.08);
+            padding: 0.6rem;
+        }
+
+        .table-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* ======================= NOTICE ======================= */
+        .notice-anuta {
+            background: rgba(232, 184, 75, 0.04);
+            border: 1px solid rgba(232, 184, 75, 0.1);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .notice-anuta .notice-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .notice-anuta h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--anuta-gold);
+        }
+
+        .notice-anuta p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .notice-anuta.warning {
+            background: rgba(239, 68, 68, 0.04);
+            border-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .notice-anuta.warning h4 { color: var(--anuta-red); }
+
+        .notice-anuta.success {
+            background: rgba(34, 197, 94, 0.04);
+            border-color: rgba(34, 197, 94, 0.1);
+        }
+
+        .notice-anuta.success h4 { color: var(--anuta-green); }
 
         /* ======================= MANUAL SECTION ======================= */
-        .manual-section {
-            background: linear-gradient(145deg, rgba(16, 20, 48, 0.95), rgba(10, 14, 39, 0.98));
-            border: 2px solid rgba(0, 217, 255, 0.2);
+        .manual-anuta {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
             border-radius: var(--radius);
-            padding: 1.8rem;
+            padding: 2rem;
+            margin-top: 1rem;
         }
 
-        .manual-top {
+        .manual-anuta .manual-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
-        .manual-top h3 {
-            color: var(--primary);
+        .manual-anuta .manual-top h3 {
+            color: var(--anuta-gold);
             font-size: 1.2rem;
             font-weight: 700;
         }
 
-        .actions-grp {
+        .actions-anuta {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
         }
 
-        .copy-btn, .messenger-btn {
+        .copy-btn-anuta {
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            transition: var(--transition);
+            background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-gold-dark));
+            color: #0A0A1A;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn-anuta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(232, 184, 75, 0.25);
+        }
+
+        .messenger-btn-anuta {
             padding: 0.6rem 1.2rem;
             border-radius: 2rem;
             border: none;
@@ -740,33 +818,20 @@
             align-items: center;
             gap: 0.4rem;
             font-size: 0.85rem;
-        }
-
-        .copy-btn {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-        }
-
-        .copy-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px var(--primary-glow);
-        }
-
-        .messenger-btn {
             background: linear-gradient(90deg, #0084FF, #00C6FF);
             color: white;
         }
 
-        .messenger-btn:hover {
+        .messenger-btn-anuta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(0, 132, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 132, 255, 0.3);
         }
 
         .form-terminal {
-            background: #05070f;
+            background: #070714;
             padding: 1.2rem;
             border-radius: var(--radius-sm);
-            border: 1px solid rgba(0, 217, 255, 0.15);
+            border: 1px solid rgba(232, 184, 75, 0.06);
             color: #b3f3ff;
             font-family: 'Courier New', monospace;
             font-size: 0.8rem;
@@ -780,22 +845,22 @@
         }
 
         /* ======================= FAQ ======================= */
-        .faq-box {
+        .faq-anuta {
             display: flex;
             flex-direction: column;
-            gap: 0.7rem;
+            gap: 0.8rem;
         }
 
         .faq-item {
-            background: var(--dark-card);
-            border: 1px solid var(--card-border);
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
             border-radius: var(--radius);
             overflow: hidden;
             transition: var(--transition);
         }
 
         .faq-item:hover {
-            border-color: rgba(0, 217, 255, 0.3);
+            border-color: rgba(232, 184, 75, 0.08);
         }
 
         .faq-trigger {
@@ -816,16 +881,14 @@
             transition: var(--transition);
         }
 
-        .faq-trigger:hover {
-            color: var(--primary);
-        }
+        .faq-trigger:hover { color: var(--anuta-gold); }
 
         .faq-content {
             display: none;
             padding: 0 1.2rem 1.2rem;
             font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .faq-content.open {
@@ -838,135 +901,42 @@
             height: 1.2rem;
             transition: transform 0.3s;
             flex-shrink: 0;
-            color: var(--primary);
+            color: var(--anuta-gold);
         }
 
-        .faq-icon.active {
-            transform: rotate(180deg);
-        }
+        .faq-icon.active { transform: rotate(180deg); }
 
-        /* ======================= PRIVACY & TERMS SECTION ======================= */
-        .privacy-section {
-            background: var(--dark-card);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .privacy-section h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .privacy-section h3 {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin: 1.5rem 0 0.8rem;
-        }
-
-        .privacy-section h4 {
-            color: var(--primary);
-            font-size: 1.05rem;
-            margin: 1.2rem 0 0.5rem;
-        }
-
-        .privacy-section p {
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .privacy-section ul {
-            padding-right: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .privacy-section ul li {
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-            list-style: none;
-            padding-right: 1.2rem;
-            position: relative;
-        }
-
-        .privacy-section ul li::before {
-            content: "▸";
-            position: absolute;
-            right: 0;
-            color: var(--primary);
-        }
-
-        .privacy-section .highlight {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .privacy-section .highlight-cyan {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .privacy-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 2rem;
-            padding: 0.3rem 1.2rem;
-            font-size: 0.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        /* ======================= DISCLAIMER BOX ======================= */
-        .disclaimer-box {
-            background: rgba(255, 215, 0, 0.06);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .disclaimer-box h3 {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .disclaimer-box p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.8;
-            margin-bottom: 0.8rem;
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ======================= CTA ======================= */
-        .cta-box {
+        .cta-anuta {
             text-align: center;
-            background: linear-gradient(145deg, rgba(0, 217, 255, 0.05), rgba(255, 215, 0, 0.03));
-            border: 1px solid rgba(0, 217, 255, 0.15);
+            background: linear-gradient(145deg, rgba(232, 184, 75, 0.04), rgba(0, 217, 255, 0.02));
+            border: 1px solid rgba(232, 184, 75, 0.06);
             border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
         }
 
-        .cta-box h2 {
-            font-size: 1.6rem;
+        .cta-anuta h2 {
+            font-size: 2rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
+        @media (max-width: 768px) { .cta-anuta h2 { font-size: 1.5rem; } }
 
-        .cta-box p {
+        .cta-anuta p {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
             font-size: 1rem;
+            margin-bottom: 1.8rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-buttons {
+        .cta-anuta .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
@@ -975,182 +945,134 @@
 
         /* ======================= FOOTER ======================= */
         footer {
-            border-top: 1px solid rgba(0, 217, 255, 0.08);
-            padding: 2.5rem 0 1.5rem;
-            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 3rem 0 1.5rem;
             margin-top: 1rem;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
             text-align: right;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .footer-col h4 {
-            color: var(--primary);
+            color: var(--anuta-gold);
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
         }
 
-        .footer-col p, .footer-col a {
+        .footer-col p,
+        .footer-col a {
             font-size: 0.8rem;
             color: var(--text-muted);
             text-decoration: none;
             display: block;
-            padding: 0.15rem 0;
+            padding: 0.2rem 0;
             transition: var(--transition);
         }
 
-        .footer-col a:hover {
-            color: var(--primary);
-        }
+        .footer-col a:hover { color: var(--anuta-gold); }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
             padding-top: 1.2rem;
             font-size: 0.75rem;
             color: var(--text-muted);
+            text-align: center;
         }
 
-        .footer-bottom a {
-            color: var(--primary);
-            text-decoration: none;
-        }
+        .footer-bottom a { color: var(--anuta-gold); text-decoration: none; }
 
         /* ======================= RESPONSIVE ======================= */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            .hero p {
-                font-size: 0.95rem;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .btn-primary, .btn-secondary, .btn-gold {
-                justify-content: center;
-                padding: 0.8rem 1.5rem;
-            }
-            .manual-top {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .actions-grp {
-                flex-direction: column;
-            }
-            .copy-btn, .messenger-btn {
-                justify-content: center;
-            }
-            .pricing-table {
-                font-size: 0.75rem;
-                min-width: 480px;
-            }
-            .pricing-table th, .pricing-table td {
-                padding: 0.4rem 0.3rem;
-            }
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .ticker-item {
-                font-size: 0.7rem;
-            }
+            .container { padding: 0 1rem; }
+
             .header-content {
                 flex-direction: column;
                 align-items: stretch;
                 text-align: center;
             }
-            .header-actions {
+            .header-actions { justify-content: center; }
+            .logo { justify-content: center; }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .manual-anuta .manual-top {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .actions-anuta {
+                flex-direction: column;
+            }
+            .copy-btn-anuta,
+            .messenger-btn-anuta {
                 justify-content: center;
             }
-            .logo {
-                justify-content: center;
+
+            .pricing-table {
+                font-size: 0.75rem;
+                min-width: 480px;
             }
-            .privacy-section {
-                padding: 1.2rem;
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.4rem 0.3rem;
+            }
+
+            .notice-anuta {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
-            .features-grid {
-                grid-template-columns: 1fr 1fr;
+            .cards-grid {
+                grid-template-columns: 1fr;
             }
             .categories-grid {
                 grid-template-columns: 1fr;
+            }
+            .hero-content h1 { font-size: 1.4rem; }
+            .stat-item .number { font-size: 1.3rem; }
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .hero h1 {
-                font-size: 1.3rem;
-            }
-            .cta-box h2 {
-                font-size: 1.3rem;
-            }
         }
 
         /* ======================= UTILITY ======================= */
+        .text-gold { color: var(--anuta-gold); }
+        .text-muted { color: var(--text-muted); }
         .text-center { text-align: center; }
         .mt-1 { margin-top: 1rem; }
         .mt-2 { margin-top: 2rem; }
         .mb-1 { margin-bottom: 1rem; }
         .gap-1 { gap: 1rem; }
-        .flex-center { display: flex; align-items: center; justify-content: center; }
         .flex-wrap { flex-wrap: wrap; }
-
-        .highlight-gold {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .highlight-primary {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .text-muted {
-            color: var(--text-muted);
-        }
-
-        /* ======================= TERMS OF USE SPECIAL ======================= */
-        .terms-list {
-            padding-right: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .terms-list li {
-            color: var(--text-muted);
-            margin-bottom: 0.6rem;
-            list-style: none;
-            padding-right: 1.5rem;
-            position: relative;
-            line-height: 1.8;
-        }
-
-        .terms-list li::before {
-            content: "▸";
-            position: absolute;
-            right: 0;
-            color: var(--primary);
-        }
-
-        .terms-list li strong {
-            color: var(--gold);
-        }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
 <body>
@@ -1160,11 +1082,14 @@
     <div class="container">
         <div class="header-content">
             <a href="#" class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">Cash Faster</span>
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <span class="logo-text">Cash <span>Faster</span></span>
+                    <span class="logo-sub">تمويل استهلاكي سريع وآمن</span>
+                </div>
             </a>
             <div class="header-actions">
-                <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-header">
+                <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank" class="btn-header">
                     <i class="fas fa-pen"></i> قدم طلبك
                 </a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-header-outline">
@@ -1175,314 +1100,429 @@
     </div>
 </header>
 
-<!-- ======================= TICKER / MARQUEE ======================= -->
-<div class="ticker-bar">
-    <div class="container" style="padding: 0 1.2rem;">
-        <div class="ticker-content">
-            <span class="ticker-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>🔒 شركة <span class="highlight">كاش فاستر</span> لا نطلب منك دفع أو تحويل نهائياً لنا أو لأي من مسؤولينا</span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-gift"></i>
-                <span>💰 الخدمة متاحة للجميع <span class="highlight-green">مجانية</span> تصل إلى <span class="highlight">٢٠٠,٠٠٠ ج.م</span></span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-check-circle"></i>
-                <span>✅ بدون تحملك أي رسوم أو مصاريف إدارية مسبقة</span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-clock"></i>
-                <span>⏱️ الصرف فوري بعد الموافقة خلال <span class="highlight-green">دقائق</span></span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-lock"></i>
-                <span>🔐 تشفير <span class="highlight">256-bit</span> لحماية بياناتك</span>
-            </span>
-            <!-- تكرار للحركة المستمرة -->
-            <span class="ticker-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>🔒 شركة <span class="highlight">كاش فاستر</span> لا نطلب منك دفع أو تحويل نهائياً لنا أو لأي من مسؤولينا</span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-gift"></i>
-                <span>💰 الخدمة متاحة للجميع <span class="highlight-green">مجانية</span> تصل إلى <span class="highlight">٢٠٠,٠٠٠ ج.م</span></span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-check-circle"></i>
-                <span>✅ بدون تحملك أي رسوم أو مصاريف إدارية مسبقة</span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-clock"></i>
-                <span>⏱️ الصرف فوري بعد الموافقة خلال <span class="highlight-green">دقائق</span></span>
-            </span>
-            <span class="ticker-item">
-                <i class="fas fa-lock"></i>
-                <span>🔐 تشفير <span class="highlight">256-bit</span> لحماية بياناتك</span>
-            </span>
+<!-- ======================= HERO SECTION ======================= -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    مرخص من هيئة الرقابة المالية
+                </div>
+                <h1>
+                    تمويل استهلاكي<br>
+                    <span class="highlight-gold">سريع وآمن</span>
+                    <span style="color: var(--text-muted); font-weight: 300; font-size: 0.5em;">|</span>
+                    <span class="highlight-blue">بدون رسوم</span>
+                </h1>
+                <p>
+                    احصل على تمويل يصل إلى <strong class="highlight-gold">٢٠٠,٠٠٠ ج.م</strong> بدون أي رسوم إدارية مسبقة.
+                    أقساط مرنة تناسب ميزانيتك، وصرف فوري عبر محفظتك الإلكترونية.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank" class="btn-primary-hero">
+                        <i class="fas fa-bolt"></i> ابدأ الآن
+                    </a>
+                    <a href="#pricing" class="btn-secondary-hero">
+                        <i class="fas fa-table"></i> جدول الأقساط
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-card">
+                    <div class="big-icon">⚡</div>
+                    <h3>Cash Faster</h3>
+                    <p>تمويل سريع وآمن بكل ثقة</p>
+                    <div class="tags">
+                        <span class="gold-tag"><i class="fas fa-lock"></i> آمن</span>
+                        <span class="blue-tag"><i class="fas fa-bolt"></i> سريع</span>
+                        <span class="green-tag"><i class="fas fa-check-circle"></i> موثوق</span>
+                    </div>
+                    <div style="margin-top: 1rem; width: 100%; max-width: 200px; height: 4px; background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-blue)); border-radius: 4px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= STATS BAR ======================= -->
+<div class="container">
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="number">+500</div>
+            <div class="label">عميل مموّل</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">200K</div>
+            <div class="label">حد أقصى للتمويل</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">60</div>
+            <div class="label">شهر مدة السداد</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">✅</div>
+            <div class="label">مرخص من الرقابة المالية</div>
         </div>
     </div>
 </div>
 
-<!-- ======================= MAIN CONTENT ======================= -->
-<main>
+<!-- ======================= ABOUT SECTION (عرض) ======================= -->
+<section class="section-anuta" id="about">
     <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-info-circle"></i> من نحن</span>
+            <h2>نبذة عن <span class="text-gold">كاش فاستر</span></h2>
+            <p class="desc">نقدم حلول تمويلية مبتكرة وسريعة تناسب احتياجاتك</p>
+        </div>
 
-        <!-- ===== HERO ===== -->
-        <div class="hero">
-            <div class="hero-badge">
-                <i class="fas fa-check-circle"></i> مرخص من هيئة الرقابة المالية
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>من نحن <span class="highlight-gold">كاش فاستر</span></h2>
+                <p>
+                    <strong>كاش فاستر</strong> هي شركة رائدة في مجال التمويل الاستهلاكي ومتناهي الصغر. منذ انطلاقنا، أعدنا تعريف مفهوم التمويل من خلال دمج التكنولوجيا المتقدمة، ونماذج الائتمان المعتمدة على تحليل البيانات، وفهم عميق لاحتياجات السوق المحلي.
+                </p>
+                <p>
+                    نهدف إلى تمكين الأفراد وأصحاب المشاريع الصغيرة من تحقيق أهدافهم المالية عبر حلول تمويلية سريعة ومرنة وسهلة الوصول، مدعومة بتجربة رقمية سلسة ومتكاملة.
+                </p>
+                <div class="highlight-box">
+                    <p>🔹 ترخيص رقم <strong style="color: var(--anuta-gold);">(24)</strong> من الهيئة العامة للرقابة المالية (FRA) لعام 2023</p>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <span style="background: rgba(232, 184, 75, 0.06); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-gold); border: 1px solid rgba(232, 184, 75, 0.06);">
+                        <i class="fas fa-check-circle"></i> شفافية تامة
+                    </span>
+                    <span style="background: rgba(0, 217, 255, 0.04); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-blue); border: 1px solid rgba(0, 217, 255, 0.06);">
+                        <i class="fas fa-bolt"></i> صرف فوري
+                    </span>
+                    <span style="background: rgba(34, 197, 94, 0.04); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-green); border: 1px solid rgba(34, 197, 94, 0.06);">
+                        <i class="fas fa-shield-alt"></i> بدون رسوم مسبقة
+                    </span>
+                </div>
             </div>
-            <h1>
-                تمويل استهلاكي <br>
-                <span class="hero-highlight">سريع وآمن</span>
-                <span style="color: var(--text-muted); font-weight: 400; font-size: 0.6em;">|</span>
-                <span class="hero-highlight-gold">بدون رسوم</span>
-            </h1>
-            <p>
-                احصل على تمويل يصل إلى <strong class="highlight-gold">٢٠٠,٠٠٠ ج.م</strong> بدون أي رسوم إدارية مسبقة.
-                أقساط مرنة تناسب ميزانيتك، وصرف فوري عبر محفظتك الإلكترونية.
-                <br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">
-                    <i class="fas fa-shield-alt" style="color: var(--success);"></i>
-                    نضمن لك الشفافية والأمان التام
-                </span>
-            </p>
-            <div class="hero-buttons">
-                <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-primary">
-                    <i class="fas fa-bolt"></i> ابدأ الآن
-                </a>
-                <a href="#pricing" class="btn-secondary">
-                    <i class="fas fa-table"></i> جدول الأقساط
-                </a>
-                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-gold">
-                    <i class="fas fa-search"></i> تتبع طلبك
-                </a>
+            <div class="about-stats">
+                <div class="about-stat-card">
+                    <span class="icon">👥</span>
+                    <div class="number">+500</div>
+                    <div class="label">عميل مموّل</div>
+                </div>
+                <div class="about-stat-card">
+                    <span class="icon">💰</span>
+                    <div class="number">200K</div>
+                    <div class="label">حد أقصى للتمويل</div>
+                </div>
+                <div class="about-stat-card">
+                    <span class="icon">📅</span>
+                    <div class="number">60</div>
+                    <div class="label">شهر مدة السداد</div>
+                </div>
+                <div class="about-stat-card">
+                    <span class="icon">✅</span>
+                    <div class="number">مرخص</div>
+                    <div class="label">من الرقابة المالية</div>
+                </div>
             </div>
-            <div class="trust-bar">
-                <div class="trust-item"><i class="fas fa-lock"></i> تشفير <span>256-bit</span></div>
-                <div class="trust-item"><i class="fas fa-coins"></i> رسوم مقدمة <span>0%</span></div>
-                <div class="trust-item"><i class="fas fa-file-contract"></i> عقود <span>موثقة</span></div>
-                <div class="trust-item"><i class="fas fa-clock"></i> صرف <span>فوري</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= SERVICES ======================= -->
+<section class="section-anuta" id="services">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-star"></i> ماذا نقدم</span>
+            <h2>خدماتنا التمويلية</h2>
+            <p class="desc">حلول مرنة تناسب جميع الاحتياجات المالية</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card-anuta">
+                <span class="card-icon">⚡</span>
+                <h3>تمويل سريع</h3>
+                <p>صرف فوري بعد الموافقة خلال دقائق مباشرة إلى محفظتك الإلكترونية</p>
+                <span class="card-tag">فوري</span>
+            </div>
+            <div class="card-anuta">
+                <span class="card-icon">💰</span>
+                <h3>بدون رسوم مسبقة</h3>
+                <p>لا نطلب أي مبالغ قبل الصرف نهائياً، جميع الرسوم مدمجة في الأقساط</p>
+                <span class="card-tag">شفاف</span>
+            </div>
+            <div class="card-anuta">
+                <span class="card-icon">📊</span>
+                <h3>أقساط مرنة</h3>
+                <p>خطط سداد من 12 إلى 60 شهراً تناسب جميع الميزانيات والدخول</p>
+                <span class="card-tag">مرن</span>
+            </div>
+            <div class="card-anuta">
+                <span class="card-icon">🛡️</span>
+                <h3>ضمان عائلي</h3>
+                <p>حماية قانونية للطرفين من خلال ضامن من الدرجة الأولى</p>
+                <span class="card-tag">آمن</span>
+            </div>
+            <div class="card-anuta">
+                <span class="card-icon">💵</span>
+                <h3>مبالغ كبيرة</h3>
+                <p>من 30,000 حتى 200,000 جنيه مصري حسب احتياجك وقدرتك</p>
+                <span class="card-tag">مرن</span>
+            </div>
+            <div class="card-anuta">
+                <span class="card-icon">👥</span>
+                <h3>شفافية تامة</h3>
+                <p>عقود واضحة وصريحة بدون أي بنود خفية أو مفاجآت</p>
+                <span class="card-tag">موثوق</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= CATEGORIES ======================= -->
+<section class="section-anuta" id="categories">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-users"></i> من يمكنه التقديم</span>
+            <h2>الفئات المدعومة</h2>
+            <p class="desc">برامج ائتمانية تناسب معظم القطاعات</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="cat-item"><span class="cat-icon">🏛️</span><span>موظفو الحكومة والخاص</span></div>
+            <div class="cat-item"><span class="cat-icon">🏢</span><span>موظفو الشركات</span></div>
+            <div class="cat-item"><span class="cat-icon">👴</span><span>أصحاب المعاشات</span></div>
+            <div class="cat-item"><span class="cat-icon">🛍️</span><span>أصحاب المشاريع الناشئة</span></div>
+            <div class="cat-item"><span class="cat-icon">👩</span><span>ربات المنازل (بضامن)</span></div>
+            <div class="cat-item"><span class="cat-icon">🛠️</span><span>أصحاب الأعمال الحرة</span></div>
+        </div>
+
+        <div class="notice-anuta warning">
+            <div class="notice-icon">⚠️</div>
+            <div>
+                <h4>تنويه هام</h4>
+                <p>نعتذر عن تقديم الخدمة للسادة المحامين، رجال الشرطة، والقوات المسلحة.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= PRICING ======================= -->
+<section class="section-anuta" id="pricing">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-calculator"></i> خطط التمويل</span>
+            <h2>جدول الأقساط الكامل</h2>
+            <p class="desc">اختر المبلغ المناسب وتعرف على القسط الشهري وإجمالي السداد</p>
+        </div>
+
+        <div class="pricing-wrapper">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>المبلغ</th>
+                        <th>المدة</th>
+                        <th>القسط الشهري</th>
+                        <th>إجمالي السداد</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-row"><td colspan="4">💚 التمويل الاقتصادي</td></tr>
+                    <tr><td>30,000 ج.م</td><td>12 شهر</td><td>3,325 ج.م</td><td>39,900 ج.م</td></tr>
+                    <tr><td>35,000 ج.م</td><td>12 شهر</td><td>3,875 ج.م</td><td>46,500 ج.م</td></tr>
+                    <tr><td>40,000 ج.م</td><td>18 شهر</td><td>2,965 ج.م</td><td>53,370 ج.م</td></tr>
+                    <tr><td>45,000 ج.م</td><td>18 شهر</td><td>3,325 ج.م</td><td>59,850 ج.م</td></tr>
+
+                    <tr class="category-row"><td colspan="4">💙 التمويل الأساسي</td></tr>
+                    <tr><td>50,000 ج.م</td><td>24 شهر</td><td>2,725 ج.م</td><td>65,400 ج.م</td></tr>
+                    <tr><td>55,000 ج.م</td><td>24 شهر</td><td>3,075 ج.م</td><td>73,800 ج.م</td></tr>
+                    <tr><td>60,000 ج.م</td><td>24 شهر</td><td>3,085 ج.م</td><td>74,040 ج.م</td></tr>
+                    <tr><td>65,000 ج.م</td><td>26 شهر</td><td>3,325 ج.م</td><td>86,450 ج.م</td></tr>
+                    <tr><td>70,000 ج.م</td><td>26 شهر</td><td>3,585 ج.م</td><td>93,210 ج.م</td></tr>
+                    <tr><td>75,000 ج.م</td><td>26 شهر</td><td>3,845 ج.م</td><td>99,970 ج.م</td></tr>
+
+                    <tr class="category-row"><td colspan="4">💛 التمويل المتوسط</td></tr>
+                    <tr><td>80,000 ج.م</td><td>30 شهر</td><td>3,550 ج.م</td><td>106,500 ج.م</td></tr>
+                    <tr><td>85,000 ج.م</td><td>30 شهر</td><td>3,775 ج.م</td><td>113,250 ج.م</td></tr>
+                    <tr><td>90,000 ج.م</td><td>30 شهر</td><td>3,990 ج.م</td><td>119,700 ج.م</td></tr>
+                    <tr><td>95,000 ج.م</td><td>30 شهر</td><td>4,220 ج.م</td><td>126,600 ج.م</td></tr>
+                    <tr><td>100,000 ج.م</td><td>32 شهر</td><td>4,157 ج.م</td><td>133,024 ج.م</td></tr>
+                    <tr><td>105,000 ج.م</td><td>32 شهر</td><td>4,375 ج.م</td><td>140,000 ج.م</td></tr>
+                    <tr><td>110,000 ج.م</td><td>32 شهر</td><td>4,580 ج.م</td><td>146,560 ج.م</td></tr>
+
+                    <tr class="category-row"><td colspan="4">🧡 التمويل المتقدم</td></tr>
+                    <tr><td>115,000 ج.م</td><td>38 شهر</td><td>4,075 ج.م</td><td>154,850 ج.م</td></tr>
+                    <tr><td>120,000 ج.م</td><td>38 شهر</td><td>4,235 ج.م</td><td>160,930 ج.م</td></tr>
+                    <tr><td>125,000 ج.م</td><td>38 شهر</td><td>4,035 ج.م</td><td>153,330 ج.م</td></tr>
+                    <tr><td>130,000 ج.م</td><td>42 شهر</td><td>4,400 ج.م</td><td>184,800 ج.م</td></tr>
+                    <tr><td>135,000 ج.م</td><td>42 شهر</td><td>4,305 ج.م</td><td>180,810 ج.م</td></tr>
+                    <tr><td>140,000 ج.م</td><td>42 شهر</td><td>4,495 ج.م</td><td>188,790 ج.م</td></tr>
+
+                    <tr class="category-row"><td colspan="4">🏆 التمويل الذهبي</td></tr>
+                    <tr><td>145,000 ج.م</td><td>48 شهر</td><td>4,075 ج.م</td><td>195,600 ج.م</td></tr>
+                    <tr><td>150,000 ج.م</td><td>48 شهر</td><td>4,205 ج.م</td><td>201,840 ج.م</td></tr>
+                    <tr><td>155,000 ج.م</td><td>48 شهر</td><td>4,315 ج.م</td><td>207,120 ج.م</td></tr>
+                    <tr><td>160,000 ج.م</td><td>48 شهر</td><td>4,435 ج.م</td><td>212,880 ج.م</td></tr>
+                    <tr><td>165,000 ج.م</td><td>48 شهر</td><td>4,615 ج.م</td><td>221,520 ج.م</td></tr>
+                    <tr><td>170,000 ج.م</td><td>48 شهر</td><td>4,725 ج.م</td><td>226,800 ج.م</td></tr>
+                    <tr><td>175,000 ج.م</td><td>48 شهر</td><td>4,848 ج.م</td><td>232,704 ج.م</td></tr>
+                    <tr><td>180,000 ج.م</td><td>54 شهر</td><td>4,435 ج.م</td><td>239,490 ج.م</td></tr>
+                    <tr><td>185,000 ج.م</td><td>54 شهر</td><td>4,557 ج.م</td><td>246,078 ج.م</td></tr>
+                    <tr><td>190,000 ج.م</td><td>60 شهر</td><td>4,215 ج.م</td><td>252,900 ج.م</td></tr>
+                    <tr><td>195,000 ج.م</td><td>60 شهر</td><td>4,325 ج.م</td><td>259,500 ج.م</td></tr>
+                    <tr><td>200,000 ج.م</td><td>60 شهر</td><td>4,440 ج.م</td><td>266,400 ج.م</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-note">
+            <i class="fas fa-lock"></i> جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.
+        </div>
+    </div>
+</section>
+
+<!-- ======================= PARTNERS ======================= -->
+<section class="section-anuta" id="partners">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-handshake"></i> شركاؤنا</span>
+            <h2>نعمل مع أكبر الشركات الموثوقة</h2>
+            <p class="desc">نتعاون مع شركاء موثوقين لضمان أفضل خدمة لك</p>
+        </div>
+
+        <div class="partners-grid">
+            <div class="partner-item">
+                <span class="partner-icon">🏦</span>
+                <span class="partner-name">بنك مصر</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">📱</span>
+                <span class="partner-name">فوري</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">🏍️</span>
+                <span class="partner-name">مجموعة الأمير</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">🚗</span>
+                <span class="partner-name">TVS مصر</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">🛠️</span>
+                <span class="partner-name">بولمان</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">💡</span>
+                <span class="partner-name">بلو آي في</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">📊</span>
+                <span class="partner-name">سمارت للخدمات الرقمية</span>
+            </div>
+            <div class="partner-item">
+                <span class="partner-icon">💳</span>
+                <span class="partner-name">كريدتير للتكنولوجيا المالية</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= REQUIREMENTS ======================= -->
+<section class="section-anuta" id="requirements">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-clipboard-list"></i> المستندات المطلوبة</span>
+            <h2>شروط التمويل</h2>
+            <p class="desc">كل ما تحتاجه للحصول على تمويلك بكل سهولة</p>
+        </div>
+
+        <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 2rem;">🪪</span>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0;">بطاقة رقم قومي سارية</h3>
+                        <p style="font-size: 0.8rem;">يشترط تقديم هوية شخصية سارية المفعول</p>
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                    <li>صورة واضحة للبطاقة من الوجهين</li>
+                    <li>البطاقة غير منتهية الصلاحية</li>
+                    <li>صورة سيلفي مع البطاقة</li>
+                </div>
+            </div>
+            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 2rem;">💰</span>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0;">دخل شهري ثابت</h3>
+                        <p style="font-size: 0.8rem;">لا يقل عن 5,000 جنيه مصري</p>
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                    <li>موظفو الحكومة والخاص</li>
+                    <li>أصحاب المهن الحرة</li>
+                    <li>ربات المنازل (بضامن)</li>
+                </div>
+            </div>
+            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 2rem;">👨‍👩‍👧</span>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0;">ضامن من الدرجة الأولى</h3>
+                        <p style="font-size: 0.8rem;">أحد الأقارب للتوثيق القانوني</p>
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                    <li>للرجال: الأب، الأم، الأخ، الزوجة</li>
+                    <li>للسيدات: الأب، الأم، الأخت، الزوج</li>
+                    <li>يجب توافر ضامن من الدرجة الأولى</li>
+                </div>
+            </div>
+            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 2rem;">📱</span>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0;">محفظة إلكترونية نشطة</h3>
+                        <p style="font-size: 0.8rem;">اتصالات كاش</p>
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                    <li>المحفظة مسجلة بنفس الرقم القومي</li>
+                    <li>المحفظة مفعلة وجاهزة للاستقبال</li>
+                    <li>الصرف فقط على المحفظة المسجلة</li>
+                </div>
             </div>
         </div>
 
-        <!-- ===== REQUIREMENTS ===== -->
-        <section id="requirements">
-            <div class="section-header">
-                <h2>📋 شروط التمويل</h2>
-                <span class="subtitle"><i class="fas fa-info-circle"></i> اضغط على أي شرط لمعرفة التفاصيل</span>
-                <p class="desc">نحرص على الشفافية التامة، نوضح لك كل ما تحتاجه للحصول على تمويلك</p>
+        <div class="notice-anuta success">
+            <div class="notice-icon">✅</div>
+            <div>
+                <h4>ميزتنا الأساسية</h4>
+                <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة. نضمن لك الشفافية التامة.</p>
             </div>
-            <div id="requirementsList">
-                <div class="glass-card">
-                    <div class="card-main">
-                        <div class="card-icon">🪪</div>
-                        <div class="card-text">
-                            <h3>بطاقة رقم قومي سارية</h3>
-                            <p>يشترط تقديم هوية شخصية سارية المفعول</p>
-                        </div>
-                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </div>
-                    <div class="card-details">
-                        <li>يجب تقديم صورة واضحة للبطاقة من الوجهين</li>
-                        <li>البطاقة غير منتهية الصلاحية وقت التقديم</li>
-                        <li>صورة شخصية حديثة (سيلفي) مع البطاقة</li>
-                        <li>التوقيع على العقد من مكانك بمجرد نزول المبلغ حسابك</li>
-                    </div>
-                </div>
-                <div class="glass-card">
-                    <div class="card-main">
-                        <div class="card-icon">💰</div>
-                        <div class="card-text">
-                            <h3>دخل شهري ثابت</h3>
-                            <p>لا يقل عن 5,000 جنيه مصري</p>
-                        </div>
-                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </div>
-                    <div class="card-details">
-                        <li>للموظفين في القطاعين الحكومي والخاص</li>
-                        <li>لأصحاب المهن الحرة والمشاريع الصغيرة</li>
-                        <li>لربات المنازل (بضامن من الدرجة الأولى)</li>
-                        <li>لأصحاب المعاشات والمستفيدين</li>
-                    </div>
-                </div>
-                <div class="glass-card">
-                    <div class="card-main">
-                        <div class="card-icon">👨‍👩‍👧</div>
-                        <div class="card-text">
-                            <h3>ضامن من الدرجة الأولى</h3>
-                            <p>أحد الأقارب للتوثيق القانوني</p>
-                        </div>
-                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </div>
-                    <div class="card-details">
-                        <li>للرجال: الأب، الأم، الأخ، الأخت، الزوجة</li>
-                        <li>للسيدات: الأب، الأم، الأخت، الزوج</li>
-                        <li>يجب توافر ضامن من الدرجة الأولى</li>
-                        <li>الضامن يتحمل مسؤولية السداد في حالة التخلف</li>
-                    </div>
-                </div>
-                <div class="glass-card">
-                    <div class="card-main">
-                        <div class="card-icon">📱</div>
-                        <div class="card-text">
-                            <h3>محفظة إلكترونية نشطة</h3>
-                            <p>اتصالات كاش</p>
-                        </div>
-                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </div>
-                    <div class="card-details">
-                        <li>يجب أن تكون المحفظة مسجلة بنفس الرقم القومي</li>
-                        <li>المحفظة مفعلة وجاهزة لاستقبال الأموال</li>
-                        <li>يتم الصرف فقط على المحفظة المسجلة باسم العميل</li>
-                        <li>رقم المحفظة مطابق لرقم الجوال المسجل</li>
-                    </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= MANUAL UPLOAD ======================= -->
+<section class="section-anuta" id="manual-upload">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-headset"></i> دعم يدوي</span>
+            <h2>رفع الطلب يدوياً</h2>
+            <p class="desc">واجهتك مشكلة؟ فريق الدعم جاهز لمساعدتك</p>
+        </div>
+
+        <div class="manual-anuta">
+            <div class="manual-top">
+                <h3><i class="fas fa-file-alt"></i> استمارة التسجيل اليدوي</h3>
+                <div class="actions-anuta">
+                    <button class="copy-btn-anuta" id="copyFormBtn"><i class="fas fa-copy"></i> نسخ الاستمارة</button>
+                    <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn-anuta"><i class="fab fa-facebook-messenger"></i> أرسل عبر ماسنجر</a>
                 </div>
             </div>
-
-            <div class="notice-banner">
-                <div class="notice-icon">✅</div>
-                <div class="notice-info">
-                    <h4 class="success">ميزتنا الأساسية</h4>
-                    <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة. نضمن لك الشفافية التامة.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PRICING TABLE ===== -->
-        <section id="pricing">
-            <div class="section-header">
-                <h2>📊 جدول الأقساط الكامل</h2>
-                <span class="subtitle"><i class="fas fa-calculator"></i> جميع المبالغ والمدد المتاحة للتمويل</span>
-                <p class="desc">اختر المبلغ المناسب لك وتعرف على القسط الشهري وإجمالي السداد</p>
-            </div>
-            <div class="pricing-wrapper">
-                <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th>المبلغ</th>
-                            <th>المدة</th>
-                            <th>القسط الشهري</th>
-                            <th>إجمالي السداد</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- الفئة الاقتصادية -->
-                        <tr class="category-row"><td colspan="4">💚 التمويل الاقتصادي</td></tr>
-                        <tr><td>30,000 ج.م</td><td>12 شهر</td><td>3,325 ج.م</td><td>39,900 ج.م</td></tr>
-                        <tr><td>35,000 ج.م</td><td>12 شهر</td><td>3,875 ج.م</td><td>46,500 ج.م</td></tr>
-                        <tr><td>40,000 ج.م</td><td>18 شهر</td><td>2,965 ج.م</td><td>53,370 ج.م</td></tr>
-                        <tr><td>45,000 ج.م</td><td>18 شهر</td><td>3,325 ج.م</td><td>59,850 ج.م</td></tr>
-
-                        <!-- الفئة الأساسية -->
-                        <tr class="category-row"><td colspan="4">💙 التمويل الأساسي</td></tr>
-                        <tr><td>50,000 ج.م</td><td>24 شهر</td><td>2,725 ج.م</td><td>65,400 ج.م</td></tr>
-                        <tr><td>55,000 ج.م</td><td>24 شهر</td><td>3,075 ج.م</td><td>73,800 ج.م</td></tr>
-                        <tr><td>60,000 ج.م</td><td>24 شهر</td><td>3,085 ج.م</td><td>74,040 ج.م</td></tr>
-                        <tr><td>65,000 ج.م</td><td>26 شهر</td><td>3,325 ج.م</td><td>86,450 ج.م</td></tr>
-                        <tr><td>70,000 ج.م</td><td>26 شهر</td><td>3,585 ج.م</td><td>93,210 ج.م</td></tr>
-                        <tr><td>75,000 ج.م</td><td>26 شهر</td><td>3,845 ج.م</td><td>99,970 ج.م</td></tr>
-
-                        <!-- الفئة المتوسطة -->
-                        <tr class="category-row"><td colspan="4">💛 التمويل المتوسط</td></tr>
-                        <tr><td>80,000 ج.م</td><td>30 شهر</td><td>3,550 ج.م</td><td>106,500 ج.م</td></tr>
-                        <tr><td>85,000 ج.م</td><td>30 شهر</td><td>3,775 ج.م</td><td>113,250 ج.م</td></tr>
-                        <tr><td>90,000 ج.م</td><td>30 شهر</td><td>3,990 ج.م</td><td>119,700 ج.م</td></tr>
-                        <tr><td>95,000 ج.م</td><td>30 شهر</td><td>4,220 ج.م</td><td>126,600 ج.م</td></tr>
-                        <tr><td>100,000 ج.م</td><td>32 شهر</td><td>4,157 ج.م</td><td>133,024 ج.م</td></tr>
-                        <tr><td>105,000 ج.م</td><td>32 شهر</td><td>4,375 ج.م</td><td>140,000 ج.م</td></tr>
-                        <tr><td>110,000 ج.م</td><td>32 شهر</td><td>4,580 ج.م</td><td>146,560 ج.م</td></tr>
-
-                        <!-- الفئة المتقدمة -->
-                        <tr class="category-row"><td colspan="4">🧡 التمويل المتقدم</td></tr>
-                        <tr><td>115,000 ج.م</td><td>38 شهر</td><td>4,075 ج.م</td><td>154,850 ج.م</td></tr>
-                        <tr><td>120,000 ج.م</td><td>38 شهر</td><td>4,235 ج.م</td><td>160,930 ج.م</td></tr>
-                        <tr><td>125,000 ج.م</td><td>38 شهر</td><td>4,035 ج.م</td><td>153,330 ج.م</td></tr>
-                        <tr><td>130,000 ج.م</td><td>42 شهر</td><td>4,400 ج.م</td><td>184,800 ج.م</td></tr>
-                        <tr><td>135,000 ج.م</td><td>42 شهر</td><td>4,305 ج.م</td><td>180,810 ج.م</td></tr>
-                        <tr><td>140,000 ج.م</td><td>42 شهر</td><td>4,495 ج.م</td><td>188,790 ج.م</td></tr>
-
-                        <!-- الفئة الذهبية -->
-                        <tr class="category-row"><td colspan="4">🏆 التمويل الذهبي</td></tr>
-                        <tr><td>145,000 ج.م</td><td>48 شهر</td><td>4,075 ج.م</td><td>195,600 ج.م</td></tr>
-                        <tr><td>150,000 ج.م</td><td>48 شهر</td><td>4,205 ج.م</td><td>201,840 ج.م</td></tr>
-                        <tr><td>155,000 ج.م</td><td>48 شهر</td><td>4,315 ج.م</td><td>207,120 ج.م</td></tr>
-                        <tr><td>160,000 ج.م</td><td>48 شهر</td><td>4,435 ج.م</td><td>212,880 ج.م</td></tr>
-                        <tr><td>165,000 ج.م</td><td>48 شهر</td><td>4,615 ج.م</td><td>221,520 ج.م</td></tr>
-                        <tr><td>170,000 ج.م</td><td>48 شهر</td><td>4,725 ج.م</td><td>226,800 ج.م</td></tr>
-                        <tr><td>175,000 ج.م</td><td>48 شهر</td><td>4,848 ج.م</td><td>232,704 ج.م</td></tr>
-                        <tr><td>180,000 ج.م</td><td>54 شهر</td><td>4,435 ج.م</td><td>239,490 ج.م</td></tr>
-                        <tr><td>185,000 ج.م</td><td>54 شهر</td><td>4,557 ج.م</td><td>246,078 ج.م</td></tr>
-                        <tr><td>190,000 ج.م</td><td>60 شهر</td><td>4,215 ج.م</td><td>252,900 ج.م</td></tr>
-                        <tr><td>195,000 ج.م</td><td>60 شهر</td><td>4,325 ج.م</td><td>259,500 ج.م</td></tr>
-                        <tr><td>200,000 ج.م</td><td>60 شهر</td><td>4,440 ج.م</td><td>266,400 ج.م</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="table-note">
-                <i class="fas fa-lock"></i> جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.
-            </div>
-        </section>
-
-        <!-- ===== FEATURES ===== -->
-        <section id="features">
-            <div class="section-header">
-                <h2>💡 مميزات Cash Faster</h2>
-                <span class="subtitle"><i class="fas fa-star"></i> لماذا نحن الخيار الأفضل؟</span>
-            </div>
-            <div class="features-grid">
-                <div class="glass-card feature-box"><span class="feat-icon">⚡</span><h3>صرف فوري</h3><p>فور الموافقة، الأموال في محفظتك خلال دقائق</p></div>
-                <div class="glass-card feature-box"><span class="feat-icon">💰</span><h3>بدون رسوم مسبقة</h3><p>لا نطلب أي مبالغ قبل الصرف نهائياً</p></div>
-                <div class="glass-card feature-box"><span class="feat-icon">⏰</span><h3>أقساط مرنة</h3><p>من 12 إلى 60 شهراً تناسب جميع الميزانيات</p></div>
-                <div class="glass-card feature-box"><span class="feat-icon">🛡️</span><h3>ضمان عائلي</h3><p>حماية قانونية للطرفين من خلال الضامن</p></div>
-                <div class="glass-card feature-box"><span class="feat-icon">💵</span><h3>مبالغ كبيرة</h3><p>من 30,000 حتى 200,000 جنيه مصري</p></div>
-                <div class="glass-card feature-box"><span class="feat-icon">👥</span><h3>شفافية تامة</h3><p>عقود واضحة وصريحة بدون أي بنود خفية</p></div>
-            </div>
-        </section>
-
-        <!-- ===== CATEGORIES ===== -->
-        <section id="categories">
-            <div class="section-header">
-                <h2>👥 الفئات المدعومة</h2>
-                <span class="subtitle"><i class="fas fa-users"></i> برامج ائتمانية تناسب معظم القطاعات</span>
-            </div>
-            <div class="categories-grid">
-                <div class="cat-item"><span class="cat-icon">🏛️</span><span>موظفو الحكومة والخاص</span></div>
-                <div class="cat-item"><span class="cat-icon">🏢</span><span>موظفو الشركات</span></div>
-                <div class="cat-item"><span class="cat-icon">👴</span><span>أصحاب المعاشات</span></div>
-                <div class="cat-item"><span class="cat-icon">🛍️</span><span>أصحاب المشاريع الناشئة</span></div>
-                <div class="cat-item"><span class="cat-icon">👩</span><span>ربات المنازل (بضامن)</span></div>
-                <div class="cat-item"><span class="cat-icon">🛠️</span><span>أصحاب الأعمال الحرة</span></div>
-            </div>
-            <div class="notice-banner warning">
-                <div class="notice-icon" style="color: var(--danger);">⚠️</div>
-                <div class="notice-info">
-                    <h4 class="warning-text">تنويه هام</h4>
-                    <p>نعتذر عن تقديم الخدمة للسادة المحامين، رجال الشرطة، والقوات المسلحة.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== MANUAL UPLOAD ===== -->
-        <section id="manual-upload">
-            <div class="section-header">
-                <h2>📋 رفع الطلب يدوياً</h2>
-                <span class="subtitle"><i class="fas fa-headset"></i> واجهتك مشكلة؟ فريق الدعم جاهز لمساعدتك</span>
-            </div>
-            <div class="manual-section">
-                <div class="manual-top">
-                    <h3><i class="fas fa-file-alt"></i> استمارة التسجيل اليدوي</h3>
-                    <div class="actions-grp">
-                        <button class="copy-btn" id="copyFormBtn"><i class="fas fa-copy"></i> نسخ الاستمارة</button>
-                        <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn"><i class="fab fa-facebook-messenger"></i> أرسل عبر ماسنجر</a>
-                    </div>
-                </div>
-                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:0.8rem;">
-                    <i class="fas fa-info-circle" style="color: var(--primary);"></i>
-                    انسخ النص أدناه، ثم أرسله عبر ماسنجر إلى صفحة الدعم الرسمية.
-                </p>
-                <div class="form-terminal" id="manualFormText">
+            <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:0.8rem;">
+                <i class="fas fa-info-circle" style="color: var(--anuta-gold);"></i>
+                انسخ النص أدناه، ثم أرسله عبر ماسنجر إلى صفحة الدعم الرسمية.
+            </p>
+            <div class="form-terminal" id="manualFormText">
 📋 استمارة طلب تمويل Cash Faster
 
 1️⃣ البيانات الشخصية:
@@ -1508,281 +1548,105 @@
 - رقم هاتف الضامن:
 
 🔐 بياناتك مشفرة بالكامل ولن تستخدم إلا لمراجعة طلب التمويل.
-                </div>
-                <div class="notice-banner gold">
-                    <div class="notice-icon" style="color: var(--gold);">⚙️</div>
-                    <div class="notice-info">
-                        <h4 class="gold-text">بعد الإرسال</h4>
-                        <p>سيتواصل معك ممثل الدعم خلال 60 دقيقة لاستكمال الإجراءات وتوثيق الطلب.</p>
-                    </div>
+            </div>
+            <div class="notice-anuta">
+                <div class="notice-icon">⚙️</div>
+                <div>
+                    <h4>بعد الإرسال</h4>
+                    <p>سيتواصل معك ممثل الدعم خلال 60 دقيقة لاستكمال الإجراءات وتوثيق الطلب.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- ===== FAQ ===== -->
-        <section id="faq">
-            <div class="section-header">
-                <h2>❓ أسئلة شائعة</h2>
-                <span class="subtitle"><i class="fas fa-question-circle"></i> إجابات واضحة لأهم الاستفسارات</span>
-            </div>
-            <div class="faq-box">
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        كيف تتم الموافقة على الطلب؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة خلال 24 ساعة من تقديم المستندات الكاملة.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        ما هي المستندات المطلوبة؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">صورة البطاقة + صورة شخصية (سيلفي) + إثبات دخل + بيانات الضامن + رقم محفظة نشط. جميع المستندات مشفرة ومحمية.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        كيف استلم القرض؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">بعد إنهاء الإجراءات، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة خلال دقائق.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        ما هي مدة السداد؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ الذي تختاره.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        هل هناك فئات مستبعدة؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة. نعتذر عن عدم تقديم الخدمة لهذه الفئات.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        هل هناك رسوم خفية؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول بوضوح تام.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        هل يمكنني سداد القرض مبكراً؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد الفعلي.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        كيف يتم حماية بياناتي؟
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="faq-content">جميع بياناتك مشفرة بتقنية 256-bit، ولا يمكن لأي شخص خارج فريق التمويل الاطلاع عليها. نلتزم بأعلى معايير الأمان والخصوصية.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PRIVACY & TERMS SECTION ===== -->
-        <section id="privacy-terms">
-            <div class="section-header">
-                <h2>🔐 سياسة الخصوصية وشروط الاستخدام</h2>
-                <span class="subtitle"><i class="fas fa-shield-alt"></i> نحمي بياناتك ونلتزم بالشفافية</span>
-            </div>
-
-            <!-- ===== PRIVACY POLICY ===== -->
-            <div class="privacy-section">
-                <div class="privacy-badge">
-                    <i class="fas fa-shield-alt"></i> محدث: مايو 2026
-                </div>
-
-                <h3>📌 سياسة الخصوصية</h3>
-                <p>
-                    نحن في <span class="highlight">Cash Faster</span> نلتزم بحماية خصوصيتك وبياناتك الشخصية. تصف سياسة الخصوصية هذه سياساتنا وإجراءاتنا المتعلقة بجمع واستخدام والإفصاح عن معلوماتك عند استخدامك لخدماتنا.
-                </p>
-                <p>
-                    باستخدامك لخدماتنا، فإنك توافق على جمع المعلومات واستخدامها وفقًا لسياسة الخصوصية هذه.
-                </p>
-
-                <h3>📌 التعريفات</h3>
-                <ul>
-                    <li><span class="highlight-cyan">الحساب:</span> حساب فريد تم إنشاؤه لك للوصول إلى خدماتنا.</li>
-                    <li><span class="highlight-cyan">الشركة:</span> تشير إلى <span class="highlight">Cash Faster</span> (كاش فاستر للتمويل الاستهلاكي).</li>
-                    <li><span class="highlight-cyan">البيانات الشخصية:</span> أي معلومات تتعلق بشخص محدد أو يمكن تحديده.</li>
-                    <li><span class="highlight-cyan">الخدمة:</span> تشير إلى موقعنا الإلكتروني وجميع الخدمات التي نقدمها.</li>
-                    <li><span class="highlight-cyan">أنت:</span> الفرد الذي يصل إلى الخدمة أو يستخدمها.</li>
-                    <li><span class="highlight-cyan">الجهاز:</span> أي جهاز يمكنه الوصول إلى الخدمة (كمبيوتر، هاتف محمول، جهاز لوحي).</li>
-                </ul>
-
-                <h3>📌 جمع البيانات الشخصية واستخدامها</h3>
-                <p><span class="highlight-cyan">أنواع البيانات التي يتم جمعها:</span></p>
-                <ul>
-                    <li>الاسم الكامل رباعياً</li>
-                    <li>الرقم القومي (14 رقم)</li>
-                    <li>العنوان بالتفصيل</li>
-                    <li>رقم المحفظة الإلكترونية</li>
-                    <li>رقم الهاتف ورقم الواتساب</li>
-                    <li>البيانات المالية (الدخل الشهري، مصدر الدخل، المبلغ المطلوب)</li>
-                    <li>بيانات الضامن (الاسم، الرقم القومي، رقم الهاتف، صلة القرابة)</li>
-                    <li>الصور والمستندات المطلوبة للتقديم</li>
-                </ul>
-
-                <p><span class="highlight-cyan">الغرض من جمع البيانات:</span></p>
-                <ul>
-                    <li>التحقق من الهوية</li>
-                    <li>التقييم الائتماني واتخاذ قرارات التمويل</li>
-                    <li>متابعة السداد والتحصيل</li>
-                    <li>التحليل الإحصائي وتحسين المنتجات والخدمات</li>
-                    <li>التواصل معك بشأن طلبك</li>
-                </ul>
-
-                <h3>📌 أمن البيانات وتخزينها</h3>
-                <ul>
-                    <li><span class="highlight-cyan">أثناء النقل:</span> تتم حماية البيانات باستخدام بروتوكولات أمان معتمدة وفقًا لمعايير الصناعة.</li>
-                    <li><span class="highlight-cyan">أثناء التخزين:</span> يتم تأمينها باستخدام خوارزميات تشفير قوية (256-bit).</li>
-                    <li><span class="highlight-cyan">التحكم في الوصول:</span> لا يُسمح بالوصول إلى البيانات إلا للموظفين المخولين.</li>
-                    <li><span class="highlight-cyan">الاحتفاظ والتخزين:</span> نحتفظ بالبيانات الشخصية فقط للمدة اللازمة لتحقيق الأغراض المذكورة.</li>
-                </ul>
-
-                <h3>📌 مشاركة البيانات ونقلها</h3>
-                <p>نحن <span class="highlight-cyan">لا نشارك</span> بياناتك الشخصية مع أطراف ثالثة إلا في الحالات التالية:</p>
-                <ul>
-                    <li>بموافقتك الصريحة</li>
-                    <li>مع مزودي الخدمات الذين يساعدوننا في تقديم خدماتنا</li>
-                    <li>عندما يقتضي القانون ذلك (مثل أوامر المحاكم، أو تحقيقات الشرطة، أو توجيهات البنك المركزي)</li>
-                    <li>مع مزودي خدمات الأمن وإدارة المخاطر (لأغراض كشف الاحتيال)</li>
-                    <li>إذا كان تبادل البيانات مطلوباً لأغراض التسويق، فسنحصل على موافقتك الواضحة</li>
-                </ul>
-
-                <h3>📌 حقوقك والتحكم في بياناتك</h3>
-                <p>يمكنك من خلال التواصل مع خدمة العملاء:</p>
-                <ul>
-                    <li>تعديل أو حذف بعض المعلومات الشخصية</li>
-                    <li>طلب تصدير بياناتك</li>
-                    <li>حذف حسابك (لا يمكن حذف الحساب إلا بعد سداد جميع القروض المستحقة بالكامل)</li>
-                    <li>الاستفسار عن تفاصيل الاحتفاظ بالبيانات</li>
-                </ul>
-
-                <h3>📌 التعديلات على سياسة الخصوصية</h3>
-                <p>
-                    قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطارك بأي تغييرات عن طريق نشر سياسة الخصوصية الجديدة على هذه الصفحة. آخر تحديث: <span class="highlight">مايو 2026</span>.
-                </p>
-            </div>
-
-            <!-- ===== TERMS OF USE ===== -->
-            <div class="privacy-section" style="margin-top: 2rem;">
-                <div class="privacy-badge">
-                    <i class="fas fa-file-contract"></i> محدث: مايو 2026
-                </div>
-
-                <h3>📋 شروط الاستخدام</h3>
-                <p style="font-size: 1.05rem; color: var(--text-light); margin-bottom: 1.5rem;">
-                    مرحبًا بك في منصة <span class="highlight">Cash Faster</span>.
-                </p>
-
-                <p>
-                    يرجى قراءة شروط الاستخدام التالية ("شروط الاستخدام") بعناية قبل استخدام هذه المنصة. تحتوي شروط الاستخدام على شروط وأحكام تحكم استخدامك للمنصة وكذلك الخدمات المقدمة فيها، بما في ذلك على سبيل المثال لا الحصر خدمات المعلومات وخدمات القروض والخدمات الأخرى التي قد يطورها مزود الخدمات.
-                </p>
-                <p>
-                    من خلال الوصول إلى و/أو استخدام المنصة، سيتم اعتبارك موافقًا على شروط الاستخدام هذه. إذا كنت لا توافق على شروط الاستخدام هذه، فيرجى التوقف فورًا عن استخدام المنصة.
-                </p>
-
-                <h3>1. استخدام المنصة</h3>
-                <p>لاستخدام المنصة، يجب عليك:</p>
-                <ul class="terms-list">
-                    <li>قبول والموافقة على شروط الاستخدام هذه وسياسة الخصوصية</li>
-                    <li>التسجيل معنا على منصة <span class="highlight">Cash Faster</span></li>
-                    <li>تقديم جميع المعلومات التي قد نطلبها، مثل اسمك ووظيفتك وعنوان بريدك الإلكتروني ورقم جهازك المحمول وبيانات الاعتماد عبر الإنترنت لحسابك المصرفي وأي معلومات أخرى قد نطلبها من وقت لآخر</li>
-                </ul>
-
-                <h3>2. استخدام الحساب</h3>
-                <h4>2.1</h4>
-                <p>
-                    ستكون مسؤولاً عن استخدام حسابك وفقًا للقوانين واللوائح السائدة. أنت توافق على أنك لن تستخدم حسابك في أي إجراءات تنتهك القوانين واللوائح، بما في ذلك على سبيل المثال لا الحصر، تزوير الهويات، أو الانخراط في جرائم غسيل الأموال، أو أي إجراءات أخرى لا تتوافق مع القوانين واللوائح.
-                </p>
-
-                <h4>2.2</h4>
-                <p>
-                    أنت توافق على أن القرض الذي تحصل عليه أو تقدمه من خلال المنصة سيتم استخدامه فقط للأغراض المنصوص عليها في اتفاقية القرض التي سيتم إبرامها بين المقترض والمقرض (كما يمثله مزود الخدمة).
-                </p>
-
-                <h4>2.3</h4>
-                <p>
-                    أنت توافق على أنه بخلاف الإجراءات التي تحظرها القوانين واللوائح، يُحظر عليك أيضًا استخدام الحساب بطريقة قد تضر بأطراف أخرى، بما في ذلك على سبيل المثال لا الحصر، مزود الخدمات أو أطراف ثالثة أخرى.
-                </p>
-                <p>
-                    تشمل الإجراءات التي تسبب ضررًا لأطراف أخرى، على سبيل المثال لا الحصر: تعطيل التحكم في الأنظمة الإلكترونية، البريد العشوائي، الكشف غير القانوني عن المعلومات السرية للطرف الثالث، نسخ كل جزء من أجزاء المنصة دون إذن (بغض النظر عما إذا كان محميًا من قبل الملكية الفكرية أم لا)، أو تحميل محتويات بها عنف، أو فاحشة، أو هجوم على كرامة الآخرين، أو محتويات محمية بموجب الملكية الفكرية للطرف الآخر، أو غيرها من الإجراءات التي قد تضر بأطراف أخرى.
-                </p>
-
-                <h4>2.4</h4>
-                <p>
-                    أنت تفهم وتوافق على أنه لا يجوز لك سوى امتلاك حساب واحد في المنصة، ما لم يقرر مزود الخدمات خلاف ذلك. لهذا الغرض، فإنك توافق على أنك لن تنشئ ولا تحاول إنشاء، بشكل مباشر أو غير مباشر، أكثر من حساب واحد في المنصة.
-                </p>
-
-                <h4>2.5</h4>
-                <p>
-                    يحق لمزود الخدمات إغلاق حسابك إذا لم تمتثل لشروط الاستخدام. ومع ذلك، ستكون مسؤولاً عن المحتويات التي تقوم بتحميلها والتي تنتهك شروط الاستخدام، ويجب عليك تعويض مزود الخدمات عن أي نوع من العواقب الناشئة عن المحتويات التي تقوم بتحميلها على المنصة والتي تنتهك شروط الاستخدام.
-                </p>
-
-                <h3>3. الآخرين</h3>
-                <h4>3.1</h4>
-                <p>
-                    تُفسَّر شروط الاستخدام هذه وتحكمها قوانين جمهورية مصر العربية. تخضع أي مطالبة أو نزاع ينشأ فيما يتعلق بشروط الاستخدام هذه للاختصاص القضائي لمحاكم جمهورية مصر العربية، وفقًا للقوانين واللوائح السائدة.
-                </p>
-
-                <h4>3.2</h4>
-                <p>
-                    إذا كان هناك أي بند في شروط الاستخدام تم الإعلان عن بطلانه أو انتهاكه للقوانين واللوائح، فلن تؤثر الشروط على صلاحية الأحكام المتبقية وسيتم اعتبار شروط الاستخدام هذه منقحة بطريقة تعكس التوافق مع القوانين والأنظمة.
-                </p>
-
-                <h4>3.3</h4>
-                <p>
-                    لا يوجد تنازل عن أي حقوق لمزود الخدمات والتي يجب أن تُمنح ما لم يكن واضحًا ومكتوبًا من قبل مزود الخدمات. لا يُعتبر عدم الأداء أو الأداء المتأخر أو الأداء الجزئي لحقوق مزود الخدمات تنازلاً عن أي حقوق لمقدم الخدمات.
-                </p>
-
-                <!-- ====== DISCLAIMER ====== -->
-                <div class="disclaimer-box">
-                    <h3><i class="fas fa-exclamation-triangle"></i> إخلاء مسؤولية</h3>
-                    <p>
-                        <strong>شركة <span class="highlight">Cash Faster</span> (كاش فاستر)</strong> هي شركة مصرية تعمل في مجال التمويل الاستهلاكي وفقاً للقوانين واللوائح المصرية. جميع إجراءات التمويل تخضع لتقييم ائتماني دقيق وفقاً للشروط والأحكام المعلنة.
-                    </p>
-                    <p>
-                        <strong>تنبيه هام:</strong> نحن <span class="highlight-cyan">لا نطلب من عملائنا دفع أو تحويل أي مبالغ مالية</span> لأي شخص أو جهة بخلاف الأقساط الشهرية المتفق عليها. في حالة تلقي أي طلب بتحويل أموال باسم الشركة، يرجى التواصل فوراً مع خدمة العملاء والإبلاغ عن ذلك.
-                    </p>
-                    <p>
-                        جميع البيانات والمستندات المقدمة من العملاء تُستخدم فقط لأغراض التقييم الائتماني واتخاذ قرارات التمويل، ولا يتم مشاركتها مع أي طرف ثالث إلا في الحالات التي يقتضيها القانون.
-                    </p>
-                    <p>
-                        الشركة غير مسؤولة عن أي استخدام غير مصرح به للبيانات من قبل أطراف خارجية نتيجة لأي اختراق أمني خارج عن إرادتها.
-                    </p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #94A3B8;">
-                        <i class="fas fa-check-circle" style="color: #22C55E;"></i>
-                        آخر تحديث لإخلاء المسؤولية: مايو 2026
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CTA ===== -->
-        <section>
-            <div class="cta-box">
-                <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
-                <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
-                <div class="cta-buttons">
-                    <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-primary">
-                        <i class="fas fa-bolt"></i> قدم طلبك الآن
-                    </a>
-                    <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-gold">
-                        <i class="fas fa-search"></i> تتبع طلبك
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </div>
-</main>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="section-anuta" id="faq">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</span>
+            <h2>إجابات واضحة لأهم الاستفسارات</h2>
+            <p class="desc">كل ما تريد معرفته عن التمويل مع كاش فاستر</p>
+        </div>
+
+        <div class="faq-anuta">
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    كيف تتم الموافقة على الطلب؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة خلال 24 ساعة من تقديم المستندات الكاملة.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    ما هي المستندات المطلوبة؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">صورة البطاقة + صورة شخصية (سيلفي) + إثبات دخل + بيانات الضامن + رقم محفظة نشط. جميع المستندات مشفرة ومحمية.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    كيف استلم القرض؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">بعد إنهاء الإجراءات، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة خلال دقائق.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    ما هي مدة السداد؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ الذي تختاره.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    هل هناك فئات مستبعدة؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة. نعتذر عن عدم تقديم الخدمة لهذه الفئات.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    هل هناك رسوم خفية؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول بوضوح تام.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    هل يمكنني سداد القرض مبكراً؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد الفعلي.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    كيف يتم حماية بياناتي؟
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">جميع بياناتك مشفرة بتقنية 256-bit، ولا يمكن لأي شخص خارج فريق التمويل الاطلاع عليها. نلتزم بأعلى معايير الأمان والخصوصية.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= CTA ======================= -->
+<section class="section-anuta">
+    <div class="container">
+        <div class="cta-anuta">
+            <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
+            <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
+            <div class="cta-buttons">
+                <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank" class="btn-primary-hero">
+                    <i class="fas fa-bolt"></i> قدم طلبك الآن
+                </a>
+                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-secondary-hero">
+                    <i class="fas fa-search"></i> تتبع طلبك
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- ======================= FOOTER ======================= -->
 <footer>
@@ -1791,15 +1655,14 @@
             <div class="footer-col">
                 <h4>⚡ Cash Faster</h4>
                 <p>تمويل استهلاكي سريع وآمن<br>بدون رسوم إدارية مسبقة</p>
-                <p style="margin-top: 0.3rem; color: var(--gold);">+</p>
+                <p style="margin-top: 0.3rem; color: var(--anuta-gold); font-size: 0.7rem;">ترخيص رقم (24) من هيئة الرقابة المالية</p>
             </div>
             <div class="footer-col">
                 <h4>روابط سريعة</h4>
-                <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank">تقديم طلب</a>
+                <a href="https://eu.surveymars.com/q/lYmWgRl5Y" target="_blank">تقديم طلب</a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank">تتبع طلبك</a>
                 <a href="#pricing">جدول الأقساط</a>
                 <a href="#faq">الأسئلة الشائعة</a>
-                <a href="#privacy-terms">سياسة الخصوصية</a>
             </div>
             <div class="footer-col">
                 <h4>الأمان والخصوصية</h4>
@@ -1839,36 +1702,16 @@
         }
     });
 
-    // ===== Requirements Accordion =====
-    const cards = document.querySelectorAll('#requirementsList .glass-card');
-    cards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const details = this.querySelector('.card-details');
-            const arrow = this.querySelector('.arrow-icon');
-            const isActive = details.classList.contains('active');
-
-            // Close all others
-            document.querySelectorAll('#requirementsList .card-details').forEach(d => d.classList.remove('active'));
-            document.querySelectorAll('#requirementsList .arrow-icon').forEach(a => a.classList.remove('rotate'));
-
-            if (!isActive) {
-                details.classList.add('active');
-                arrow.classList.add('rotate');
-            }
-        });
-    });
-
     // ===== FAQ Accordion =====
     document.querySelectorAll('.faq-trigger').forEach(btn => {
         btn.addEventListener('click', () => {
             const content = btn.nextElementSibling;
             const icon = btn.querySelector('.faq-icon');
             const isOpen = content.classList.contains('open');
-
+            
             document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
             document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('active'));
-
+            
             if (!isOpen) {
                 content.classList.add('open');
                 icon.classList.add('active');
@@ -1895,7 +1738,9 @@
         }
     }
 
-    copyBtn.addEventListener('click', copyToClipboard);
+    if (copyBtn) {
+        copyBtn.addEventListener('click', copyToClipboard);
+    }
 
     function showToast(message) {
         const toast = document.createElement('div');
@@ -1905,14 +1750,14 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(90deg, #22C55E, #16A34A);
-            color: white;
+            background: linear-gradient(90deg, #E8B84B, #C99A2E);
+            color: #0A0A1A;
             padding: 0.8rem 2rem;
             border-radius: 2rem;
             font-weight: 700;
             z-index: 9999;
             font-family: 'Cairo', sans-serif;
-            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 8px 30px rgba(232, 184, 75, 0.25);
             animation: toastSlide 0.4s ease;
         `;
         document.body.appendChild(toast);
@@ -1935,6 +1780,19 @@
         }
     `;
     document.head.appendChild(styleSheet);
+
+    // ===== Smooth scroll for anchor links =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 </script>
 
 </body>
