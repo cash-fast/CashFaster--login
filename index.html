@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="كاش فاستر للتمويل الاستهلاكي - حلول تمويلية سريعة وآمنة بدون رسوم مقدمة">
+    <meta name="description" content="كاش فاستر للتمويل الاستهلاكي - حلول تمويلية سريعة وآمنة بدون رسوم مقدمة - مرخص من هيئة الرقابة المالية">
     <meta name="theme-color" content="#0A0A1A">
+    <meta name="robots" content="index, follow">
     <title>كاش فاستر | تمويل استهلاكي سريع وآمن</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +56,7 @@
         /* ======================= CONTAINER ======================= */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.2rem; }
 
-        /* ======================= HEADER (مثل عنوته) ======================= */
+        /* ======================= HEADER ======================= */
         header {
             background: rgba(10, 10, 26, 0.98);
             backdrop-filter: blur(16px);
@@ -159,7 +160,7 @@
             transform: translateY(-2px);
         }
 
-        /* ======================= HERO ======================= */
+        /* ======================= HERO SECTION ======================= */
         .hero-section {
             position: relative;
             padding: 3rem 0 2rem;
@@ -278,7 +279,7 @@
             transform: translateY(-3px);
         }
 
-        /* ===== صورة الهيرو ===== */
+        /* ===== HERO IMAGE ===== */
         .hero-image {
             display: flex;
             justify-content: center;
@@ -355,6 +356,16 @@
             background: rgba(34, 197, 94, 0.06);
             color: var(--anuta-green);
             border-color: rgba(34, 197, 94, 0.08);
+        }
+
+        .image-card .security-badge {
+            margin-top: 1rem;
+            padding: 0.4rem 1rem;
+            background: rgba(232, 184, 75, 0.05);
+            border-radius: 2rem;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            border: 1px solid rgba(232, 184, 75, 0.06);
         }
 
         /* ======================= STATS BAR ======================= */
@@ -434,7 +445,7 @@
             font-size: 0.95rem;
         }
 
-        /* ======================= ABOUT GRID (عرض) ======================= */
+        /* ======================= ABOUT GRID ======================= */
         .about-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -911,6 +922,114 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ======================= TESTIMONIALS ======================= */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .testimonial-card {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(232, 184, 75, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-card .stars {
+            color: var(--anuta-gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .testimonial-card .text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card .name {
+            color: #FFF;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card .role {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        .testimonial-card .icon-quote {
+            color: var(--anuta-gold);
+            font-size: 2rem;
+            opacity: 0.2;
+            margin-bottom: -0.5rem;
+        }
+
+        /* ======================= PRIVACY POLICY ======================= */
+        .privacy-section {
+            background: var(--anuta-card);
+            border: 1px solid var(--anuta-border);
+            border-radius: var(--radius);
+            padding: 2rem;
+        }
+
+        .privacy-section .privacy-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-section .privacy-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-section .privacy-item h3 {
+            color: var(--anuta-gold);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .privacy-section .privacy-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.9;
+        }
+
+        .privacy-section .privacy-item p strong {
+            color: #FFF;
+        }
+
+        .privacy-section .privacy-item a {
+            color: var(--anuta-gold);
+            text-decoration: none;
+        }
+        .privacy-section .privacy-item a:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-section .privacy-footer {
+            background: rgba(232, 184, 75, 0.04);
+            border-right: 4px solid var(--anuta-gold);
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .privacy-section .privacy-footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
         /* ======================= CTA ======================= */
         .cta-anuta {
             text-align: center;
@@ -987,6 +1106,137 @@
 
         .footer-bottom a { color: var(--anuta-gold); text-decoration: none; }
 
+        /* ======================= COOKIES CONSENT ======================= */
+        #cookiesConsent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 26, 0.98);
+            backdrop-filter: blur(16px);
+            border-top: 2px solid var(--anuta-gold);
+            padding: 1rem 1.5rem;
+            z-index: 9999;
+            display: none;
+            text-align: center;
+        }
+
+        #cookiesConsent p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #cookiesConsent p i {
+            color: var(--anuta-gold);
+        }
+
+        #cookiesConsent .cookies-actions {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #cookiesConsent .cookies-accept {
+            background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-gold-dark));
+            color: #0A0A1A;
+            padding: 0.4rem 1.8rem;
+            border: none;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        #cookiesConsent .cookies-accept:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(232, 184, 75, 0.3);
+        }
+
+        #cookiesConsent .cookies-privacy {
+            background: transparent;
+            color: var(--anuta-gold);
+            padding: 0.4rem 1.8rem;
+            border: 2px solid var(--anuta-gold);
+            border-radius: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        #cookiesConsent .cookies-privacy:hover {
+            background: var(--anuta-gold);
+            color: #0A0A1A;
+        }
+
+        /* ======================= BACK TO TOP ======================= */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--anuta-gold), var(--anuta-gold-dark));
+            color: #0A0A1A;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(232, 184, 75, 0.3);
+            display: none;
+            z-index: 999;
+            transition: var(--transition);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(232, 184, 75, 0.4);
+        }
+
+        /* ======================= LIVE CHAT ======================= */
+        .live-chat-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: linear-gradient(135deg, #0084FF, #00C6FF);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 132, 255, 0.25);
+            z-index: 998;
+            transition: var(--transition);
+            animation: pulseChat 2s ease-in-out infinite;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .live-chat-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 132, 255, 0.35);
+        }
+
+        @keyframes pulseChat {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(0, 132, 255, 0.2); }
+            50% { transform: scale(1.05); box-shadow: 0 4px 30px rgba(0, 132, 255, 0.35); }
+        }
+
         /* ======================= RESPONSIVE ======================= */
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
@@ -1040,6 +1290,25 @@
             .categories-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #backToTop {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+
+            .live-chat-btn {
+                bottom: 80px;
+                right: 20px;
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1061,6 +1330,9 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* ======================= UTILITY ======================= */
@@ -1073,456 +1345,479 @@
         .gap-1 { gap: 1rem; }
         .flex-wrap { flex-wrap: wrap; }
         .flex-center { display: flex; align-items: center; justify-content: center; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
     </style>
 </head>
 <body>
 
-<!-- ======================= HEADER ======================= -->
-<header id="mainHeader">
+    <!-- ======================= HEADER ======================= -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">⚡</div>
+                    <div>
+                        <span class="logo-text">Cash <span>Faster</span></span>
+                        <span class="logo-sub">تمويل استهلاكي سريع وآمن</span>
+                    </div>
+                </a>
+                <div class="header-actions">
+                    <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-header">
+                        <i class="fas fa-pen"></i> قدم طلبك
+                    </a>
+                    <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-header-outline">
+                        <i class="fas fa-search"></i> تتبع طلبك
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================= HERO SECTION ======================= -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge">
+                        <i class="fas fa-check-circle"></i>
+                        مرخص من هيئة الرقابة المالية
+                    </div>
+                    <h1>
+                        تمويل استهلاكي<br>
+                        <span class="highlight-gold">سريع وآمن</span>
+                        <span style="color: var(--text-muted); font-weight: 300; font-size: 0.5em;">|</span>
+                        <span class="highlight-blue">بدون رسوم</span>
+                    </h1>
+                    <p>
+                        احصل على تمويل يصل إلى <strong class="highlight-gold">٢٠٠,٠٠٠ ج.م</strong> بدون أي رسوم إدارية مسبقة.
+                        أقساط مرنة تناسب ميزانيتك، وصرف فوري عبر محفظتك الإلكترونية.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-primary-hero">
+                            <i class="fas fa-bolt"></i> ابدأ الآن
+                        </a>
+                        <a href="#pricing" class="btn-secondary-hero">
+                            <i class="fas fa-table"></i> جدول الأقساط
+                        </a>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <span style="font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem;">
+                            <i class="fas fa-lock" style="color: var(--anuta-gold);"></i> تشفير 256-bit
+                        </span>
+                        <span style="font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem;">
+                            <i class="fas fa-shield-alt" style="color: var(--anuta-green);"></i> بياناتك آمنة
+                        </span>
+                        <span style="font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem;">
+                            <i class="fas fa-check-circle" style="color: var(--anuta-blue);"></i> مرخص
+                        </span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-card">
+                        <div class="big-icon">⚡</div>
+                        <h3>Cash Faster</h3>
+                        <p>تمويل سريع وآمن بكل ثقة</p>
+                        <div class="tags">
+                            <span class="gold-tag"><i class="fas fa-lock"></i> آمن</span>
+                            <span class="blue-tag"><i class="fas fa-bolt"></i> سريع</span>
+                            <span class="green-tag"><i class="fas fa-check-circle"></i> موثوق</span>
+                        </div>
+                        <div style="margin-top: 1rem; width: 100%; max-width: 200px; height: 4px; background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-blue)); border-radius: 4px;"></div>
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i> تشفير 256-bit | مرخص من FRA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= STATS BAR ======================= -->
     <div class="container">
-        <div class="header-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">⚡</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="number">+500</div>
+                <div class="label">عميل مموّل</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">200K</div>
+                <div class="label">حد أقصى للتمويل</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">60</div>
+                <div class="label">شهر مدة السداد</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">✅</div>
+                <div class="label">مرخص من الرقابة المالية</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= ABOUT SECTION ======================= -->
+    <section class="section-anuta" id="about">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-info-circle"></i> من نحن</span>
+                <h2>نبذة عن <span class="text-gold">كاش فاستر</span></h2>
+                <p class="desc">نقدم حلول تمويلية مبتكرة وسريعة تناسب احتياجاتك</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>من نحن <span class="highlight-gold">كاش فاستر</span></h2>
+                    <p>
+                        <strong>كاش فاستر</strong> هي شركة رائدة في مجال التمويل الاستهلاكي ومتناهي الصغر. منذ انطلاقنا، أعدنا تعريف مفهوم التمويل من خلال دمج التكنولوجيا المتقدمة، ونماذج الائتمان المعتمدة على تحليل البيانات، وفهم عميق لاحتياجات السوق المحلي.
+                    </p>
+                    <p>
+                        نهدف إلى تمكين الأفراد وأصحاب المشاريع الصغيرة من تحقيق أهدافهم المالية عبر حلول تمويلية سريعة ومرنة وسهلة الوصول، مدعومة بتجربة رقمية سلسة ومتكاملة.
+                    </p>
+                    <div class="highlight-box">
+                        <p>🔹 ترخيص رقم <strong style="color: var(--anuta-gold);">(24)</strong> من الهيئة العامة للرقابة المالية (FRA) لعام 2023</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <span style="background: rgba(232, 184, 75, 0.06); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-gold); border: 1px solid rgba(232, 184, 75, 0.06);">
+                            <i class="fas fa-check-circle"></i> شفافية تامة
+                        </span>
+                        <span style="background: rgba(0, 217, 255, 0.04); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-blue); border: 1px solid rgba(0, 217, 255, 0.06);">
+                            <i class="fas fa-bolt"></i> صرف فوري
+                        </span>
+                        <span style="background: rgba(34, 197, 94, 0.04); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-green); border: 1px solid rgba(34, 197, 94, 0.06);">
+                            <i class="fas fa-shield-alt"></i> بدون رسوم مسبقة
+                        </span>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="about-stat-card">
+                        <span class="icon">👥</span>
+                        <div class="number">+500</div>
+                        <div class="label">عميل مموّل</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <span class="icon">💰</span>
+                        <div class="number">200K</div>
+                        <div class="label">حد أقصى للتمويل</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <span class="icon">📅</span>
+                        <div class="number">60</div>
+                        <div class="label">شهر مدة السداد</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <span class="icon">✅</span>
+                        <div class="number">مرخص</div>
+                        <div class="label">من الرقابة المالية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= SERVICES ======================= -->
+    <section class="section-anuta" id="services">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-star"></i> ماذا نقدم</span>
+                <h2>خدماتنا التمويلية</h2>
+                <p class="desc">حلول مرنة تناسب جميع الاحتياجات المالية</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card-anuta">
+                    <span class="card-icon">⚡</span>
+                    <h3>تمويل سريع</h3>
+                    <p>صرف فوري بعد الموافقة خلال دقائق مباشرة إلى محفظتك الإلكترونية</p>
+                    <span class="card-tag">فوري</span>
+                </div>
+                <div class="card-anuta">
+                    <span class="card-icon">💰</span>
+                    <h3>بدون رسوم مسبقة</h3>
+                    <p>لا نطلب أي مبالغ قبل الصرف نهائياً، جميع الرسوم مدمجة في الأقساط</p>
+                    <span class="card-tag">شفاف</span>
+                </div>
+                <div class="card-anuta">
+                    <span class="card-icon">📊</span>
+                    <h3>أقساط مرنة</h3>
+                    <p>خطط سداد من 12 إلى 60 شهراً تناسب جميع الميزانيات والدخول</p>
+                    <span class="card-tag">مرن</span>
+                </div>
+                <div class="card-anuta">
+                    <span class="card-icon">🛡️</span>
+                    <h3>ضمان عائلي</h3>
+                    <p>حماية قانونية للطرفين من خلال ضامن من الدرجة الأولى</p>
+                    <span class="card-tag">آمن</span>
+                </div>
+                <div class="card-anuta">
+                    <span class="card-icon">💵</span>
+                    <h3>مبالغ كبيرة</h3>
+                    <p>من 30,000 حتى 200,000 جنيه مصري حسب احتياجك وقدرتك</p>
+                    <span class="card-tag">مرن</span>
+                </div>
+                <div class="card-anuta">
+                    <span class="card-icon">👥</span>
+                    <h3>شفافية تامة</h3>
+                    <p>عقود واضحة وصريحة بدون أي بنود خفية أو مفاجآت</p>
+                    <span class="card-tag">موثوق</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CATEGORIES ======================= -->
+    <section class="section-anuta" id="categories">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-users"></i> من يمكنه التقديم</span>
+                <h2>الفئات المدعومة</h2>
+                <p class="desc">برامج ائتمانية تناسب معظم القطاعات</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="cat-item"><span class="cat-icon">🏛️</span><span>موظفو الحكومة والخاص</span></div>
+                <div class="cat-item"><span class="cat-icon">🏢</span><span>موظفو الشركات</span></div>
+                <div class="cat-item"><span class="cat-icon">👴</span><span>أصحاب المعاشات</span></div>
+                <div class="cat-item"><span class="cat-icon">🛍️</span><span>أصحاب المشاريع الناشئة</span></div>
+                <div class="cat-item"><span class="cat-icon">👩</span><span>ربات المنازل (بضامن)</span></div>
+                <div class="cat-item"><span class="cat-icon">🛠️</span><span>أصحاب الأعمال الحرة</span></div>
+            </div>
+
+            <div class="notice-anuta warning">
+                <div class="notice-icon">⚠️</div>
                 <div>
-                    <span class="logo-text">Cash <span>Faster</span></span>
-                    <span class="logo-sub">تمويل استهلاكي سريع وآمن</span>
+                    <h4>تنويه هام</h4>
+                    <p>نعتذر عن تقديم الخدمة للسادة المحامين، رجال الشرطة، والقوات المسلحة.</p>
                 </div>
-            </a>
-            <div class="header-actions">
-                <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-header">
-                    <i class="fas fa-pen"></i> قدم طلبك
-                </a>
-                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-header-outline">
-                    <i class="fas fa-search"></i> تتبع طلبك
-                </a>
             </div>
         </div>
-    </div>
-</header>
+    </section>
 
-<!-- ======================= HERO SECTION ======================= -->
-<section class="hero-section">
-    <div class="container">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="badge">
-                    <i class="fas fa-check-circle"></i>
-                    مرخص من هيئة الرقابة المالية
+    <!-- ======================= PRICING ======================= -->
+    <section class="section-anuta" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-calculator"></i> خطط التمويل</span>
+                <h2>جدول الأقساط الكامل</h2>
+                <p class="desc">اختر المبلغ المناسب وتعرف على القسط الشهري وإجمالي السداد</p>
+            </div>
+
+            <div class="pricing-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>المبلغ</th>
+                            <th>المدة</th>
+                            <th>القسط الشهري</th>
+                            <th>إجمالي السداد</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="category-row"><td colspan="4">💚 التمويل الاقتصادي</td></tr>
+                        <tr><td>30,000 ج.م</td><td>12 شهر</td><td>3,325 ج.م</td><td>39,900 ج.م</td></tr>
+                        <tr><td>35,000 ج.م</td><td>12 شهر</td><td>3,875 ج.م</td><td>46,500 ج.م</td></tr>
+                        <tr><td>40,000 ج.م</td><td>18 شهر</td><td>2,965 ج.م</td><td>53,370 ج.م</td></tr>
+                        <tr><td>45,000 ج.م</td><td>18 شهر</td><td>3,325 ج.م</td><td>59,850 ج.م</td></tr>
+
+                        <tr class="category-row"><td colspan="4">💙 التمويل الأساسي</td></tr>
+                        <tr><td>50,000 ج.م</td><td>24 شهر</td><td>2,725 ج.م</td><td>65,400 ج.م</td></tr>
+                        <tr><td>55,000 ج.م</td><td>24 شهر</td><td>3,075 ج.م</td><td>73,800 ج.م</td></tr>
+                        <tr><td>60,000 ج.م</td><td>24 شهر</td><td>3,085 ج.م</td><td>74,040 ج.م</td></tr>
+                        <tr><td>65,000 ج.م</td><td>26 شهر</td><td>3,325 ج.م</td><td>86,450 ج.م</td></tr>
+                        <tr><td>70,000 ج.م</td><td>26 شهر</td><td>3,585 ج.م</td><td>93,210 ج.م</td></tr>
+                        <tr><td>75,000 ج.م</td><td>26 شهر</td><td>3,845 ج.م</td><td>99,970 ج.م</td></tr>
+
+                        <tr class="category-row"><td colspan="4">💛 التمويل المتوسط</td></tr>
+                        <tr><td>80,000 ج.م</td><td>30 شهر</td><td>3,550 ج.م</td><td>106,500 ج.م</td></tr>
+                        <tr><td>85,000 ج.م</td><td>30 شهر</td><td>3,775 ج.م</td><td>113,250 ج.م</td></tr>
+                        <tr><td>90,000 ج.م</td><td>30 شهر</td><td>3,990 ج.م</td><td>119,700 ج.م</td></tr>
+                        <tr><td>95,000 ج.م</td><td>30 شهر</td><td>4,220 ج.م</td><td>126,600 ج.م</td></tr>
+                        <tr><td>100,000 ج.م</td><td>32 شهر</td><td>4,157 ج.م</td><td>133,024 ج.م</td></tr>
+                        <tr><td>105,000 ج.م</td><td>32 شهر</td><td>4,375 ج.م</td><td>140,000 ج.م</td></tr>
+                        <tr><td>110,000 ج.م</td><td>32 شهر</td><td>4,580 ج.م</td><td>146,560 ج.م</td></tr>
+
+                        <tr class="category-row"><td colspan="4">🧡 التمويل المتقدم</td></tr>
+                        <tr><td>115,000 ج.م</td><td>38 شهر</td><td>4,075 ج.م</td><td>154,850 ج.م</td></tr>
+                        <tr><td>120,000 ج.م</td><td>38 شهر</td><td>4,235 ج.م</td><td>160,930 ج.م</td></tr>
+                        <tr><td>125,000 ج.م</td><td>38 شهر</td><td>4,035 ج.م</td><td>153,330 ج.م</td></tr>
+                        <tr><td>130,000 ج.م</td><td>42 شهر</td><td>4,400 ج.م</td><td>184,800 ج.م</td></tr>
+                        <tr><td>135,000 ج.م</td><td>42 شهر</td><td>4,305 ج.م</td><td>180,810 ج.م</td></tr>
+                        <tr><td>140,000 ج.م</td><td>42 شهر</td><td>4,495 ج.م</td><td>188,790 ج.م</td></tr>
+
+                        <tr class="category-row"><td colspan="4">🏆 التمويل الذهبي</td></tr>
+                        <tr><td>145,000 ج.م</td><td>48 شهر</td><td>4,075 ج.م</td><td>195,600 ج.م</td></tr>
+                        <tr><td>150,000 ج.م</td><td>48 شهر</td><td>4,205 ج.م</td><td>201,840 ج.م</td></tr>
+                        <tr><td>155,000 ج.م</td><td>48 شهر</td><td>4,315 ج.م</td><td>207,120 ج.م</td></tr>
+                        <tr><td>160,000 ج.م</td><td>48 شهر</td><td>4,435 ج.م</td><td>212,880 ج.م</td></tr>
+                        <tr><td>165,000 ج.م</td><td>48 شهر</td><td>4,615 ج.م</td><td>221,520 ج.م</td></tr>
+                        <tr><td>170,000 ج.م</td><td>48 شهر</td><td>4,725 ج.م</td><td>226,800 ج.م</td></tr>
+                        <tr><td>175,000 ج.م</td><td>48 شهر</td><td>4,848 ج.م</td><td>232,704 ج.م</td></tr>
+                        <tr><td>180,000 ج.م</td><td>54 شهر</td><td>4,435 ج.م</td><td>239,490 ج.م</td></tr>
+                        <tr><td>185,000 ج.م</td><td>54 شهر</td><td>4,557 ج.م</td><td>246,078 ج.م</td></tr>
+                        <tr><td>190,000 ج.م</td><td>60 شهر</td><td>4,215 ج.م</td><td>252,900 ج.م</td></tr>
+                        <tr><td>195,000 ج.م</td><td>60 شهر</td><td>4,325 ج.م</td><td>259,500 ج.م</td></tr>
+                        <tr><td>200,000 ج.م</td><td>60 شهر</td><td>4,440 ج.م</td><td>266,400 ج.م</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-note">
+                <i class="fas fa-lock"></i> جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= PARTNERS ======================= -->
+    <section class="section-anuta" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-handshake"></i> شركاؤنا</span>
+                <h2>نعمل مع أكبر الشركات الموثوقة</h2>
+                <p class="desc">نتعاون مع شركاء موثوقين لضمان أفضل خدمة لك</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <span class="partner-icon">🏦</span>
+                    <span class="partner-name">بنك مصر</span>
                 </div>
-                <h1>
-                    تمويل استهلاكي<br>
-                    <span class="highlight-gold">سريع وآمن</span>
-                    <span style="color: var(--text-muted); font-weight: 300; font-size: 0.5em;">|</span>
-                    <span class="highlight-blue">بدون رسوم</span>
-                </h1>
-                <p>
-                    احصل على تمويل يصل إلى <strong class="highlight-gold">٢٠٠,٠٠٠ ج.م</strong> بدون أي رسوم إدارية مسبقة.
-                    أقساط مرنة تناسب ميزانيتك، وصرف فوري عبر محفظتك الإلكترونية.
+                <div class="partner-item">
+                    <span class="partner-icon">📱</span>
+                    <span class="partner-name">فوري</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-icon">🏍️</span>
+                    <span class="partner-name">مجموعة الأمير</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-icon">🚗</span>
+                    <span class="partner-name">TVS مصر</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-icon">🛠️</span>
+                    <span class="partner-name">بولمان</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-icon">💡</span>
+                    <span class="partner-name">بلو آي في</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-icon">📊</span>
+                    <span class="partner-name">سمارت للخدمات الرقمية</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-icon">💳</span>
+                    <span class="partner-name">كريديتير للتكنولوجيا المالية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= REQUIREMENTS ======================= -->
+    <section class="section-anuta" id="requirements">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-clipboard-list"></i> المستندات المطلوبة</span>
+                <h2>شروط التمويل</h2>
+                <p class="desc">كل ما تحتاجه للحصول على تمويلك بكل سهولة</p>
+            </div>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <span style="font-size: 2rem;">🪪</span>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: 0;">بطاقة رقم قومي سارية</h3>
+                            <p style="font-size: 0.8rem;">يشترط تقديم هوية شخصية سارية المفعول</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                        <li>صورة واضحة للبطاقة من الوجهين</li>
+                        <li>البطاقة غير منتهية الصلاحية</li>
+                        <li>صورة سيلفي مع البطاقة</li>
+                    </div>
+                </div>
+                <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <span style="font-size: 2rem;">💰</span>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: 0;">دخل شهري ثابت</h3>
+                            <p style="font-size: 0.8rem;">لا يقل عن 5,000 جنيه مصري</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                        <li>موظفو الحكومة والخاص</li>
+                        <li>أصحاب المهن الحرة</li>
+                        <li>ربات المنازل (بضامن)</li>
+                    </div>
+                </div>
+                <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <span style="font-size: 2rem;">👨‍👩‍👧</span>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: 0;">ضامن من الدرجة الأولى</h3>
+                            <p style="font-size: 0.8rem;">أحد الأقارب للتوثيق القانوني</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                        <li>للرجال: الأب، الأم، الأخ، الزوجة</li>
+                        <li>للسيدات: الأب، الأم، الأخت، الزوج</li>
+                        <li>يجب توافر ضامن من الدرجة الأولى</li>
+                    </div>
+                </div>
+                <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <span style="font-size: 2rem;">📱</span>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: 0;">محفظة إلكترونية نشطة</h3>
+                            <p style="font-size: 0.8rem;">اتصالات كاش</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
+                        <li>المحفظة مسجلة بنفس الرقم القومي</li>
+                        <li>المحفظة مفعلة وجاهزة للاستقبال</li>
+                        <li>الصرف فقط على المحفظة المسجلة</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice-anuta success">
+                <div class="notice-icon">✅</div>
+                <div>
+                    <h4>ميزتنا الأساسية</h4>
+                    <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة. نضمن لك الشفافية التامة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= MANUAL UPLOAD ======================= -->
+    <section class="section-anuta" id="manual-upload">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-headset"></i> دعم يدوي</span>
+                <h2>رفع الطلب يدوياً</h2>
+                <p class="desc">واجهتك مشكلة؟ فريق الدعم جاهز لمساعدتك</p>
+            </div>
+
+            <div class="manual-anuta">
+                <div class="manual-top">
+                    <h3><i class="fas fa-file-alt"></i> استمارة التسجيل اليدوي</h3>
+                    <div class="actions-anuta">
+                        <button class="copy-btn-anuta" id="copyFormBtn"><i class="fas fa-copy"></i> نسخ الاستمارة</button>
+                        <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn-anuta"><i class="fab fa-facebook-messenger"></i> أرسل عبر ماسنجر</a>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:0.8rem;">
+                    <i class="fas fa-info-circle" style="color: var(--anuta-gold);"></i>
+                    انسخ النص أدناه، ثم أرسله عبر ماسنجر إلى صفحة الدعم الرسمية.
                 </p>
-                <div class="hero-buttons">
-                    <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-primary-hero">
-                        <i class="fas fa-bolt"></i> ابدأ الآن
-                    </a>
-                    <a href="#pricing" class="btn-secondary-hero">
-                        <i class="fas fa-table"></i> جدول الأقساط
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-card">
-                    <div class="big-icon">⚡</div>
-                    <h3>Cash Faster</h3>
-                    <p>تمويل سريع وآمن بكل ثقة</p>
-                    <div class="tags">
-                        <span class="gold-tag"><i class="fas fa-lock"></i> آمن</span>
-                        <span class="blue-tag"><i class="fas fa-bolt"></i> سريع</span>
-                        <span class="green-tag"><i class="fas fa-check-circle"></i> موثوق</span>
-                    </div>
-                    <div style="margin-top: 1rem; width: 100%; max-width: 200px; height: 4px; background: linear-gradient(90deg, var(--anuta-gold), var(--anuta-blue)); border-radius: 4px;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======================= STATS BAR ======================= -->
-<div class="container">
-    <div class="stats-bar">
-        <div class="stat-item">
-            <div class="number">+500</div>
-            <div class="label">عميل مموّل</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">200K</div>
-            <div class="label">حد أقصى للتمويل</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">60</div>
-            <div class="label">شهر مدة السداد</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">✅</div>
-            <div class="label">مرخص من الرقابة المالية</div>
-        </div>
-    </div>
-</div>
-
-<!-- ======================= ABOUT SECTION (عرض) ======================= -->
-<section class="section-anuta" id="about">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-info-circle"></i> من نحن</span>
-            <h2>نبذة عن <span class="text-gold">كاش فاستر</span></h2>
-            <p class="desc">نقدم حلول تمويلية مبتكرة وسريعة تناسب احتياجاتك</p>
-        </div>
-
-        <div class="about-grid">
-            <div class="about-text">
-                <h2>من نحن <span class="highlight-gold">كاش فاستر</span></h2>
-                <p>
-                    <strong>كاش فاستر</strong> هي شركة رائدة في مجال التمويل الاستهلاكي ومتناهي الصغر. منذ انطلاقنا، أعدنا تعريف مفهوم التمويل من خلال دمج التكنولوجيا المتقدمة، ونماذج الائتمان المعتمدة على تحليل البيانات، وفهم عميق لاحتياجات السوق المحلي.
-                </p>
-                <p>
-                    نهدف إلى تمكين الأفراد وأصحاب المشاريع الصغيرة من تحقيق أهدافهم المالية عبر حلول تمويلية سريعة ومرنة وسهلة الوصول، مدعومة بتجربة رقمية سلسة ومتكاملة.
-                </p>
-                <div class="highlight-box">
-                    <p>🔹 ترخيص رقم <strong style="color: var(--anuta-gold);">(24)</strong> من الهيئة العامة للرقابة المالية (FRA) لعام 2023</p>
-                </div>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                    <span style="background: rgba(232, 184, 75, 0.06); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-gold); border: 1px solid rgba(232, 184, 75, 0.06);">
-                        <i class="fas fa-check-circle"></i> شفافية تامة
-                    </span>
-                    <span style="background: rgba(0, 217, 255, 0.04); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-blue); border: 1px solid rgba(0, 217, 255, 0.06);">
-                        <i class="fas fa-bolt"></i> صرف فوري
-                    </span>
-                    <span style="background: rgba(34, 197, 94, 0.04); padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.75rem; color: var(--anuta-green); border: 1px solid rgba(34, 197, 94, 0.06);">
-                        <i class="fas fa-shield-alt"></i> بدون رسوم مسبقة
-                    </span>
-                </div>
-            </div>
-            <div class="about-stats">
-                <div class="about-stat-card">
-                    <span class="icon">👥</span>
-                    <div class="number">+500</div>
-                    <div class="label">عميل مموّل</div>
-                </div>
-                <div class="about-stat-card">
-                    <span class="icon">💰</span>
-                    <div class="number">200K</div>
-                    <div class="label">حد أقصى للتمويل</div>
-                </div>
-                <div class="about-stat-card">
-                    <span class="icon">📅</span>
-                    <div class="number">60</div>
-                    <div class="label">شهر مدة السداد</div>
-                </div>
-                <div class="about-stat-card">
-                    <span class="icon">✅</span>
-                    <div class="number">مرخص</div>
-                    <div class="label">من الرقابة المالية</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======================= SERVICES ======================= -->
-<section class="section-anuta" id="services">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-star"></i> ماذا نقدم</span>
-            <h2>خدماتنا التمويلية</h2>
-            <p class="desc">حلول مرنة تناسب جميع الاحتياجات المالية</p>
-        </div>
-
-        <div class="cards-grid">
-            <div class="card-anuta">
-                <span class="card-icon">⚡</span>
-                <h3>تمويل سريع</h3>
-                <p>صرف فوري بعد الموافقة خلال دقائق مباشرة إلى محفظتك الإلكترونية</p>
-                <span class="card-tag">فوري</span>
-            </div>
-            <div class="card-anuta">
-                <span class="card-icon">💰</span>
-                <h3>بدون رسوم مسبقة</h3>
-                <p>لا نطلب أي مبالغ قبل الصرف نهائياً، جميع الرسوم مدمجة في الأقساط</p>
-                <span class="card-tag">شفاف</span>
-            </div>
-            <div class="card-anuta">
-                <span class="card-icon">📊</span>
-                <h3>أقساط مرنة</h3>
-                <p>خطط سداد من 12 إلى 60 شهراً تناسب جميع الميزانيات والدخول</p>
-                <span class="card-tag">مرن</span>
-            </div>
-            <div class="card-anuta">
-                <span class="card-icon">🛡️</span>
-                <h3>ضمان عائلي</h3>
-                <p>حماية قانونية للطرفين من خلال ضامن من الدرجة الأولى</p>
-                <span class="card-tag">آمن</span>
-            </div>
-            <div class="card-anuta">
-                <span class="card-icon">💵</span>
-                <h3>مبالغ كبيرة</h3>
-                <p>من 30,000 حتى 200,000 جنيه مصري حسب احتياجك وقدرتك</p>
-                <span class="card-tag">مرن</span>
-            </div>
-            <div class="card-anuta">
-                <span class="card-icon">👥</span>
-                <h3>شفافية تامة</h3>
-                <p>عقود واضحة وصريحة بدون أي بنود خفية أو مفاجآت</p>
-                <span class="card-tag">موثوق</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======================= CATEGORIES ======================= -->
-<section class="section-anuta" id="categories">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-users"></i> من يمكنه التقديم</span>
-            <h2>الفئات المدعومة</h2>
-            <p class="desc">برامج ائتمانية تناسب معظم القطاعات</p>
-        </div>
-
-        <div class="categories-grid">
-            <div class="cat-item"><span class="cat-icon">🏛️</span><span>موظفو الحكومة والخاص</span></div>
-            <div class="cat-item"><span class="cat-icon">🏢</span><span>موظفو الشركات</span></div>
-            <div class="cat-item"><span class="cat-icon">👴</span><span>أصحاب المعاشات</span></div>
-            <div class="cat-item"><span class="cat-icon">🛍️</span><span>أصحاب المشاريع الناشئة</span></div>
-            <div class="cat-item"><span class="cat-icon">👩</span><span>ربات المنازل (بضامن)</span></div>
-            <div class="cat-item"><span class="cat-icon">🛠️</span><span>أصحاب الأعمال الحرة</span></div>
-        </div>
-
-        <div class="notice-anuta warning">
-            <div class="notice-icon">⚠️</div>
-            <div>
-                <h4>تنويه هام</h4>
-                <p>نعتذر عن تقديم الخدمة للسادة المحامين، رجال الشرطة، والقوات المسلحة.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======================= PRICING ======================= -->
-<section class="section-anuta" id="pricing">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-calculator"></i> خطط التمويل</span>
-            <h2>جدول الأقساط الكامل</h2>
-            <p class="desc">اختر المبلغ المناسب وتعرف على القسط الشهري وإجمالي السداد</p>
-        </div>
-
-        <div class="pricing-wrapper">
-            <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>المبلغ</th>
-                        <th>المدة</th>
-                        <th>القسط الشهري</th>
-                        <th>إجمالي السداد</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="category-row"><td colspan="4">💚 التمويل الاقتصادي</td></tr>
-                    <tr><td>30,000 ج.م</td><td>12 شهر</td><td>3,325 ج.م</td><td>39,900 ج.م</td></tr>
-                    <tr><td>35,000 ج.م</td><td>12 شهر</td><td>3,875 ج.م</td><td>46,500 ج.م</td></tr>
-                    <tr><td>40,000 ج.م</td><td>18 شهر</td><td>2,965 ج.م</td><td>53,370 ج.م</td></tr>
-                    <tr><td>45,000 ج.م</td><td>18 شهر</td><td>3,325 ج.م</td><td>59,850 ج.م</td></tr>
-
-                    <tr class="category-row"><td colspan="4">💙 التمويل الأساسي</td></tr>
-                    <tr><td>50,000 ج.م</td><td>24 شهر</td><td>2,725 ج.م</td><td>65,400 ج.م</td></tr>
-                    <tr><td>55,000 ج.م</td><td>24 شهر</td><td>3,075 ج.م</td><td>73,800 ج.م</td></tr>
-                    <tr><td>60,000 ج.م</td><td>24 شهر</td><td>3,085 ج.م</td><td>74,040 ج.م</td></tr>
-                    <tr><td>65,000 ج.م</td><td>26 شهر</td><td>3,325 ج.م</td><td>86,450 ج.م</td></tr>
-                    <tr><td>70,000 ج.م</td><td>26 شهر</td><td>3,585 ج.م</td><td>93,210 ج.م</td></tr>
-                    <tr><td>75,000 ج.م</td><td>26 شهر</td><td>3,845 ج.م</td><td>99,970 ج.م</td></tr>
-
-                    <tr class="category-row"><td colspan="4">💛 التمويل المتوسط</td></tr>
-                    <tr><td>80,000 ج.م</td><td>30 شهر</td><td>3,550 ج.م</td><td>106,500 ج.م</td></tr>
-                    <tr><td>85,000 ج.م</td><td>30 شهر</td><td>3,775 ج.م</td><td>113,250 ج.م</td></tr>
-                    <tr><td>90,000 ج.م</td><td>30 شهر</td><td>3,990 ج.م</td><td>119,700 ج.م</td></tr>
-                    <tr><td>95,000 ج.م</td><td>30 شهر</td><td>4,220 ج.م</td><td>126,600 ج.م</td></tr>
-                    <tr><td>100,000 ج.م</td><td>32 شهر</td><td>4,157 ج.م</td><td>133,024 ج.م</td></tr>
-                    <tr><td>105,000 ج.م</td><td>32 شهر</td><td>4,375 ج.م</td><td>140,000 ج.م</td></tr>
-                    <tr><td>110,000 ج.م</td><td>32 شهر</td><td>4,580 ج.م</td><td>146,560 ج.م</td></tr>
-
-                    <tr class="category-row"><td colspan="4">🧡 التمويل المتقدم</td></tr>
-                    <tr><td>115,000 ج.م</td><td>38 شهر</td><td>4,075 ج.م</td><td>154,850 ج.م</td></tr>
-                    <tr><td>120,000 ج.م</td><td>38 شهر</td><td>4,235 ج.م</td><td>160,930 ج.م</td></tr>
-                    <tr><td>125,000 ج.م</td><td>38 شهر</td><td>4,035 ج.م</td><td>153,330 ج.م</td></tr>
-                    <tr><td>130,000 ج.م</td><td>42 شهر</td><td>4,400 ج.م</td><td>184,800 ج.م</td></tr>
-                    <tr><td>135,000 ج.م</td><td>42 شهر</td><td>4,305 ج.م</td><td>180,810 ج.م</td></tr>
-                    <tr><td>140,000 ج.م</td><td>42 شهر</td><td>4,495 ج.م</td><td>188,790 ج.م</td></tr>
-
-                    <tr class="category-row"><td colspan="4">🏆 التمويل الذهبي</td></tr>
-                    <tr><td>145,000 ج.م</td><td>48 شهر</td><td>4,075 ج.م</td><td>195,600 ج.م</td></tr>
-                    <tr><td>150,000 ج.م</td><td>48 شهر</td><td>4,205 ج.م</td><td>201,840 ج.م</td></tr>
-                    <tr><td>155,000 ج.م</td><td>48 شهر</td><td>4,315 ج.م</td><td>207,120 ج.م</td></tr>
-                    <tr><td>160,000 ج.م</td><td>48 شهر</td><td>4,435 ج.م</td><td>212,880 ج.م</td></tr>
-                    <tr><td>165,000 ج.م</td><td>48 شهر</td><td>4,615 ج.م</td><td>221,520 ج.م</td></tr>
-                    <tr><td>170,000 ج.م</td><td>48 شهر</td><td>4,725 ج.م</td><td>226,800 ج.م</td></tr>
-                    <tr><td>175,000 ج.م</td><td>48 شهر</td><td>4,848 ج.م</td><td>232,704 ج.م</td></tr>
-                    <tr><td>180,000 ج.م</td><td>54 شهر</td><td>4,435 ج.م</td><td>239,490 ج.م</td></tr>
-                    <tr><td>185,000 ج.م</td><td>54 شهر</td><td>4,557 ج.م</td><td>246,078 ج.م</td></tr>
-                    <tr><td>190,000 ج.م</td><td>60 شهر</td><td>4,215 ج.م</td><td>252,900 ج.م</td></tr>
-                    <tr><td>195,000 ج.م</td><td>60 شهر</td><td>4,325 ج.م</td><td>259,500 ج.م</td></tr>
-                    <tr><td>200,000 ج.م</td><td>60 شهر</td><td>4,440 ج.م</td><td>266,400 ج.م</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-note">
-            <i class="fas fa-lock"></i> جميع الأقساط شاملة الفوائد والرسوم الإدارية. التمويل يخضع لتقييم الائتمان.
-        </div>
-    </div>
-</section>
-
-<!-- ======================= PARTNERS ======================= -->
-<section class="section-anuta" id="partners">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-handshake"></i> شركاؤنا</span>
-            <h2>نعمل مع أكبر الشركات الموثوقة</h2>
-            <p class="desc">نتعاون مع شركاء موثوقين لضمان أفضل خدمة لك</p>
-        </div>
-
-        <div class="partners-grid">
-            <div class="partner-item">
-                <span class="partner-icon">🏦</span>
-                <span class="partner-name">بنك مصر</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">📱</span>
-                <span class="partner-name">فوري</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">🏍️</span>
-                <span class="partner-name">مجموعة الأمير</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">🚗</span>
-                <span class="partner-name">TVS مصر</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">🛠️</span>
-                <span class="partner-name">بولمان</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">💡</span>
-                <span class="partner-name">بلو آي في</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">📊</span>
-                <span class="partner-name">سمارت للخدمات الرقمية</span>
-            </div>
-            <div class="partner-item">
-                <span class="partner-icon">💳</span>
-                <span class="partner-name">كريدتير للتكنولوجيا المالية</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======================= REQUIREMENTS ======================= -->
-<section class="section-anuta" id="requirements">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-clipboard-list"></i> المستندات المطلوبة</span>
-            <h2>شروط التمويل</h2>
-            <p class="desc">كل ما تحتاجه للحصول على تمويلك بكل سهولة</p>
-        </div>
-
-        <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                    <span style="font-size: 2rem;">🪪</span>
-                    <div>
-                        <h3 style="font-size: 1rem; margin-bottom: 0;">بطاقة رقم قومي سارية</h3>
-                        <p style="font-size: 0.8rem;">يشترط تقديم هوية شخصية سارية المفعول</p>
-                    </div>
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
-                    <li>صورة واضحة للبطاقة من الوجهين</li>
-                    <li>البطاقة غير منتهية الصلاحية</li>
-                    <li>صورة سيلفي مع البطاقة</li>
-                </div>
-            </div>
-            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                    <span style="font-size: 2rem;">💰</span>
-                    <div>
-                        <h3 style="font-size: 1rem; margin-bottom: 0;">دخل شهري ثابت</h3>
-                        <p style="font-size: 0.8rem;">لا يقل عن 5,000 جنيه مصري</p>
-                    </div>
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
-                    <li>موظفو الحكومة والخاص</li>
-                    <li>أصحاب المهن الحرة</li>
-                    <li>ربات المنازل (بضامن)</li>
-                </div>
-            </div>
-            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                    <span style="font-size: 2rem;">👨‍👩‍👧</span>
-                    <div>
-                        <h3 style="font-size: 1rem; margin-bottom: 0;">ضامن من الدرجة الأولى</h3>
-                        <p style="font-size: 0.8rem;">أحد الأقارب للتوثيق القانوني</p>
-                    </div>
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
-                    <li>للرجال: الأب، الأم، الأخ، الزوجة</li>
-                    <li>للسيدات: الأب، الأم، الأخت، الزوج</li>
-                    <li>يجب توافر ضامن من الدرجة الأولى</li>
-                </div>
-            </div>
-            <div class="card-anuta" style="text-align: right; padding: 1.2rem;">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                    <span style="font-size: 2rem;">📱</span>
-                    <div>
-                        <h3 style="font-size: 1rem; margin-bottom: 0;">محفظة إلكترونية نشطة</h3>
-                        <p style="font-size: 0.8rem;">اتصالات كاش</p>
-                    </div>
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; padding-right: 3rem;">
-                    <li>المحفظة مسجلة بنفس الرقم القومي</li>
-                    <li>المحفظة مفعلة وجاهزة للاستقبال</li>
-                    <li>الصرف فقط على المحفظة المسجلة</li>
-                </div>
-            </div>
-        </div>
-
-        <div class="notice-anuta success">
-            <div class="notice-icon">✅</div>
-            <div>
-                <h4>ميزتنا الأساسية</h4>
-                <p>بدون أي رسوم إدارية مقدمة. المراجعة والصرف فورياً بعد الموافقة. نضمن لك الشفافية التامة.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======================= MANUAL UPLOAD ======================= -->
-<section class="section-anuta" id="manual-upload">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-headset"></i> دعم يدوي</span>
-            <h2>رفع الطلب يدوياً</h2>
-            <p class="desc">واجهتك مشكلة؟ فريق الدعم جاهز لمساعدتك</p>
-        </div>
-
-        <div class="manual-anuta">
-            <div class="manual-top">
-                <h3><i class="fas fa-file-alt"></i> استمارة التسجيل اليدوي</h3>
-                <div class="actions-anuta">
-                    <button class="copy-btn-anuta" id="copyFormBtn"><i class="fas fa-copy"></i> نسخ الاستمارة</button>
-                    <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="messenger-btn-anuta"><i class="fab fa-facebook-messenger"></i> أرسل عبر ماسنجر</a>
-                </div>
-            </div>
-            <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:0.8rem;">
-                <i class="fas fa-info-circle" style="color: var(--anuta-gold);"></i>
-                انسخ النص أدناه، ثم أرسله عبر ماسنجر إلى صفحة الدعم الرسمية.
-            </p>
-            <div class="form-terminal" id="manualFormText">
+                <div class="form-terminal" id="manualFormText">
 📋 استمارة طلب تمويل Cash Faster
 
 1️⃣ البيانات الشخصية:
@@ -1548,252 +1843,425 @@
 - رقم هاتف الضامن:
 
 🔐 بياناتك مشفرة بالكامل ولن تستخدم إلا لمراجعة طلب التمويل.
-            </div>
-            <div class="notice-anuta">
-                <div class="notice-icon">⚙️</div>
-                <div>
-                    <h4>بعد الإرسال</h4>
-                    <p>سيتواصل معك ممثل الدعم خلال 60 دقيقة لاستكمال الإجراءات وتوثيق الطلب.</p>
+                </div>
+                <div class="notice-anuta">
+                    <div class="notice-icon">⚙️</div>
+                    <div>
+                        <h4>بعد الإرسال</h4>
+                        <p>سيتواصل معك ممثل الدعم خلال 60 دقيقة لاستكمال الإجراءات وتوثيق الطلب.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ======================= FAQ ======================= -->
-<section class="section-anuta" id="faq">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</span>
-            <h2>إجابات واضحة لأهم الاستفسارات</h2>
-            <p class="desc">كل ما تريد معرفته عن التمويل مع كاش فاستر</p>
-        </div>
+    <!-- ======================= TESTIMONIALS ======================= -->
+    <section class="section-anuta" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-star" style="color: var(--anuta-gold);"></i> آراء العملاء</span>
+                <h2>ماذا يقول عملاؤنا عنا؟</h2>
+                <p class="desc">تجارب حقيقية من عملاء مموّلين</p>
+            </div>
 
-        <div class="faq-anuta">
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    كيف تتم الموافقة على الطلب؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة خلال 24 ساعة من تقديم المستندات الكاملة.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    ما هي المستندات المطلوبة؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">صورة البطاقة + صورة شخصية (سيلفي) + إثبات دخل + بيانات الضامن + رقم محفظة نشط. جميع المستندات مشفرة ومحمية.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    كيف استلم القرض؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">بعد إنهاء الإجراءات، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة خلال دقائق.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    ما هي مدة السداد؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ الذي تختاره.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    هل هناك فئات مستبعدة؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة. نعتذر عن عدم تقديم الخدمة لهذه الفئات.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    هل هناك رسوم خفية؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول بوضوح تام.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    هل يمكنني سداد القرض مبكراً؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد الفعلي.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger">
-                    كيف يتم حماية بياناتي؟
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-content">جميع بياناتك مشفرة بتقنية 256-bit، ولا يمكن لأي شخص خارج فريق التمويل الاطلاع عليها. نلتزم بأعلى معايير الأمان والخصوصية.</div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="icon-quote">"</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text">"تم الصرف خلال ساعة فقط من تقديم الطلب. شكراً كاش فاستر على السرعة والمصداقية."</p>
+                    <div class="name">أحمد محمد</div>
+                    <div class="role">موظف قطاع خاص</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="icon-quote">"</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text">"أقساط مرنة جداً تناسب ميزانيتي. أنصح الجميع بالتعامل مع كاش فاستر."</p>
+                    <div class="name">سارة خالد</div>
+                    <div class="role">ربة منزل</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="icon-quote">"</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text">"خدمة عملاء ممتازة، ردود سريعة ودعم مستمر. شكراً لكم من القلب."</p>
+                    <div class="name">محمود حسن</div>
+                    <div class="role">صاحب مشروع</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ======================= CTA ======================= -->
-<section class="section-anuta">
-    <div class="container">
-        <div class="cta-anuta">
-            <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
-            <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
-            <div class="cta-buttons">
-                <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-primary-hero">
-                    <i class="fas fa-bolt"></i> قدم طلبك الآن
-                </a>
-                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-secondary-hero">
-                    <i class="fas fa-search"></i> تتبع طلبك
-                </a>
+    <!-- ======================= PRIVACY POLICY ======================= -->
+    <section class="section-anuta" id="privacy">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-shield-alt"></i> الأمان والخصوصية</span>
+                <h2>سياسة الخصوصية</h2>
+                <p class="desc">نحن نلتزم بحماية بياناتك الشخصية</p>
+            </div>
+
+            <div class="privacy-section">
+                <div class="privacy-item">
+                    <h3><i class="fas fa-lock"></i> الأمان والتشفير</h3>
+                    <p>
+                        جميع البيانات التي تقدمها عبر موقعنا يتم تشفيرها باستخدام تقنية <strong>256-bit SSL</strong>.
+                        هذا يعني أن معلوماتك الشخصية محمية من أي محاولات اختراق أو سرقة أثناء نقلها عبر الإنترنت.
+                    </p>
+                </div>
+
+                <div class="privacy-item">
+                    <h3><i class="fas fa-user-secret"></i> سرية البيانات</h3>
+                    <p>
+                        نلتزم بأعلى معايير السرية. لا يتم مشاركة بياناتك مع أي طرف ثالث لأغراض تسويقية أو تجارية.
+                        يستخدم فريقنا بياناتك فقط لتقييم طلب التمويل والتواصل معك بشأنه.
+                    </p>
+                </div>
+
+                <div class="privacy-item">
+                    <h3><i class="fas fa-trash-alt"></i> حق الحذف</h3>
+                    <p>
+                        لديك الحق الكامل في طلب حذف جميع بياناتك من أنظمتنا في أي وقت، وذلك بالتواصل مع فريق الدعم عبر
+                        <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank">صفحتنا على فيسبوك</a>.
+                        سيتم حذف بياناتك خلال 5 أيام عمل.
+                    </p>
+                </div>
+
+                <div class="privacy-item">
+                    <h3><i class="fas fa-clock"></i> مدة الاحتفاظ بالبيانات</h3>
+                    <p>
+                        نحتفظ ببيانات العملاء لمدة <strong>5 سنوات</strong> من تاريخ انتهاء التمويل،
+                        وذلك لأغراض قانونية وتوثيقية. بعد انتهاء هذه المدة، يتم حذف البيانات بشكل آمن.
+                    </p>
+                </div>
+
+                <div class="privacy-item">
+                    <h3><i class="fas fa-gavel"></i> الالتزام القانوني</h3>
+                    <p>
+                        نحن نلتزم بجميع القوانين واللوائح المنظمة لقطاع التمويل الاستهلاكي في مصر،
+                        بما في ذلك <strong>قانون حماية البيانات الشخصية رقم 151 لسنة 2020</strong>.
+                    </p>
+                </div>
+
+                <div class="privacy-footer">
+                    <p>
+                        <i class="fas fa-info-circle" style="color: var(--anuta-gold);"></i>
+                        آخر تحديث لسياسة الخصوصية: <strong style="color: #FFF;">يناير 2026</strong>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ======================= FOOTER ======================= -->
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>⚡ Cash Faster</h4>
-                <p>تمويل استهلاكي سريع وآمن<br>بدون رسوم إدارية مسبقة</p>
-                <p style="margin-top: 0.3rem; color: var(--anuta-gold); font-size: 0.7rem;">ترخيص رقم (24) من هيئة الرقابة المالية</p>
+    <!-- ======================= FAQ ======================= -->
+    <section class="section-anuta" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</span>
+                <h2>إجابات واضحة لأهم الاستفسارات</h2>
+                <p class="desc">كل ما تريد معرفته عن التمويل مع كاش فاستر</p>
             </div>
-            <div class="footer-col">
-                <h4>روابط سريعة</h4>
-                <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank">تقديم طلب</a>
-                <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank">تتبع طلبك</a>
-                <a href="#pricing">جدول الأقساط</a>
-                <a href="#faq">الأسئلة الشائعة</a>
+
+            <div class="faq-anuta">
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        كيف تتم الموافقة على الطلب؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نقوم باستعلام ميداني سري للتحقق من بيانات السكن والعمل فقط، ثم تصدر الموافقة خلال 24 ساعة من تقديم المستندات الكاملة.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        ما هي المستندات المطلوبة؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">صورة البطاقة + صورة شخصية (سيلفي) + إثبات دخل + بيانات الضامن + رقم محفظة نشط. جميع المستندات مشفرة ومحمية.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        كيف استلم القرض؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">بعد إنهاء الإجراءات، يتم تحويل المبلغ بالكامل إلى محفظتك الإلكترونية مباشرة خلال دقائق.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        ما هي مدة السداد؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نوفر خطط سداد مرنة من 12 شهراً حتى 60 شهراً حسب المبلغ الذي تختاره.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        هل هناك فئات مستبعدة؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نعم: المحامون، رجال الشرطة، والقوات المسلحة. نعتذر عن عدم تقديم الخدمة لهذه الفئات.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        هل هناك رسوم خفية؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">لا توجد أي رسوم تُطلب قبل الصرف. جميع الرسوم والفوائد مدمجة في الأقساط الشهرية الموضحة في الجدول بوضوح تام.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        هل يمكنني سداد القرض مبكراً؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">نعم، يمكنك سداد القرض في أي وقت قبل الموعد المحدد، مع احتساب الفائدة حتى تاريخ السداد الفعلي.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        كيف يتم حماية بياناتي؟
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">جميع بياناتك مشفرة بتقنية 256-bit، ولا يمكن لأي شخص خارج فريق التمويل الاطلاع عليها. نلتزم بأعلى معايير الأمان والخصوصية.</div>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>الأمان والخصوصية</h4>
-                <p>🔐 تشفير 256-bit</p>
-                <p>🛡️ بياناتك مشفرة بالكامل</p>
-                <p>📜 عقود قانونية موثقة</p>
-                <p>✅ مرخص من هيئة الرقابة المالية</p>
+        </div>
+    </section>
+
+    <!-- ======================= CTA ======================= -->
+    <section class="section-anuta">
+        <div class="container">
+            <div class="cta-anuta">
+                <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
+                <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
+                <div class="cta-buttons">
+                    <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank" class="btn-primary-hero">
+                        <i class="fas fa-bolt"></i> قدم طلبك الآن
+                    </a>
+                    <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-secondary-hero">
+                        <i class="fas fa-search"></i> تتبع طلبك
+                    </a>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>تابعنا</h4>
-                <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank">
-                    <i class="fab fa-facebook"></i> صفحة الدعم الرسمية
-                </a>
+        </div>
+    </section>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>⚡ Cash Faster</h4>
+                    <p>تمويل استهلاكي سريع وآمن<br>بدون رسوم إدارية مسبقة</p>
+                    <p style="margin-top: 0.3rem; color: var(--anuta-gold); font-size: 0.7rem;">ترخيص رقم (24) من هيئة الرقابة المالية</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <a href="https://eu.surveymars.com/q/7h3QjvAbU" target="_blank">تقديم طلب</a>
+                    <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank">تتبع طلبك</a>
+                    <a href="#pricing">جدول الأقساط</a>
+                    <a href="#faq">الأسئلة الشائعة</a>
+                    <a href="#privacy">سياسة الخصوصية</a>
+                </div>
+                <div class="footer-col">
+                    <h4>الأمان والخصوصية</h4>
+                    <p>🔐 تشفير 256-bit</p>
+                    <p>🛡️ بياناتك مشفرة بالكامل</p>
+                    <p>📜 عقود قانونية موثقة</p>
+                    <p>✅ مرخص من هيئة الرقابة المالية</p>
+                </div>
+                <div class="footer-col">
+                    <h4>تابعنا</h4>
+                    <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank">
+                        <i class="fab fa-facebook"></i> صفحة الدعم الرسمية
+                    </a>
+                    <p style="margin-top: 0.3rem; font-size: 0.7rem; color: var(--text-muted);">
+                        <i class="fas fa-clock"></i> الدعم متاح 24/7
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cash Faster. جميع الحقوق محفوظة | تمويل استهلاكي آمن وموثوق</p>
                 <p style="margin-top: 0.3rem; font-size: 0.7rem; color: var(--text-muted);">
-                    <i class="fas fa-clock"></i> الدعم متاح 24/7
+                    التمويل يخضع لتقييم الائتمان والشروط الكاملة على موقعنا.
                 </p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Cash Faster. جميع الحقوق محفوظة | تمويل استهلاكي آمن وموثوق</p>
-            <p style="margin-top: 0.3rem; font-size: 0.7rem; color: var(--text-muted);">
-                التمويل يخضع لتقييم الائتمان والشروط الكاملة على موقعنا.
-            </p>
+    </footer>
+
+    <!-- ======================= COOKIES CONSENT ======================= -->
+    <div id="cookiesConsent">
+        <p>
+            <i class="fas fa-cookie-bite"></i>
+            نستخدم ملفات تعريف الارتباط لتحسين تجربتك. باستخدامك للموقع، فإنك توافق على
+            <a href="#privacy" style="color: var(--anuta-gold); text-decoration: none; font-weight: 700;">سياسة الخصوصية</a> الخاصة بنا.
+        </p>
+        <div class="cookies-actions">
+            <button class="cookies-accept" onclick="acceptCookies()">موافق</button>
+            <a href="#privacy" class="cookies-privacy"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a>
         </div>
     </div>
-</footer>
 
-<!-- ======================= JAVASCRIPT ======================= -->
-<script>
-    // ===== Header Scroll Effect =====
-    const header = document.getElementById('mainHeader');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    <!-- ======================= BACK TO TOP ======================= -->
+    <button id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    // ===== FAQ Accordion =====
-    document.querySelectorAll('.faq-trigger').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('.faq-icon');
-            const isOpen = content.classList.contains('open');
-            
-            document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
-            document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('active'));
-            
-            if (!isOpen) {
-                content.classList.add('open');
-                icon.classList.add('active');
+    <!-- ======================= LIVE CHAT ======================= -->
+    <a href="https://www.facebook.com/share/1BHzyoMVUx/" target="_blank" class="live-chat-btn">
+        <i class="fab fa-facebook-messenger fa-lg"></i>
+        دردش معنا
+    </a>
+
+    <!-- ======================= JAVASCRIPT ======================= -->
+    <script>
+        // ===== Header Scroll Effect =====
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
-    });
 
-    // ===== Copy Form Text =====
-    const copyBtn = document.getElementById('copyFormBtn');
-    const formText = document.getElementById('manualFormText');
+        // ===== FAQ Accordion =====
+        document.querySelectorAll('.faq-trigger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = content.classList.contains('open');
 
-    async function copyToClipboard() {
-        try {
-            await navigator.clipboard.writeText(formText.innerText);
-            showToast('✅ تم النسخ بنجاح!');
-        } catch (err) {
-            const textarea = document.createElement('textarea');
-            textarea.value = formText.innerText;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            showToast('✅ تم النسخ بنجاح!');
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('active'));
+
+                if (!isOpen) {
+                    content.classList.add('open');
+                    icon.classList.add('active');
+                }
+            });
+        });
+
+        // ===== Copy Form Text =====
+        const copyBtn = document.getElementById('copyFormBtn');
+        const formText = document.getElementById('manualFormText');
+
+        async function copyToClipboard() {
+            try {
+                await navigator.clipboard.writeText(formText.innerText);
+                showToast('✅ تم النسخ بنجاح!');
+            } catch (err) {
+                const textarea = document.createElement('textarea');
+                textarea.value = formText.innerText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast('✅ تم النسخ بنجاح!');
+            }
         }
-    }
 
-    if (copyBtn) {
-        copyBtn.addEventListener('click', copyToClipboard);
-    }
+        if (copyBtn) {
+            copyBtn.addEventListener('click', copyToClipboard);
+        }
 
-    function showToast(message) {
-        const toast = document.createElement('div');
-        toast.textContent = message;
-        toast.style.cssText = `
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(90deg, #E8B84B, #C99A2E);
-            color: #0A0A1A;
-            padding: 0.8rem 2rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            z-index: 9999;
-            font-family: 'Cairo', sans-serif;
-            box-shadow: 0 8px 30px rgba(232, 184, 75, 0.25);
-            animation: toastSlide 0.4s ease;
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(90deg, #E8B84B, #C99A2E);
+                color: #0A0A1A;
+                padding: 0.8rem 2rem;
+                border-radius: 2rem;
+                font-weight: 700;
+                z-index: 9999;
+                font-family: 'Cairo', sans-serif;
+                box-shadow: 0 8px 30px rgba(232, 184, 75, 0.25);
+                animation: toastSlide 0.4s ease;
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.animation = 'toastSlideOut 0.4s ease forwards';
+                setTimeout(() => toast.remove(), 400);
+            }, 2500);
+        }
+
+        // إضافة أنماط التوست
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes toastSlide {
+                from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+                to { opacity: 1; transform: translateX(-50%) translateY(0); }
+            }
+            @keyframes toastSlideOut {
+                from { opacity: 1; transform: translateX(-50%) translateY(0); }
+                to { opacity: 0; transform: translateX(-50%) translateY(30px); }
+            }
         `;
-        document.body.appendChild(toast);
-        setTimeout(() => {
-            toast.style.animation = 'toastSlideOut 0.4s ease forwards';
-            setTimeout(() => toast.remove(), 400);
-        }, 2500);
-    }
+        document.head.appendChild(styleSheet);
 
-    // إضافة أنماط التوست
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = `
-        @keyframes toastSlide {
-            from { opacity: 0; transform: translateX(-50%) translateY(30px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        // ===== Cookies Consent =====
+        function checkCookies() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookiesConsent').style.display = 'block';
+            }
         }
-        @keyframes toastSlideOut {
-            from { opacity: 1; transform: translateX(-50%) translateY(0); }
-            to { opacity: 0; transform: translateX(-50%) translateY(30px); }
-        }
-    `;
-    document.head.appendChild(styleSheet);
 
-    // ===== Smooth scroll for anchor links =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookiesConsent').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', checkCookies);
+
+        // ===== Back to Top =====
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
             }
         });
-    });
-</script>
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== Fade In Animation on Scroll =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-anuta, .testimonial-card, .about-stat-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
