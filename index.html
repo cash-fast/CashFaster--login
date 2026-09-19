@@ -53,10 +53,6 @@
             overflow-x: hidden;
         }
 
-        body.modal-open {
-            overflow: hidden;
-        }
-
         /* ======================= SCROLLBAR ======================= */
         ::-webkit-scrollbar {
             width: 8px;
@@ -127,15 +123,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
-        }
-
-        .logo-sub {
-            font-size: 0.6rem;
-            color: var(--text-muted);
-            -webkit-text-fill-color: var(--text-muted);
-            display: block;
-            margin-top: -4px;
-            font-weight: 400;
         }
 
         .header-actions {
@@ -1024,148 +1011,6 @@
             text-decoration: none;
         }
 
-        /* ======================= MODAL (Registration Closed) ======================= */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(5, 8, 29, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem;
-            animation: overlayFadeIn 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        @keyframes overlayFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-box {
-            background: linear-gradient(145deg, rgba(16, 20, 48, 0.98), rgba(10, 14, 39, 0.99));
-            border: 2px solid rgba(0, 217, 255, 0.3);
-            border-radius: var(--radius);
-            max-width: 480px;
-            width: 100%;
-            padding: 2rem 1.6rem 1.6rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 60px rgba(0, 217, 255, 0.15);
-            animation: modalPopIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        @keyframes modalPopIn {
-            from { opacity: 0; transform: scale(0.85) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 0.8rem;
-            left: 0.8rem;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .modal-close:hover {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--danger);
-            border-color: rgba(239, 68, 68, 0.4);
-            transform: rotate(90deg);
-        }
-
-        .modal-icon {
-            font-size: 3.5rem;
-            margin-bottom: 0.8rem;
-            display: block;
-            animation: iconPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .modal-box h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--gold);
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
-        }
-
-        .modal-box .modal-msg {
-            font-size: 1rem;
-            color: var(--text-light);
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            line-height: 1.7;
-        }
-
-        .modal-box .modal-sub {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .modal-box .modal-sub .hl {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .modal-box .modal-thanks {
-            display: inline-block;
-            background: rgba(0, 217, 255, 0.08);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 2rem;
-            padding: 0.35rem 1.2rem;
-            font-size: 0.85rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 1.4rem;
-        }
-
-        .modal-btn {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            color: var(--dark-bg);
-            padding: 0.8rem 2.5rem;
-            border-radius: 2rem;
-            font-weight: 800;
-            border: none;
-            cursor: pointer;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px var(--primary-glow);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .modal-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 35px rgba(0, 217, 255, 0.5);
-        }
-
         /* ======================= RESPONSIVE ======================= */
         @media (max-width: 768px) {
             .container {
@@ -1227,15 +1072,6 @@
             }
             .privacy-section {
                 padding: 1.2rem;
-            }
-            .modal-box {
-                padding: 1.6rem 1.2rem 1.2rem;
-            }
-            .modal-icon {
-                font-size: 3rem;
-            }
-            .modal-box h3 {
-                font-size: 1.15rem;
             }
         }
 
@@ -1319,9 +1155,9 @@
                 <span class="logo-text">Cash Faster</span>
             </a>
             <div class="header-actions">
-                <button type="button" class="btn-header" onclick="showRegistrationClosed()">
+                <a href="https://surveymars.com/q/N8zVBi0Dj" target="_blank" class="btn-header">
                     <i class="fas fa-pen"></i> قدم طلبك
-                </button>
+                </a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-header-outline">
                     <i class="fas fa-search"></i> تتبع طلبك
                 </a>
@@ -1404,9 +1240,9 @@
                 </span>
             </p>
             <div class="hero-buttons">
-                <button type="button" class="btn-primary" onclick="showRegistrationClosed()">
+                <a href="https://surveymars.com/q/N8zVBi0Dj" target="_blank" class="btn-primary">
                     <i class="fas fa-bolt"></i> ابدأ الآن
-                </button>
+                </a>
                 <a href="#pricing" class="btn-secondary">
                     <i class="fas fa-table"></i> جدول الأقساط
                 </a>
@@ -1643,6 +1479,10 @@
 1️⃣ البيانات الشخصية:
 - الاسم الكامل:
 - الرقم القومي (14 رقم):
+- رقم الهاتف:
+- رقم الواتساب:
+- المحافظة:
+- العنوان بالتفصيل:
 
 2️⃣ الصور المطلوبة:
 - صورة سيلفي مع البطاقة الشخصية
@@ -1654,6 +1494,7 @@
 
 4️⃣ البيانات المالية:
 - المبلغ المطلوب (من 30,000 إلى 200,000):
+- مدة السداد:
 - مصدر الدخل / الوظيفة:
 - متوسط الدخل الشهري:
 
@@ -1661,6 +1502,7 @@
 - اسم الضامن الكامل:
 - صلة القرابة:
 - رقم هاتف الضامن:
+- الرقم القومي للضامن:
 
 🔐 بياناتك مشفرة بالكامل ولن تستخدم إلا لمراجعة طلب التمويل.
                 </div>
@@ -1926,9 +1768,9 @@
                 <h2>🚀 جاهز لتبدأ رحلة التمويل؟</h2>
                 <p>استكمل طلبك الآن واستلم تمويلك خلال دقائق. نضمن لك الشفافية والأمان التام.</p>
                 <div class="cta-buttons">
-                    <button type="button" class="btn-primary" onclick="showRegistrationClosed()">
+                    <a href="https://surveymars.com/q/N8zVBi0Dj" target="_blank" class="btn-primary">
                         <i class="fas fa-bolt"></i> قدم طلبك الآن
-                    </button>
+                    </a>
                     <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank" class="btn-gold">
                         <i class="fas fa-search"></i> تتبع طلبك
                     </a>
@@ -1950,7 +1792,7 @@
             </div>
             <div class="footer-col">
                 <h4>روابط سريعة</h4>
-                <a href="#" onclick="showRegistrationClosed(); return false;">تقديم طلب</a>
+                <a href="https://surveymars.com/q/N8zVBi0Dj" target="_blank">تقديم طلب</a>
                 <a href="https://cash-fast.github.io/Esti3lam-tlabat/" target="_blank">تتبع طلبك</a>
                 <a href="#pricing">جدول الأقساط</a>
                 <a href="#faq">الأسئلة الشائعة</a>
@@ -1982,36 +1824,6 @@
     </div>
 </footer>
 
-<!-- ======================= MODAL: Registration Closed ======================= -->
-<div class="modal-overlay" id="registrationModal">
-    <div class="modal-box">
-        <button type="button" class="modal-close" onclick="closeRegistrationModal()" aria-label="إغلاق">
-            <i class="fas fa-times"></i>
-        </button>
-
-        <span class="modal-icon">🚫</span>
-
-        <h3>التسجيل مغلق مؤقتاً</h3>
-
-        <p class="modal-msg">
-            الطلبات المسجلة لدينا كثيرة جداً 📄
-        </p>
-
-        <p class="modal-sub">
-            سيتم فتح التسجيل مرة أخرى في <span class="hl">أقرب وقت ممكن</span>،
-            نرجو منكم المتابعة باستمرار لمعرفة موعد الفتح.
-        </p>
-
-        <div class="modal-thanks">🙏 شكراً لتفهمكم</div>
-
-        <br>
-
-        <button type="button" class="modal-btn" onclick="closeRegistrationModal()">
-            <i class="fas fa-check"></i> حسناً، فهمت
-        </button>
-    </div>
-</div>
-
 <!-- ======================= JAVASCRIPT ======================= -->
 <script>
     // ===== Header Scroll Effect =====
@@ -2033,7 +1845,6 @@
             const arrow = this.querySelector('.arrow-icon');
             const isActive = details.classList.contains('active');
 
-            // Close all others
             document.querySelectorAll('#requirementsList .card-details').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('#requirementsList .arrow-icon').forEach(a => a.classList.remove('rotate'));
 
@@ -2107,7 +1918,6 @@
         }, 2500);
     }
 
-    // إضافة أنماط التوست
     const styleSheet = document.createElement('style');
     styleSheet.textContent = `
         @keyframes toastSlide {
@@ -2120,33 +1930,6 @@
         }
     `;
     document.head.appendChild(styleSheet);
-
-    // ===== Registration Closed Modal =====
-    const registrationModal = document.getElementById('registrationModal');
-
-    function showRegistrationClosed() {
-        registrationModal.classList.add('active');
-        document.body.classList.add('modal-open');
-    }
-
-    function closeRegistrationModal() {
-        registrationModal.classList.remove('active');
-        document.body.classList.remove('modal-open');
-    }
-
-    // إغلاق عند الضغط على الخلفية
-    registrationModal.addEventListener('click', function(e) {
-        if (e.target === registrationModal) {
-            closeRegistrationModal();
-        }
-    });
-
-    // إغلاق بزر Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && registrationModal.classList.contains('active')) {
-            closeRegistrationModal();
-        }
-    });
 </script>
 
 </body>
